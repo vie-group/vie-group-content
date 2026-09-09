@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "websiteRepository": "vie-group/vie-group.github.io",
+  "contentRepository": "vie-group/vie-group-content",
+  "contentRoot": ".",
+  "paths": {
+    "data": "data",
+    "seminarAssets": "assets/seminars",
+    "publicationAssets": "assets/publications",
+    "activityAssets": "assets/activities",
+    "legacyMedia": "archive/legacy-media",
+    "manifests": "archive/manifests"
+  },
+  "pathPolicy": {
+    "newAssets": "Use repository-relative paths under assets/.",
+    "legacyMedia": "Existing media/ references may remain served by the website repository until migrated.",
+    "externalLinks": "Use https:// URLs for external papers, code, videos, and other canonical sources."
+  }
+}

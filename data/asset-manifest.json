@@ -1,0 +1,500 @@
+[
+  {
+    "ref": "media/code/osmo_code.txt",
+    "status": "skipped",
+    "bytes": 178
+  },
+  {
+    "ref": "media/pdf/0028_aq47djc.pdf",
+    "status": "skipped",
+    "bytes": 541760
+  },
+  {
+    "ref": "media/pdf/0028_Wsjq0ED.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/0183_talk.pptx",
+    "status": "skipped",
+    "bytes": 2628172
+  },
+  {
+    "ref": "media/pdf/0183.pdf",
+    "status": "skipped",
+    "bytes": 541674
+  },
+  {
+    "ref": "media/pdf/0508_1.pdf",
+    "status": "skipped",
+    "bytes": 1252273
+  },
+  {
+    "ref": "media/pdf/0508-Poster.pdf",
+    "status": "skipped",
+    "bytes": 573424
+  },
+  {
+    "ref": "media/pdf/0559.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/08489929.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/1273-supp.zip",
+    "status": "skipped",
+    "bytes": 18966064
+  },
+  {
+    "ref": "media/pdf/196_FF_Slide.pptx",
+    "status": "downloaded",
+    "bytes": 4618249,
+    "contentType": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+  },
+  {
+    "ref": "media/pdf/20_PECoP_Parameter_Efficient_Continual_Pretraining_for_Action_Quality_Assessment.pdf",
+    "status": "skipped",
+    "bytes": 1464834
+  },
+  {
+    "ref": "media/pdf/21_Contrastive_Regression_Transformer_for_Skill_Assessment_in_Robotic_Surgery.pdf",
+    "status": "skipped",
+    "bytes": 1165127
+  },
+  {
+    "ref": "media/pdf/2208.09910.pdf",
+    "status": "skipped",
+    "bytes": 6930662
+  },
+  {
+    "ref": "media/pdf/2272_poster.pdf",
+    "status": "skipped",
+    "bytes": 530947
+  },
+  {
+    "ref": "media/pdf/2272_video_slide.pptx",
+    "status": "skipped",
+    "bytes": 11213777
+  },
+  {
+    "ref": "media/pdf/2306.14752_1.pdf",
+    "status": "skipped",
+    "bytes": 1618131
+  },
+  {
+    "ref": "media/pdf/2308.02533.pdf",
+    "status": "skipped",
+    "bytes": 697359
+  },
+  {
+    "ref": "media/pdf/2403.06406.pdf",
+    "status": "skipped",
+    "bytes": 46597098
+  },
+  {
+    "ref": "media/pdf/302_poster.pdf",
+    "status": "skipped",
+    "bytes": 724878
+  },
+  {
+    "ref": "media/pdf/978-3-031-19818-2_10.pdf",
+    "status": "skipped",
+    "bytes": 1990478
+  },
+  {
+    "ref": "media/pdf/AAAI_2024_BLADE_Camera_Ready_Compressed_Modified_v2.pdf",
+    "status": "skipped",
+    "bytes": 3593162
+  },
+  {
+    "ref": "media/pdf/AAAI_BLADE_Poster_v3_Resized.pdf",
+    "status": "skipped",
+    "bytes": 10774446
+  },
+  {
+    "ref": "media/pdf/AAAI2024_SRH_cr.pdf",
+    "status": "skipped",
+    "bytes": 1832410
+  },
+  {
+    "ref": "media/pdf/Attention_Discriminant_Sampling_for_Point_Clouds_ICCV_2023.pdf",
+    "status": "skipped",
+    "bytes": 2821846
+  },
+  {
+    "ref": "media/pdf/Bansal_等_-_2023_-_CleanCLIP_Mitigating_Data_Poisoning_Attacks_in_Mu.pdf",
+    "status": "skipped",
+    "bytes": 21083835
+  },
+  {
+    "ref": "media/pdf/BLADE_PPT_v3.pdf",
+    "status": "skipped",
+    "bytes": 10835540
+  },
+  {
+    "ref": "media/pdf/btad464.pdf",
+    "status": "skipped",
+    "bytes": 29206128
+  },
+  {
+    "ref": "media/pdf/C2F-Seg-Paper.pdf",
+    "status": "skipped",
+    "bytes": 7026956
+  },
+  {
+    "ref": "media/pdf/CSB_2013.pdf",
+    "status": "skipped",
+    "bytes": 998180
+  },
+  {
+    "ref": "media/pdf/CVPR_2019.pdf",
+    "status": "skipped",
+    "bytes": 1102695
+  },
+  {
+    "ref": "media/pdf/CVPR_2021.pdf",
+    "status": "skipped",
+    "bytes": 6664776
+  },
+  {
+    "ref": "media/pdf/CVPR2021_POSTER.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/CVPR2021_SLIDES.pptx",
+    "status": "skipped",
+    "bytes": 17194410
+  },
+  {
+    "ref": "media/pdf/CVPR海报_ldc_final.pdf",
+    "status": "skipped",
+    "bytes": 950269
+  },
+  {
+    "ref": "media/pdf/DiffPoint.pdf",
+    "status": "skipped",
+    "bytes": 2102323
+  },
+  {
+    "ref": "media/pdf/Disruptive_Autoencoders-_Leveraging_Low-level_features_for_3D_Medical_Image_Pre-training.pdf",
+    "status": "skipped",
+    "bytes": 1138838
+  },
+  {
+    "ref": "media/pdf/fncom-16-842760.pdf",
+    "status": "skipped",
+    "bytes": 5599703
+  },
+  {
+    "ref": "media/pdf/fp775-liA.pdf",
+    "status": "skipped",
+    "bytes": 614758
+  },
+  {
+    "ref": "media/pdf/Graph_Abstract_270.pdf",
+    "status": "skipped",
+    "bytes": 405978
+  },
+  {
+    "ref": "media/pdf/ICCV_2023_DaochangLiu.pdf",
+    "status": "skipped",
+    "bytes": 9600887
+  },
+  {
+    "ref": "media/pdf/ICCV_2023_ZhixuanLi.pdf",
+    "status": "skipped",
+    "bytes": 7915249
+  },
+  {
+    "ref": "media/pdf/ICME_2019.pdf",
+    "status": "skipped",
+    "bytes": 962847
+  },
+  {
+    "ref": "media/pdf/IJCARS.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/IJCV_2014.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/JCM_2016.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/LabelFool_A_Trick_In_The_Label_Space.pdf",
+    "status": "skipped",
+    "bytes": 1935126
+  },
+  {
+    "ref": "media/pdf/LabelFool_poster.pdf",
+    "status": "skipped",
+    "bytes": 1722493
+  },
+  {
+    "ref": "media/pdf/Li_et_al.-2019ZTE_Communications-Recent_Advances_and_Challenges_in_Video_Quality_Assessment.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/Li-2021-Unified-quality-assessment-of-in-th.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/Liu__ICCV_2023_paper.pdf",
+    "status": "skipped",
+    "bytes": 4556855
+  },
+  {
+    "ref": "media/pdf/Liu_Zero-1-to-3_Zero-shot_One_Image_to_3D_Object_ICCV_2023_paper.pdf",
+    "status": "skipped",
+    "bytes": 5060309
+  },
+  {
+    "ref": "media/pdf/Mao_等_-_2023_-_Understanding_Zero-Shot_Adversarial_Robustness_for.pdf",
+    "status": "skipped",
+    "bytes": 912693
+  },
+  {
+    "ref": "media/pdf/OAFormer_Learning_Occlusion_Distinguishable_Feature_for_Amodal_Instance_Segmentation.pdf",
+    "status": "skipped",
+    "bytes": 1955864
+  },
+  {
+    "ref": "media/pdf/OSMO_poster.pdf",
+    "status": "downloaded",
+    "bytes": 1048576,
+    "contentType": "application/pdf"
+  },
+  {
+    "ref": "media/pdf/p201-gao.pdf",
+    "status": "downloaded",
+    "bytes": 1048576,
+    "contentType": "application/pdf"
+  },
+  {
+    "ref": "media/pdf/P5B-01_presentation_with_videos.pptx",
+    "status": "skipped",
+    "bytes": 39050687
+  },
+  {
+    "ref": "media/pdf/P5B-01.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/Paper270_Ld8SMTg.pdf",
+    "status": "skipped",
+    "bytes": 1023760
+  },
+  {
+    "ref": "media/pdf/Peebles_Scalable_Diffusion_Models_with_Transformers_ICCV_2023_paper.pdf",
+    "status": "skipped",
+    "bytes": 5083189
+  },
+  {
+    "ref": "media/pdf/PKU-NTU_Workshop_Macau2018-TMM_presentation.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/poster_Mdjyg2b.pdf",
+    "status": "skipped",
+    "bytes": 942665
+  },
+  {
+    "ref": "media/pdf/poster_srh_aaai_S3M6ZRr.pdf",
+    "status": "skipped",
+    "bytes": 2942098
+  },
+  {
+    "ref": "media/pdf/poster_update.pdf",
+    "status": "skipped",
+    "bytes": 754129
+  },
+  {
+    "ref": "media/pdf/Presentation_270.pptx",
+    "status": "skipped",
+    "bytes": 5844034
+  },
+  {
+    "ref": "media/pdf/rcp0011-liA.pdf",
+    "status": "skipped",
+    "bytes": 115092
+  },
+  {
+    "ref": "media/pdf/Saha_Re-IQA_Unsupervised_Learning_for_Image_Quality_Assessment_in_the_Wild_CVPR_2023_paper.pdf",
+    "status": "skipped",
+    "bytes": 7794894
+  },
+  {
+    "ref": "media/pdf/seg_WQE0Dfg.pdf",
+    "status": "skipped",
+    "bytes": 3624290
+  },
+  {
+    "ref": "media/pdf/short-oral.pptx",
+    "status": "skipped",
+    "bytes": 691456
+  },
+  {
+    "ref": "media/pdf/SVIP_2015.pdf",
+    "status": "skipped",
+    "bytes": 1012810
+  },
+  {
+    "ref": "media/pdf/TCSVT_2019.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/Test_Time_Adaptation_for_Blind_Image_Quality_Assessment.pdf",
+    "status": "skipped",
+    "bytes": 11787634
+  },
+  {
+    "ref": "media/pdf/TMI_2023.pdf",
+    "status": "skipped",
+    "bytes": 3982296
+  },
+  {
+    "ref": "media/pdf/TMM_2012.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/TMM_2017.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/pdf/Transferable_adversarial_examples_based_on_global_smooth_perturbations.pdf",
+    "status": "skipped",
+    "bytes": 2156340
+  },
+  {
+    "ref": "media/pdf/UMIFormer.pdf",
+    "status": "skipped",
+    "bytes": 4977489
+  },
+  {
+    "ref": "media/pdf/Xia_Learning_from_Noisy_Pseudo_Labels_for_Semi-Supervised_Temporal_Action_Localization.pdf",
+    "status": "skipped",
+    "bytes": 1346204
+  },
+  {
+    "ref": "media/pdf/Xu_和_Chen_-_2023_-_Multimodal_Optimal_Transport-based_Co-Attention_Tr.pdf",
+    "status": "skipped",
+    "bytes": 35652736
+  },
+  {
+    "ref": "media/ppt/1.5.pptx",
+    "status": "skipped",
+    "bytes": 1767015
+  },
+  {
+    "ref": "media/ppt/11.24.pptx",
+    "status": "skipped",
+    "bytes": 1936430
+  },
+  {
+    "ref": "media/ppt/20_PECoP_Parameter_Efficient_Continual_Pretraining_for_Action_Quality_Assessment.pptx",
+    "status": "skipped",
+    "bytes": 1403905
+  },
+  {
+    "ref": "media/ppt/2024-3-15.pptx",
+    "status": "skipped",
+    "bytes": 5426055
+  },
+  {
+    "ref": "media/ppt/21_Contrastive_Regression_Transformer_for_Skill_Assessment_in_Robotic_Surgery.pptx",
+    "status": "skipped",
+    "bytes": 1278551
+  },
+  {
+    "ref": "media/ppt/分享7TTA-IQA.pptx",
+    "status": "skipped",
+    "bytes": 3435122
+  },
+  {
+    "ref": "media/ppt/分享8Re-IQA.pptx",
+    "status": "skipped",
+    "bytes": 3932029
+  },
+  {
+    "ref": "media/ppt/ADS.pptx",
+    "status": "skipped",
+    "bytes": 5288870
+  },
+  {
+    "ref": "media/ppt/C2F-Seg.pdf",
+    "status": "skipped",
+    "bytes": 9456385
+  },
+  {
+    "ref": "media/ppt/CleanCLIP.pptx",
+    "status": "skipped",
+    "bytes": 1868459
+  },
+  {
+    "ref": "media/ppt/CLIP_Zero-shot_Adversarial_final.pptx",
+    "status": "skipped",
+    "bytes": 1427152
+  },
+  {
+    "ref": "media/ppt/DiffPoint.pptx",
+    "status": "skipped",
+    "bytes": 2552426
+  },
+  {
+    "ref": "media/ppt/DiT.pptx",
+    "status": "skipped",
+    "bytes": 70802847
+  },
+  {
+    "ref": "media/ppt/ImprovingGeneralizationofAT.pdf",
+    "status": "skipped",
+    "bytes": 1540084
+  },
+  {
+    "ref": "media/ppt/MAP_IQA.pdf",
+    "status": "skipped",
+    "bytes": 2561125
+  },
+  {
+    "ref": "media/ppt/MedLSAM-2024.pptx",
+    "status": "skipped",
+    "bytes": 14197464
+  },
+  {
+    "ref": "media/ppt/multimodal_OT-based_survival_prediction_new.pptx",
+    "status": "skipped",
+    "bytes": 1445703
+  },
+  {
+    "ref": "media/ppt/Revisiting_Weak-to-Strong_Consistency_in_Semi-Supervised_Semantic_Segmentation.pdf",
+    "status": "skipped",
+    "bytes": 1048576
+  },
+  {
+    "ref": "media/ppt/umiformer.pptx",
+    "status": "skipped",
+    "bytes": 9703445
+  },
+  {
+    "ref": "media/ppt/Zero123.pptx",
+    "status": "skipped",
+    "bytes": 22182548
+  }
+]

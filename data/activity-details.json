@@ -1,0 +1,332 @@
+[
+  {
+    "id": "2021-09-12-a-group-trip-to-beijing-zoo",
+    "legacyId": "22",
+    "date": "2021-09-12",
+    "title": "A group trip to Beijing Zoo",
+    "detailText": "The whole group went to Beijing Zoo. We had a wonderful time together!!!",
+    "detailHtml": "<font size=\"3\"><p id=\"content_22\">&ensp;&ensp;The whole group went to Beijing Zoo. We had a wonderful time together!!!</p></font>",
+    "images": [
+      "media/image/9.12.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2020-09-26-group-dinner-party",
+    "legacyId": "21",
+    "date": "2020-09-26",
+    "title": "Group Dinner Party",
+    "detailText": "Group Dinner Party",
+    "detailHtml": "<font size=\"3\"><p id=\"content_21\">&ensp;&ensp;Group Dinner Party</p></font>",
+    "images": [
+      "media/image/1_jpbFdBk.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2020-01-12-group-dinner-party",
+    "legacyId": "20",
+    "date": "2020-01-12",
+    "title": "Group Dinner Party",
+    "detailText": "The final group dinner party in this semester.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_20\">&ensp;&ensp;The final group dinner party in this semester.</p></font>",
+    "images": [
+      "media/image/微信图片_20200128165716.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2019-11-30-group-party",
+    "legacyId": "19",
+    "date": "2019-11-30",
+    "title": "Group party",
+    "detailText": "We played board games, ping pang, snooker, sang songs and had dinner together!",
+    "detailHtml": "<font size=\"3\"><p id=\"content_19\">&ensp;&ensp;We played board games, ping pang, snooker, sang songs and had dinner together!</p></font>",
+    "images": [
+      "media/image/11576051393_.pic_hd.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2019-10-24-acm-mm-2019-attending-report-oct-21-25-2019",
+    "legacyId": "17",
+    "date": "2019-10-24",
+    "title": "ACM MM 2019 Attending Report. Oct. 21-25, 2019",
+    "detailText": "---会议---今年MM是在法国的尼斯召开，会议主题更专注于multimedia中的\"multi\"了，也看到有一些更关注在方法上层的数据分析的工作。要特别说的一点是，近两年多了一个Reproducibility papers的专题，感触很深，学界越来越看重可重复性研究了。想起自己之前的两个代码没有设随机种子，要完全复现文章汇报的结果就不容易了。以后要特别关注随机性这一块，让自己的代码和工作可重复性更高。\n以下代码可参考：\n```\nREPRODUCIBILITY\nhttps://pytorch.org/docs/stable/notes/randomness.html\nimport torch\nimport numpy as np\nimport random\nseed = 19920517\ntorch.manual_seed(seed)\ntorch.backends.cudnn.deterministic = True\ntorch.backends.cudnn.benchmark = False\nnp.random.seed(seed)\nrandom.seed(seed)\n```\n---风景---\n会议地点附近风景特别好。走几分钟的路就能参观美丽的尼斯老城以及壮观绚丽的蔚蓝海岸。坐火车不到半个小时就可以参观世界上第二小的国家：摩纳哥。占地面积可能也就和北大差不多，不过依山傍水而建，实际的空间利用率非常高！\n---饮食---\n刚开始吃不惯，后来慢慢觉得西班牙火腿和培根肉还行了。第一晚吃的生蚝太有挑战性，最后一晚吃的西餐味道特别赞。",
+    "detailHtml": "<font size=\"3\"><p id=\"content_17\">&ensp;&ensp;---会议---今年MM是在法国的尼斯召开，会议主题更专注于multimedia中的&quot;multi&quot;了，也看到有一些更关注在方法上层的数据分析的工作。要特别说的一点是，近两年多了一个Reproducibility papers的专题，感触很深，学界越来越看重可重复性研究了。想起自己之前的两个代码没有设随机种子，要完全复现文章汇报的结果就不容易了。以后要特别关注随机性这一块，让自己的代码和工作可重复性更高。\n以下代码可参考：\n```\nREPRODUCIBILITY\nhttps://pytorch.org/docs/stable/notes/randomness.html\nimport torch\nimport numpy as np\nimport random\nseed = 19920517\ntorch.manual_seed(seed)\ntorch.backends.cudnn.deterministic = True\ntorch.backends.cudnn.benchmark = False\nnp.random.seed(seed)\nrandom.seed(seed)\n```\n---风景---\n会议地点附近风景特别好。走几分钟的路就能参观美丽的尼斯老城以及壮观绚丽的蔚蓝海岸。坐火车不到半个小时就可以参观世界上第二小的国家：摩纳哥。占地面积可能也就和北大差不多，不过依山傍水而建，实际的空间利用率非常高！\n---饮食---\n刚开始吃不惯，后来慢慢觉得西班牙火腿和培根肉还行了。第一晚吃的生蚝太有挑战性，最后一晚吃的西餐味道特别赞。</p></font>",
+    "images": [
+      "media/image/WechatIMG174.jpeg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2019-10-19-miccai-2019-conference",
+    "legacyId": "18",
+    "date": "2019-10-19",
+    "title": "MICCAI 2019 Conference",
+    "detailText": "MICCAI会议是医疗影像领域最顶级的国际会议，本次会议我们组的刘道畅和易方遒各有一篇文章中稿，且前者为Oral paper. 史若画和李志轩参加了EndVis Challenge的分割领域比赛，并在一个评测指标(mACC）上获得第二名。\n\n本次MICCAI开会受益良多，在这里总结一下：\n1.    关于写论文：\na)    motivation是最重要的，想法的来源要阐述清楚。\nb)    写论文时要为了读者而写，而且不仅仅是本领域的读者，包括非本领域的读者。必要的概念也需要进行简短的陈述，而非一味的引导读者去读被引用的文章\nc)    discussion部分要重述本文试图解决的问题以及本文提出的方法对其的解决程度。要坦诚面对自己方法的不足(limitations)\n2.    “在发论文之外”：要建立自己的学术group。这包括：\na)    【向外】接触更多本领域的研究人员\nb)    【自己】通过开源代码、blog、个人主页，project demo等充分展示自己\n3.    医疗领域与分割有关的课题非常多。全监督的分割问题占比最大，且性能大部分都已经很高。但是还有很多弱监督以及无监督的问题亟待解决，其可研究空间还很大。同时也发现医疗影像的数据集普遍没有自然图像的数据集那么大。\n4.    在今年的MICCAI上，半监督学习和uncertainty modelling受到了很大的关注。在半监督学习中，核心问题是如何从未标注的数据中提取有用的信息，今年有一篇做半监督分割的文章提出训练一个辅助网络预测分割区域的的面积，从而在未标注的数据上为分割网络提供监督信号，这一框架很有启发性。而uncertainty modelling在医学任务中也十分重要，今年会上专门有一个相关tuitorial，讲了一种简单直接估计uncertainty的方法，就是在测试时重复使用dropout，计算结果的波动当作不确定性，这个方法十分简单可以应用到各种任务中。",
+    "detailHtml": "<font size=\"3\"><p id=\"content_18\">&ensp;&ensp;MICCAI会议是医疗影像领域最顶级的国际会议，本次会议我们组的刘道畅和易方遒各有一篇文章中稿，且前者为Oral paper. 史若画和李志轩参加了EndVis Challenge的分割领域比赛，并在一个评测指标(mACC）上获得第二名。\n\n本次MICCAI开会受益良多，在这里总结一下：\n1.    关于写论文：\na)    motivation是最重要的，想法的来源要阐述清楚。\nb)    写论文时要为了读者而写，而且不仅仅是本领域的读者，包括非本领域的读者。必要的概念也需要进行简短的陈述，而非一味的引导读者去读被引用的文章\nc)    discussion部分要重述本文试图解决的问题以及本文提出的方法对其的解决程度。要坦诚面对自己方法的不足(limitations)\n2.    “在发论文之外”：要建立自己的学术group。这包括：\na)    【向外】接触更多本领域的研究人员\nb)    【自己】通过开源代码、blog、个人主页，project demo等充分展示自己\n3.    医疗领域与分割有关的课题非常多。全监督的分割问题占比最大，且性能大部分都已经很高。但是还有很多弱监督以及无监督的问题亟待解决，其可研究空间还很大。同时也发现医疗影像的数据集普遍没有自然图像的数据集那么大。\n4.    在今年的MICCAI上，半监督学习和uncertainty modelling受到了很大的关注。在半监督学习中，核心问题是如何从未标注的数据中提取有用的信息，今年有一篇做半监督分割的文章提出训练一个辅助网络预测分割区域的的面积，从而在未标注的数据上为分割网络提供监督信号，这一框架很有启发性。而uncertainty modelling在医学任务中也十分重要，今年会上专门有一个相关tuitorial，讲了一种简单直接估计uncertainty的方法，就是在测试时重复使用dropout，计算结果的波动当作不确定性，这个方法十分简单可以应用到各种任务中。</p></font>",
+    "images": [
+      "media/image/IMG_2086.JPG"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2019-08-18-a-group-trip-to-international-horticultural-exposition",
+    "legacyId": "16",
+    "date": "2019-08-18",
+    "title": "A group trip to  International Horticultural Exposition",
+    "detailText": "The whole group went to  International Horticultural Exposition in Yanqing,Beijing. We hava a wonderful time together!!!",
+    "detailHtml": "<font size=\"3\"><p id=\"content_16\">&ensp;&ensp;The whole group went to  International Horticultural Exposition in Yanqing,Beijing. We hava a wonderful time together!!!</p></font>",
+    "images": [
+      "media/image/合照.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2019-07-04-celebrating-graduation-for-xu-gao",
+    "legacyId": "15",
+    "date": "2019-07-04",
+    "title": "Celebrating graduation for Xu Gao",
+    "detailText": "We celebrate  Xu Gao's graduation and took a lot of photos.Besides,we went out for dinner together.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_15\">&ensp;&ensp;We celebrate  Xu Gao&#39;s graduation and took a lot of photos.Besides,we went out for dinner together.</p></font>",
+    "images": [
+      "media/image/webwxgetmsgimg_3.jpeg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2019-06-26-cvpr-2019-attending-report",
+    "legacyId": "12",
+    "date": "2019-06-26",
+    "title": "CVPR 2019 Attending Report",
+    "detailText": "非常幸运，我们关于时间轴动作定位的文章Completeness Modeling and Context Separation for Weakly Supervised Temporal Action Localization被今年的CVPR接收。六月中旬，在飞越了半个地球后，我们抵达了会议的举办地Long Beach。\n\n这次的CVPR规模空前，参会人数达到了9000人，并且40%的文章都有华人作者。会议的内容太多太丰富，总结几点感受：\n1）无监督的方法不够多，大部分还是全监督的方法，而全监督的方法感觉总是大同小异，很难让人眼前一亮。未来是属于无监督的；  2）自动驾驶的文章占了非常大一部分，了解以后稍微改变了我以前觉得自动驾驶很多泡沫的想法，现在看来还是有可能实现的；  3）厉害的人太多太多，而这些厉害的人总能提出新的问题，属于是挖坑的工作，所以以后自己不能满足于现在这种Incremental的工作；  4）看到了很多以前只知道名字的大佬真的出现在面前；  好的，最后不得不提一下美食，肋排，汉堡，烤肉，都太好吃了！\n\n更多精彩，请看VLOG：https://www.bilibili.com/video/av56547471",
+    "detailHtml": "<font size=\"3\"><p id=\"content_12\">&ensp;&ensp;非常幸运，我们关于时间轴动作定位的文章Completeness Modeling and Context Separation for Weakly Supervised Temporal Action Localization被今年的CVPR接收。六月中旬，在飞越了半个地球后，我们抵达了会议的举办地Long Beach。\n\n这次的CVPR规模空前，参会人数达到了9000人，并且40%的文章都有华人作者。会议的内容太多太丰富，总结几点感受：\n1）无监督的方法不够多，大部分还是全监督的方法，而全监督的方法感觉总是大同小异，很难让人眼前一亮。未来是属于无监督的；  2）自动驾驶的文章占了非常大一部分，了解以后稍微改变了我以前觉得自动驾驶很多泡沫的想法，现在看来还是有可能实现的；  3）厉害的人太多太多，而这些厉害的人总能提出新的问题，属于是挖坑的工作，所以以后自己不能满足于现在这种Incremental的工作；  4）看到了很多以前只知道名字的大佬真的出现在面前；  好的，最后不得不提一下美食，肋排，汉堡，烤肉，都太好吃了！\n\n更多精彩，请看VLOG：https://www.bilibili.com/video/av56547471</p></font>",
+    "images": [
+      "media/image/IMG_3310_VZ6KcfA.JPG"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2019-06-02-group-dinner-party",
+    "legacyId": "14",
+    "date": "2019-06-02",
+    "title": "Group dinner party",
+    "detailText": "We went to Xu Gao's home and made lunch together!!",
+    "detailHtml": "<font size=\"3\"><p id=\"content_14\">&ensp;&ensp;We went to Xu Gao&#39;s home and made lunch together!!</p></font>",
+    "images": [
+      "media/image/webwxgetmsgimg_1.jpeg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2019-04-13-valse-2019-attending-report",
+    "legacyId": "13",
+    "date": "2019-04-13",
+    "title": "Valse 2019 Attending Report",
+    "detailText": "The whole group went to Hefei for Valse2019. There were a lot of posters of paper from several best conferences in this year and last year. Besides, many companies come here too for their exhibitions and we've learned a lot talking to the staff.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_13\">&ensp;&ensp;The whole group went to Hefei for Valse2019. There were a lot of posters of paper from several best conferences in this year and last year. Besides, many companies come here too for their exhibitions and we&#39;ve learned a lot talking to the staff.</p></font>",
+    "images": [
+      "media/image/webwxgetmsgimg.jpeg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2019-01-28-group-dinner-party",
+    "legacyId": "11",
+    "date": "2019-01-28",
+    "title": "Group Dinner Party",
+    "detailText": "The final group dinner party in this semester.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_11\">&ensp;&ensp;The final group dinner party in this semester.</p></font>",
+    "images": [
+      "media/image/IMG_4566.PNG"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2018-12-20-group-dinner-party",
+    "legacyId": "9",
+    "date": "2018-12-20",
+    "title": "Group Dinner Party",
+    "detailText": "Regular group dinner party.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_9\">&ensp;&ensp;Regular group dinner party.</p></font>",
+    "images": [
+      "media/image/dinner.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2018-12-20-group-activity-in-the-chamber-of-secrets",
+    "legacyId": "10",
+    "date": "2018-12-20",
+    "title": "Group Activity in the Chamber of Secrets",
+    "detailText": "Group activity in the Chamber of  Secrets named Megaspace, which is located in Wudaokou area. We are 14 people, and two groups are separated. One group that contains 8 people plays the chamber with the horror theme called \"Ganshi Hotel\", and the other group that contains 6 people plays the chamber called \"Stolen\". Everyone has a delighted evening.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_10\">&ensp;&ensp;Group activity in the Chamber of  Secrets named Megaspace, which is located in Wudaokou area. We are 14 people, and two groups are separated. One group that contains 8 people plays the chamber with the horror theme called &quot;Ganshi Hotel&quot;, and the other group that contains 6 people plays the chamber called &quot;Stolen&quot;. Everyone has a delighted evening.</p></font>",
+    "images": [
+      "media/image/mishi.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2018-11-20-watch-the-film-fantastic-beasts-the-crimes-of-grindelwald",
+    "legacyId": "7",
+    "date": "2018-11-20",
+    "title": "Watch the Film \"Fantastic Beasts: The Crimes of Grindelwald\"",
+    "detailText": "Location: Meijia Cinema.\nDetails: Ruohua Shi holds the elder wand.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_7\">&ensp;&ensp;Location: Meijia Cinema.\nDetails: Ruohua Shi holds the elder wand.</p></font>",
+    "images": [
+      "media/image/grindelwald.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2018-11-18-acm-multimedia-2018-attending-report",
+    "legacyId": "8",
+    "date": "2018-11-18",
+    "title": "ACM Multimedia 2018 Attending Report",
+    "detailText": "非常幸运，我们关于监控场景下视频多目标跟踪的一篇文章被今年的ACM Multimedia接收。会议在2018年10月22日-10月26日在韩国首尔举行。会议举办地点选在了乐天酒店，坐落于首尔最繁华的商业区明洞一胖。这次参会人中的中国人比例非常高，达到了44%，学术界参会的比例占73%。这次会议有很多track，其中投稿量最大的两个就是Deep Learning for Multimedia和Multimedia and Vision，可见这几年深度学习和计算机视觉非常热门。最终会议的best paper由京都大学的一篇通过图像作诗的文章获得，best student paper由新加坡国立大学的一篇multi-person parsing的文章获得。在做poster报告的时候，有很多工业界/学术界的参会者来到我们的展板前进行交流，也认识了很多正在做多目标跟踪领域的科研人员。在参加参加会议后有一些感想：（1）大家已经不再局限于人这个整体的理解，而开始转向人身体不同part的理解； （2）从两篇best papers就可以看出，GAN依旧非常热门；（3）很多工作开始尝试把图网络（GCN等）应用于视觉任务中，以让网络获得推理的能力；（4）视频理解/分类相关任务的文章非常多，觉得可以是未来的一个大的方向；（5）中国人特别多。。。除此之外，首尔的城市还是很干净的，但是很多建筑更像是北京建筑的缩小版。感觉比较适合女生（可以买买买），但是作为男生感觉一般般，倒是有些食物还不错，比如说炸鸡和啤酒。总之，视频多目标跟踪还有很多难以解决的问题，革命尚未成功，同志仍需努力！",
+    "detailHtml": "<font size=\"3\"><p id=\"content_8\">&ensp;&ensp;非常幸运，我们关于监控场景下视频多目标跟踪的一篇文章被今年的ACM Multimedia接收。会议在2018年10月22日-10月26日在韩国首尔举行。会议举办地点选在了乐天酒店，坐落于首尔最繁华的商业区明洞一胖。这次参会人中的中国人比例非常高，达到了44%，学术界参会的比例占73%。这次会议有很多track，其中投稿量最大的两个就是Deep Learning for Multimedia和Multimedia and Vision，可见这几年深度学习和计算机视觉非常热门。最终会议的best paper由京都大学的一篇通过图像作诗的文章获得，best student paper由新加坡国立大学的一篇multi-person parsing的文章获得。在做poster报告的时候，有很多工业界/学术界的参会者来到我们的展板前进行交流，也认识了很多正在做多目标跟踪领域的科研人员。在参加参加会议后有一些感想：（1）大家已经不再局限于人这个整体的理解，而开始转向人身体不同part的理解； （2）从两篇best papers就可以看出，GAN依旧非常热门；（3）很多工作开始尝试把图网络（GCN等）应用于视觉任务中，以让网络获得推理的能力；（4）视频理解/分类相关任务的文章非常多，觉得可以是未来的一个大的方向；（5）中国人特别多。。。除此之外，首尔的城市还是很干净的，但是很多建筑更像是北京建筑的缩小版。感觉比较适合女生（可以买买买），但是作为男生感觉一般般，倒是有些食物还不错，比如说炸鸡和啤酒。总之，视频多目标跟踪还有很多难以解决的问题，革命尚未成功，同志仍需努力！</p></font>",
+    "images": [
+      "media/image/ACMMM.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2018-10-17-attending-report-on-the-third-pku-ntu-workshop-on-ai-macau-oct-13-14-2018",
+    "legacyId": "6",
+    "date": "2018-10-17",
+    "title": "Attending Report on the Third PKU-NTU Workshop on AI+, Macau, Oct. 13-14, 2018",
+    "detailText": "---Abstract---非常感谢段老师和蒋老师提供的机会，让我能在第三届PKU-NTU论坛中汇报最近做的关于图像视频质量评价的工作。同时，听到了众多业内知名的研究学者（大牛老师和师兄们）的报告，听到了他们关于AI落地（AI+）的见解以及听到了他们分享自己科研之路上的各种坎坷与励志故事。\n---Workshop---论坛刚开始是高文老师致辞，高老师就AI+进行了见解分享，核心观点是AI必须要落地，所以我们必须要弄清楚是要加AI到什么问题上？数据是什么，动机是什么，应该在何处落地？\n接下来是每个Speaker关于自己工作的报告，有将注意力通讯机制加到多个代理合作的增强学习方式；有运用AI技术进行网络威胁情报分析；有使用迁移学习和域适应技术解决数据分布不一致的情况；有用生成对抗网络生成中国水墨画风格的图像；还有运用图像合成技术在检测和识别任务中的；另外还有做图像恢复（图像去反射以及去雨的工作）。\nMPEG主席Jörn Ostermann的Keynote演讲中提到一个很重要的方向，神经网络压缩，他们在Call For Proposals.\n来自阿里巴巴AI Labs的王刚老师关于自动驾驶：从单车智能到协作智能的演讲很精彩，他们在公路中安置感知基站的做法相当于给自动驾驶开了“天眼”，有了上帝视角的自动驾驶技术将能更好的协作智能。大家也提出了对自动驾驶安全性问题的担忧。\n来自清华大学的鲁继文老师汇报了自己近些年将Deep Metric Learning的技术运用到CV领域的方方面面，这种技术的优势在于参数量小而且能针对任务设计更强的损失函数。\n中科院微电子所的钟汇才老师和北大深研院的李革老师汇报了他们的旗舰AI项目，Sunway.AI和鹏程实验室深圳云大脑，两个机构致力于增强我们国家的AI实力，都很需要人才的加入，而且提供的薪资也不菲。\n李雷达老师、李甲师兄、王诗淇师兄和陈杰师兄都是ROSE实验室出来的青年才俊，毕业没多久就已经在知名高校任职或者是知名AI公司的CEO了，他们除了分享自己研究的内容之外也分享了自己在ROSE做科研的故事，受益匪浅！\n自己报告的问答环节中邹老师和刘老师的讨论也体现了图像视频处理过程中对图像视频质量评价技术的需要，不管是针对任务的评价还是纯粹的感知质量评价。\n---Others---此次论坛的召开地点是澳门，会议结束之后我们也访问了澳门大学，参观了澳门大学的智能城市物联网国家重点实验室。\n---Summary--- BE Patient, make adequate preparation, and wait for the best opportunity in the research road!",
+    "detailHtml": "<font size=\"3\"><p id=\"content_6\">&ensp;&ensp;---Abstract---非常感谢段老师和蒋老师提供的机会，让我能在第三届PKU-NTU论坛中汇报最近做的关于图像视频质量评价的工作。同时，听到了众多业内知名的研究学者（大牛老师和师兄们）的报告，听到了他们关于AI落地（AI+）的见解以及听到了他们分享自己科研之路上的各种坎坷与励志故事。\n---Workshop---论坛刚开始是高文老师致辞，高老师就AI+进行了见解分享，核心观点是AI必须要落地，所以我们必须要弄清楚是要加AI到什么问题上？数据是什么，动机是什么，应该在何处落地？\n接下来是每个Speaker关于自己工作的报告，有将注意力通讯机制加到多个代理合作的增强学习方式；有运用AI技术进行网络威胁情报分析；有使用迁移学习和域适应技术解决数据分布不一致的情况；有用生成对抗网络生成中国水墨画风格的图像；还有运用图像合成技术在检测和识别任务中的；另外还有做图像恢复（图像去反射以及去雨的工作）。\nMPEG主席Jörn Ostermann的Keynote演讲中提到一个很重要的方向，神经网络压缩，他们在Call For Proposals.\n来自阿里巴巴AI Labs的王刚老师关于自动驾驶：从单车智能到协作智能的演讲很精彩，他们在公路中安置感知基站的做法相当于给自动驾驶开了“天眼”，有了上帝视角的自动驾驶技术将能更好的协作智能。大家也提出了对自动驾驶安全性问题的担忧。\n来自清华大学的鲁继文老师汇报了自己近些年将Deep Metric Learning的技术运用到CV领域的方方面面，这种技术的优势在于参数量小而且能针对任务设计更强的损失函数。\n中科院微电子所的钟汇才老师和北大深研院的李革老师汇报了他们的旗舰AI项目，Sunway.AI和鹏程实验室深圳云大脑，两个机构致力于增强我们国家的AI实力，都很需要人才的加入，而且提供的薪资也不菲。\n李雷达老师、李甲师兄、王诗淇师兄和陈杰师兄都是ROSE实验室出来的青年才俊，毕业没多久就已经在知名高校任职或者是知名AI公司的CEO了，他们除了分享自己研究的内容之外也分享了自己在ROSE做科研的故事，受益匪浅！\n自己报告的问答环节中邹老师和刘老师的讨论也体现了图像视频处理过程中对图像视频质量评价技术的需要，不管是针对任务的评价还是纯粹的感知质量评价。\n---Others---此次论坛的召开地点是澳门，会议结束之后我们也访问了澳门大学，参观了澳门大学的智能城市物联网国家重点实验室。\n---Summary--- BE Patient, make adequate preparation, and wait for the best opportunity in the research road!</p></font>",
+    "images": [
+      "media/image/PKU-NTU.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2018-09-29-a-trip-to-mangshan-national-park",
+    "legacyId": "1",
+    "date": "2018-09-29",
+    "title": "A Trip to Mangshan National Park",
+    "detailText": "Everyone is delighted with this joyful journey.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_1\">&ensp;&ensp;Everyone is delighted with this joyful journey.</p></font>",
+    "images": [
+      "media/image/Mangshan.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2018-09-24-miccai-2018-attending-report",
+    "legacyId": "5",
+    "date": "2018-09-24",
+    "title": "MICCAI 2018 Attending Report",
+    "detailText": "非常幸运，我们关于手术动作分割的一篇文章被今年的MICCAI(Medical Image Computing and Computer Assisted Intervention)接收。九月中旬，我和蒋老师辗转近24小时，抵达了会议的举办地西班牙的格拉纳达。\n\n---格拉纳达---\n\n格拉纳达位于伊比利亚半岛的南部，这座有着悠久历史的城市曾是罗马帝国的边疆，是摩尔人的首都，是哥伦布签订契约的地方。如今是一座现代的大学城，有着30万人口以及5万学生。格拉纳达是石榴的意思，西班牙国徽的中下方还有着石榴城的标志。\n\n---会议---\n\n这次的MICCAI无论是录取文章还是参会人数都创造了新高，但文章仍然以MIC为主，和手术视频相关的CAI的文章只占不到30%，主要集中在16号的EndoVis Workshop和19号的CAI Session。我们主要关注的内容有Surgical Scene Segmentation, CATARACTS视网膜手术器械及阶段的识别、Workflow的Challenge，以及几篇在JIGSAWS上面做动作识别和技能评价的文章。主要的感觉是方法都大同小异，更重要的是数据以及怎样结合领域知识。\n\n这是一些关于今年MICCAI的想法：\n\n1）医学影像的检测与分割是主流。大部分文章都集中在利用CT或MRI等医学图像检测疾病，也就是MIC的内容；\n\n2）论文几乎都和深度学习有关，GAN也非常受欢迎。今年有很多文章都用到了Adversarial learning，但这种方式是否真的适合医学领域还需研究；\n\n3）数据比方法更重要。不像CV领域大家会在一个共同的Benchmark上面做方法，在医疗领域，每一疾病每一种数据的类型都会有不同的数据集，而且大部分不是公开的；\n\n4）医学图像也有质量评价和复原的需求。今年有好几篇医学图像质量评价和超分辨的文章，和普通图像的关键不同在于医疗图像对真实性的要求更高；\n\n---游玩---\n\n漫长的历史给格拉纳达留下了很多好玩的地方，比如无与伦比的Nasrid皇宫、摩尔人最后的堡垒Alhambra，阿拉伯人的街区阿拉拜辛，以及安眠着伊沙贝拉和费尔南多的主教堂。广袤的荒原，炙热的阳光，还有街上的美女，都很好看。\n\n另外就是西班牙的美食，尤其是各种各样的火腿。最好的火腿来自于自由奔跑在长满橡树的牧场上的伊比利亚黑猪，它们吃着香草以及橄榄长大，在秋天被宰杀，风干两年化作了美味的火腿，非常咸香嫩滑。\n\n---总结---\n\n一篇文章告一段落，还要加油。",
+    "detailHtml": "<font size=\"3\"><p id=\"content_5\">&ensp;&ensp;非常幸运，我们关于手术动作分割的一篇文章被今年的MICCAI(Medical Image Computing and Computer Assisted Intervention)接收。九月中旬，我和蒋老师辗转近24小时，抵达了会议的举办地西班牙的格拉纳达。\n\n---格拉纳达---\n\n格拉纳达位于伊比利亚半岛的南部，这座有着悠久历史的城市曾是罗马帝国的边疆，是摩尔人的首都，是哥伦布签订契约的地方。如今是一座现代的大学城，有着30万人口以及5万学生。格拉纳达是石榴的意思，西班牙国徽的中下方还有着石榴城的标志。\n\n---会议---\n\n这次的MICCAI无论是录取文章还是参会人数都创造了新高，但文章仍然以MIC为主，和手术视频相关的CAI的文章只占不到30%，主要集中在16号的EndoVis Workshop和19号的CAI Session。我们主要关注的内容有Surgical Scene Segmentation, CATARACTS视网膜手术器械及阶段的识别、Workflow的Challenge，以及几篇在JIGSAWS上面做动作识别和技能评价的文章。主要的感觉是方法都大同小异，更重要的是数据以及怎样结合领域知识。\n\n这是一些关于今年MICCAI的想法：\n\n1）医学影像的检测与分割是主流。大部分文章都集中在利用CT或MRI等医学图像检测疾病，也就是MIC的内容；\n\n2）论文几乎都和深度学习有关，GAN也非常受欢迎。今年有很多文章都用到了Adversarial learning，但这种方式是否真的适合医学领域还需研究；\n\n3）数据比方法更重要。不像CV领域大家会在一个共同的Benchmark上面做方法，在医疗领域，每一疾病每一种数据的类型都会有不同的数据集，而且大部分不是公开的；\n\n4）医学图像也有质量评价和复原的需求。今年有好几篇医学图像质量评价和超分辨的文章，和普通图像的关键不同在于医疗图像对真实性的要求更高；\n\n---游玩---\n\n漫长的历史给格拉纳达留下了很多好玩的地方，比如无与伦比的Nasrid皇宫、摩尔人最后的堡垒Alhambra，阿拉伯人的街区阿拉拜辛，以及安眠着伊沙贝拉和费尔南多的主教堂。广袤的荒原，炙热的阳光，还有街上的美女，都很好看。\n\n另外就是西班牙的美食，尤其是各种各样的火腿。最好的火腿来自于自由奔跑在长满橡树的牧场上的伊比利亚黑猪，它们吃着香草以及橄榄长大，在秋天被宰杀，风干两年化作了美味的火腿，非常咸香嫩滑。\n\n---总结---\n\n一篇文章告一段落，还要加油。</p></font>",
+    "images": [
+      "media/image/WechatIMG194.jpeg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2018-07-14-dinner-party-with-professor-carlo-tomasi",
+    "legacyId": "2",
+    "date": "2018-07-14",
+    "title": "Dinner Party with Professor Carlo Tomasi",
+    "detailText": "The whole group held a dinner party with Professor Carlo Tomasi from Duke University.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_2\">&ensp;&ensp;The whole group held a dinner party with Professor Carlo Tomasi from Duke University.</p></font>",
+    "images": [
+      "media/image/IMG_4220.JPG"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2018-04-27-a-trip-to-xiangshan-national-park",
+    "legacyId": "3",
+    "date": "2018-04-27",
+    "title": "A Trip to Xiangshan National Park",
+    "detailText": "Everyone is delighted with this joyful journey.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_3\">&ensp;&ensp;Everyone is delighted with this joyful journey.</p></font>",
+    "images": [
+      "media/image/Xiangshan.jpg"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  },
+  {
+    "id": "2018-04-21-group-dinner-party",
+    "legacyId": "4",
+    "date": "2018-04-21",
+    "title": "Group Dinner Party",
+    "detailText": "Regular group dinner party.",
+    "detailHtml": "<font size=\"3\"><p id=\"content_4\">&ensp;&ensp;Regular group dinner party.</p></font>",
+    "images": [
+      "media/image/IMG_5290.JPG"
+    ],
+    "source": {
+      "page": "activity/index.html",
+      "waybackSnapshot": "https://web.archive.org/web/20240414160055/http://www.vie.group/activity/"
+    }
+  }
+]

@@ -1,0 +1,298 @@
+[
+  {
+    "id": "2026-09-04-mopd-multi-teacher-on-policy-distillation-for-capability-integration-in-llm-post",
+    "date": "2026-09-04",
+    "speaker": "Gefei Chen",
+    "title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
+    "abstract": "",
+    "links": {
+      "paper": "https://arxiv.org/pdf/2606.30406",
+      "slides": "assets/seminars/2026/2026-09-04-mopd-multi-teacher-on-policy-distillation-for-capability-integration-in-llm-post/slides.zip"
+    },
+    "tags": [],
+    "source": {
+      "type": "github-issue",
+      "issueNumber": 1,
+      "issueUrl": "https://github.com/vie-group/vie-group.github.io/issues/1",
+      "author": "frank3215"
+    }
+  },
+  {
+    "id": "2024-04-07-zero-shot-adversarial-robustness",
+    "date": "2024-04-07",
+    "speaker": "Xueqing Yu",
+    "title": "Understanding Zero-Shot Adversarial Robustness for Large-Scale Models",
+    "links": {
+      "paper": "media/pdf/Mao_等_-_2023_-_Understanding_Zero-Shot_Adversarial_Robustness_for.pdf",
+      "slides": "media/ppt/CLIP_Zero-shot_Adversarial_final.pptx"
+    },
+    "tags": [
+      "robustness",
+      "large-scale models"
+    ]
+  },
+  {
+    "id": "2024-03-29-map-iqa",
+    "date": "2024-03-29",
+    "speaker": "Chenxi Yang",
+    "title": "Comparison of No-Reference Image Quality Models via MAP Estimation in Diffusion Latents",
+    "links": {
+      "paper": "media/pdf/2403.06406.pdf",
+      "slides": "media/ppt/MAP_IQA.pdf"
+    },
+    "tags": [
+      "IQA",
+      "diffusion"
+    ]
+  },
+  {
+    "id": "2024-03-15-disruptive-autoencoders",
+    "date": "2024-03-15",
+    "speaker": "Ruohua Shi",
+    "title": "Disruptive Autoencoders: Leveraging Low-level Features for 3D Medical Image Pre-training",
+    "links": {
+      "paper": "media/pdf/Disruptive_Autoencoders-_Leveraging_Low-level_features_for_3D_Medical_Image_Pre-training.pdf",
+      "slides": "media/ppt/2024-3-15.pptx"
+    },
+    "tags": [
+      "medical image",
+      "pre-training"
+    ]
+  },
+  {
+    "id": "2024-03-15-contrastive-regression-transformer",
+    "date": "2024-03-15",
+    "speaker": "Qiyue Li",
+    "title": "Keep Your Eye on the Best: Contrastive Regression Transformer for Skill Assessment in Robotic Surgery",
+    "links": {
+      "paper": "media/pdf/21_Contrastive_Regression_Transformer_for_Skill_Assessment_in_Robotic_Surgery.pdf",
+      "slides": "media/ppt/21_Contrastive_Regression_Transformer_for_Skill_Assessment_in_Robotic_Surgery.pptx"
+    },
+    "tags": [
+      "surgical skill",
+      "robotic surgery"
+    ]
+  },
+  {
+    "id": "2024-03-01-re-iqa",
+    "date": "2024-03-01",
+    "speaker": "Yan Zhong",
+    "title": "Re-IQA: Unsupervised Learning for Image Quality Assessment in the Wild",
+    "links": {
+      "paper": "media/pdf/Saha_Re-IQA_Unsupervised_Learning_for_Image_Quality_Assessment_in_the_Wild_CVPR_2023_paper.pdf",
+      "slides": "media/ppt/分享8Re-IQA.pptx"
+    },
+    "tags": [
+      "IQA",
+      "unsupervised learning"
+    ]
+  },
+  {
+    "id": "2024-03-01-diffpoint",
+    "date": "2024-03-01",
+    "speaker": "Weining Ye",
+    "title": "DiffPoint: Single and Multi-view Point Cloud Reconstruction with ViT Based Diffusion Model",
+    "links": {
+      "paper": "media/pdf/DiffPoint.pdf",
+      "slides": "media/ppt/DiffPoint.pptx"
+    },
+    "tags": [
+      "3D reconstruction",
+      "diffusion"
+    ]
+  },
+  {
+    "id": "2024-02-23-robust-critical-finetuning",
+    "date": "2024-02-23",
+    "speaker": "Chenxi Yang",
+    "title": "Improving Generalization of Adversarial Training via Robust Critical Fine-Tuning",
+    "links": {
+      "paper": "media/pdf/2308.02533.pdf",
+      "slides": "media/ppt/ImprovingGeneralizationofAT.pdf"
+    },
+    "tags": [
+      "adversarial training",
+      "robustness"
+    ]
+  },
+  {
+    "id": "2024-02-23-scalable-diffusion-transformers",
+    "date": "2024-02-23",
+    "speaker": "Chao Liu",
+    "title": "Scalable Diffusion Models with Transformers",
+    "links": {
+      "paper": "media/pdf/Peebles_Scalable_Diffusion_Models_with_Transformers_ICCV_2023_paper.pdf",
+      "slides": "media/ppt/DiT.pptx"
+    },
+    "tags": [
+      "diffusion",
+      "transformer"
+    ]
+  },
+  {
+    "id": "2024-01-19-pecop",
+    "date": "2024-01-19",
+    "speaker": "Qiyue Li",
+    "title": "PECoP: Parameter Efficient Continual Pretraining for Action Quality Assessment",
+    "links": {
+      "paper": "media/pdf/20_PECoP_Parameter_Efficient_Continual_Pretraining_for_Action_Quality_Assessment.pdf",
+      "slides": "media/ppt/20_PECoP_Parameter_Efficient_Continual_Pretraining_for_Action_Quality_Assessment.pptx"
+    },
+    "tags": [
+      "action quality assessment",
+      "continual pretraining"
+    ]
+  },
+  {
+    "id": "2024-01-19-zero-1-to-3",
+    "date": "2024-01-19",
+    "speaker": "Weining Ye",
+    "title": "Zero-1-to-3: Zero-shot One Image to 3D Object",
+    "links": {
+      "paper": "media/pdf/Liu_Zero-1-to-3_Zero-shot_One_Image_to_3D_Object_ICCV_2023_paper.pdf",
+      "slides": "media/ppt/Zero123.pptx"
+    },
+    "tags": [
+      "3D generation",
+      "zero-shot"
+    ]
+  },
+  {
+    "id": "2024-01-19-multimodal-ot-survival",
+    "date": "2024-01-19",
+    "speaker": "Xueqing Yu",
+    "title": "Multimodal Optimal Transport-based Co-Attention Transformer with Global Structure Consistency for Survival Prediction",
+    "links": {
+      "paper": "media/pdf/Xu_和_Chen_-_2023_-_Multimodal_Optimal_Transport-based_Co-Attention_Tr.pdf",
+      "slides": "media/ppt/multimodal_OT-based_survival_prediction_new.pptx"
+    },
+    "tags": [
+      "multimodal learning",
+      "medical AI"
+    ]
+  },
+  {
+    "id": "2024-01-12-weak-to-strong-consistency",
+    "date": "2024-01-12",
+    "speaker": "Zhaochen Liu",
+    "title": "Revisiting Weak-to-Strong Consistency in Semi-Supervised Semantic Segmentation",
+    "links": {
+      "paper": "media/pdf/2208.09910.pdf",
+      "slides": "media/ppt/Revisiting_Weak-to-Strong_Consistency_in_Semi-Supervised_Semantic_Segmentation.pdf"
+    },
+    "tags": [
+      "semantic segmentation",
+      "semi-supervised learning"
+    ]
+  },
+  {
+    "id": "2024-01-05-video-object-location",
+    "date": "2024-01-05",
+    "speaker": "Yanfeng Yang",
+    "title": "Objects do not disappear: Video object detection by single-frame object location anticipation",
+    "links": {
+      "paper": "media/pdf/Liu__ICCV_2023_paper.pdf",
+      "slides": "media/ppt/1.5.pptx"
+    },
+    "tags": [
+      "video object detection"
+    ]
+  },
+  {
+    "id": "2024-01-05-medlsam",
+    "date": "2024-01-05",
+    "speaker": "Ruohua Shi",
+    "title": "MedLSAM: Localize and Segment Anything Model for 3D CT Images",
+    "links": {
+      "paper": "media/pdf/2306.14752_1.pdf",
+      "slides": "media/ppt/MedLSAM-2024.pptx"
+    },
+    "tags": [
+      "medical image",
+      "SAM"
+    ]
+  },
+  {
+    "id": "2023-12-08-tta-iqa",
+    "date": "2023-12-08",
+    "speaker": "Yan Zhong",
+    "title": "Test Time Adaptation for Blind Image Quality Assessment",
+    "links": {
+      "paper": "media/pdf/Test_Time_Adaptation_for_Blind_Image_Quality_Assessment.pdf",
+      "slides": "media/ppt/分享7TTA-IQA.pptx"
+    },
+    "tags": [
+      "IQA",
+      "test-time adaptation"
+    ]
+  },
+  {
+    "id": "2023-12-08-cleanclip",
+    "date": "2023-12-08",
+    "speaker": "Xueqing Yu",
+    "title": "CleanCLIP: Mitigating Data Poisoning Attacks in Multimodal Contrastive Learning",
+    "links": {
+      "paper": "media/pdf/Bansal_等_-_2023_-_CleanCLIP_Mitigating_Data_Poisoning_Attacks_in_Mu.pdf",
+      "slides": "media/ppt/CleanCLIP.pptx"
+    },
+    "tags": [
+      "multimodal learning",
+      "security"
+    ]
+  },
+  {
+    "id": "2023-12-01-umiformer",
+    "date": "2023-12-01",
+    "speaker": "Weining Ye",
+    "title": "UMIFormer: Mining the Correlations between Similar Tokens for Multi-View 3D Reconstruction",
+    "links": {
+      "paper": "media/pdf/UMIFormer.pdf",
+      "slides": "media/ppt/umiformer.pptx"
+    },
+    "tags": [
+      "3D reconstruction",
+      "transformer"
+    ]
+  },
+  {
+    "id": "2023-12-01-attention-discriminant-sampling",
+    "date": "2023-12-01",
+    "speaker": "Chao Liu",
+    "title": "Attention Discriminant Sampling for Point Clouds",
+    "links": {
+      "paper": "media/pdf/Attention_Discriminant_Sampling_for_Point_Clouds_ICCV_2023.pdf",
+      "slides": "media/ppt/ADS.pptx"
+    },
+    "tags": [
+      "point cloud"
+    ]
+  },
+  {
+    "id": "2023-11-24-noisy-pseudo-labels-tal",
+    "date": "2023-11-24",
+    "speaker": "Yanfeng Yang",
+    "title": "Learning from Noisy Pseudo Labels for Semi-Supervised Temporal Action Localization",
+    "links": {
+      "paper": "media/pdf/Xia_Learning_from_Noisy_Pseudo_Labels_for_Semi-Supervised_Temporal_Action_Localization.pdf",
+      "slides": "media/ppt/11.24.pptx"
+    },
+    "tags": [
+      "temporal action localization",
+      "semi-supervised learning"
+    ]
+  },
+  {
+    "id": "2023-11-03-c2f-seg",
+    "date": "2023-11-03",
+    "speaker": "Zhaochen Liu",
+    "title": "Coarse-to-Fine Amodal Segmentation with Shape Prior",
+    "links": {
+      "paper": "media/pdf/C2F-Seg-Paper.pdf",
+      "slides": "media/ppt/C2F-Seg.pdf"
+    },
+    "tags": [
+      "amodal segmentation",
+      "shape prior"
+    ]
+  }
+]

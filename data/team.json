@@ -1,0 +1,155 @@
+{
+  "faculty": [
+    {
+      "name": "Tingting Jiang",
+      "role": "Associate Professor",
+      "affiliation": "School of Electronics Engineering and Computer Science, Peking University",
+      "address": "Room 2641, No.2 Science Building, Peking University, Beijing, China",
+      "email": "ttjiang at pku.edu.cn"
+    }
+  ],
+  "current": [
+    {
+      "name": "Zihao Liu",
+      "role": "Ph.D. Student",
+      "email": "lzh19961031 at pku.edu.cn"
+    },
+    {
+      "name": "Chenxi Yang",
+      "role": "Ph.D. Student",
+      "email": "yangchenxi at stu.pku.edu.cn"
+    },
+    {
+      "name": "Ruohua Shi",
+      "role": "Ph.D. Student",
+      "email": "shiruohua at pku dot edu dot cn"
+    },
+    {
+      "name": "Yan Zhong",
+      "role": "Ph.D. Student",
+      "email": "zhongyan at stu.pku.edu.cn"
+    },
+    {
+      "name": "Qiyue Li",
+      "role": "Ph.D. Student",
+      "email": "liqiyue at pku dot edu dot cn"
+    },
+    {
+      "name": "Yanfeng Yang",
+      "role": "Master Student",
+      "email": "yangyanfeng at pku.edu.cn"
+    },
+    {
+      "name": "Weining Ye",
+      "role": "Master Student",
+      "email": "YWNing at pku dot edu dot cn"
+    },
+    {
+      "name": "Chao Liu",
+      "role": "Master Student",
+      "email": "lchao at stu.pku.edu.cn"
+    },
+    {
+      "name": "Zhaochen Liu",
+      "role": "Master Student",
+      "email": "dreamerliu at pku dot edu dot cn"
+    },
+    {
+      "name": "Xueqing Yu",
+      "role": "Undergraduate Student",
+      "email": "yuxueqing at pku.edu.cn"
+    }
+  ],
+  "alumni": [
+    {
+      "name": "Zhixuan Li",
+      "year": "2023",
+      "degree": "PhD",
+      "destination": "Post-doc, NTU"
+    },
+    {
+      "name": "Yujia Liu",
+      "year": "2023",
+      "degree": "PhD",
+      "destination": "Post-doc, PKU"
+    },
+    {
+      "name": "Yingjian Song",
+      "year": "2023",
+      "degree": "MS",
+      "destination": "BYD"
+    },
+    {
+      "name": "Daochang Liu",
+      "year": "2022",
+      "degree": "PhD",
+      "destination": "Post-doc, USYD"
+    },
+    {
+      "name": "Fangqiu Yi",
+      "year": "2021",
+      "degree": "MS",
+      "destination": "MEGVII"
+    },
+    {
+      "name": "Dingquan Li",
+      "year": "2021",
+      "degree": "PhD",
+      "destination": "Peng Cheng Lab"
+    },
+    {
+      "name": "Jiahe Li",
+      "year": "2020",
+      "degree": "MS",
+      "destination": "Huawei"
+    },
+    {
+      "name": "Sheng Li",
+      "year": "2020",
+      "degree": "MS",
+      "destination": "Shopee"
+    },
+    {
+      "name": "Xu Gao",
+      "year": "2019",
+      "degree": "MS",
+      "destination": "Baidu"
+    },
+    {
+      "name": "Chen Huang",
+      "year": "2018",
+      "degree": "MS",
+      "destination": "Baidu"
+    },
+    {
+      "name": "Wen Heng",
+      "year": "2018",
+      "degree": "MS",
+      "destination": "Face++ -> Tencent"
+    },
+    {
+      "name": "Zhiwei Fan",
+      "year": "2017",
+      "degree": "MS",
+      "destination": "Microsoft -> Hulu"
+    },
+    {
+      "name": "Yeji Shen",
+      "year": "2016",
+      "degree": "BS",
+      "destination": "University of Southern California, Ph.D."
+    },
+    {
+      "name": "Zhaoxiong Wang",
+      "degree": "BS"
+    },
+    {
+      "name": "Zhongwei Liu",
+      "degree": "BS"
+    },
+    {
+      "name": "Yueyu Hu",
+      "degree": "BS"
+    }
+  ]
+}
