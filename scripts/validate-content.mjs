@@ -92,6 +92,18 @@ for (const item of seminars) {
   requireString(item, "speaker", "seminar");
   if (!isIsoDate(item.date)) fail(`seminar ${item.id} must use YYYY-MM-DD date.`);
   if (item.links && typeof item.links !== "object") fail(`seminar ${item.id} links must be an object.`);
+  if (item.source) {
+    if (typeof item.source !== "object") fail(`seminar ${item.id} source must be an object.`);
+    if (item.source.repository && typeof item.source.repository !== "string") {
+      fail(`seminar ${item.id} source.repository must be a string.`);
+    }
+    if (item.source.issueNumber && !Number.isInteger(item.source.issueNumber)) {
+      fail(`seminar ${item.id} source.issueNumber must be an integer.`);
+    }
+    if (item.source.author && typeof item.source.author !== "string") {
+      fail(`seminar ${item.id} source.author must be a string.`);
+    }
+  }
 }
 
 for (const item of data["data/news.json"]) {

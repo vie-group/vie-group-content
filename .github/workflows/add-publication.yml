@@ -1,0 +1,77 @@
+name: Add Publication Record
+
+on:
+  workflow_dispatch:
+    inputs:
+      year:
+        description: "Publication year"
+        required: true
+      type:
+        description: "conference, journal, or dataset"
+        required: true
+        default: "conference"
+      authors:
+        description: "Author list"
+        required: true
+      title:
+        description: "Publication title"
+        required: true
+      venue:
+        description: "Venue"
+        required: true
+      note:
+        description: "Pages, location, issue, or other note"
+        required: false
+      pdf_url:
+        description: "PDF URL or content repo path"
+        required: false
+      code_url:
+        description: "Code URL"
+        required: false
+      slide_url:
+        description: "Slide URL or content repo path"
+        required: false
+      poster_url:
+        description: "Poster URL or content repo path"
+        required: false
+      tags:
+        description: "Comma-separated tags"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Update publication data
+        env:
+          PUBLICATION_YEAR: ${{ inputs.year }}
+          PUBLICATION_TYPE: ${{ inputs.type }}
+          PUBLICATION_AUTHORS: ${{ inputs.authors }}
+          PUBLICATION_TITLE: ${{ inputs.title }}
+          PUBLICATION_VENUE: ${{ inputs.venue }}
+          PUBLICATION_NOTE: ${{ inputs.note }}
+          PUBLICATION_PDF_URL: ${{ inputs.pdf_url }}
+          PUBLICATION_CODE_URL: ${{ inputs.code_url }}
+          PUBLICATION_SLIDE_URL: ${{ inputs.slide_url }}
+          PUBLICATION_POSTER_URL: ${{ inputs.poster_url }}
+          PUBLICATION_TAGS: ${{ inputs.tags }}
+        run: npm run add:publication
+      - run: npm run validate
+      - name: Commit changes
+        env:
+          COMMIT_TITLE: ${{ inputs.title }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/publications.json
+          git commit -m "Add publication: ${COMMIT_TITLE}" || exit 0
+          git push

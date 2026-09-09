@@ -16,3 +16,16 @@ jobs:
         with:
           node-version: 22
       - run: npm run validate
+      - name: Trigger website sync
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          SITE_SYNC_TOKEN: ${{ secrets.VIE_SITE_SYNC_TOKEN }}
+        run: |
+          if [ -z "${SITE_SYNC_TOKEN}" ]; then
+            echo "VIE_SITE_SYNC_TOKEN is not configured; skip website sync."
+            exit 0
+          fi
+          GH_TOKEN="${SITE_SYNC_TOKEN}" gh workflow run sync-content.yml \
+            --repo vie-group/vie-group.github.io \
+            --ref wayback-20240414-1to1 \
+            -f content_ref=main

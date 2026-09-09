@@ -45,6 +45,7 @@ docs/
 - `archive/manifests/` stores recovery and migration manifests.
 - `archive/legacy-media/` is reserved for later migration of old `media/` assets from the website repository.
 - `schemas/` and `scripts/` will hold content validation and migration tools.
+- `.github/ISSUE_TEMPLATE/` and `.github/workflows/` own seminar submission/deletion and manual content update flows.
 
 ## Path Policy
 
@@ -56,12 +57,20 @@ Content records should prefer repository-relative paths:
 
 The website repository should resolve these paths through a configurable content base URL. Existing legacy `media/...` references may remain in `vie-group.github.io` until the legacy media migration is completed.
 
-## Initial Scope
+## Current Scope
 
-This first version seeds the content repository with:
+This repository currently contains:
 
 - current `data/*.json`
 - current workflow-localized seminar assets under `assets/seminars/`
-- directory placeholders for future publications, activities, schemas, scripts, and workflows
+- seminar submission and deletion issue templates
+- content update workflows for News, Publications, and Seminars
+- validation scripts and CI
 
-The upload/update/delete workflows should eventually move here, while `vie-group.github.io` should become a presentation layer that consumes this repository.
+`vie-group.github.io` is the presentation and deployment layer. It consumes this repository through `content-source.json` and its `Sync Content Repository` workflow.
+
+## Website Sync
+
+After content changes land on `main`, the validation workflow attempts to trigger `vie-group.github.io`'s `Sync Content Repository` workflow if `VIE_SITE_SYNC_TOKEN` is configured.
+
+Without that secret, run the website sync manually from the website repository's Actions tab.

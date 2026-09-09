@@ -12,6 +12,7 @@
     "tags": [],
     "source": {
       "type": "github-issue",
+      "repository": "vie-group/vie-group.github.io",
       "issueNumber": 1,
       "issueUrl": "https://github.com/vie-group/vie-group.github.io/issues/1",
       "author": "frank3215"

@@ -24,10 +24,11 @@ Student or maintainer opens a content issue
 ## Near-Term Migration Plan
 
 1. Keep `vie-group.github.io` serving the current site.
-2. Move seminar upload/delete/update workflows into `vie-group-content`.
-3. Teach the website repo to fetch or vendor `vie-group-content/data/*.json`.
-4. Move newly uploaded seminar assets to `vie-group-content/assets/seminars/`.
-5. Migrate legacy `media/` only after the content workflow is stable.
+2. Keep seminar upload/delete/update workflows in `vie-group-content`.
+3. Let the website repo fetch or sync `vie-group-content/data/*.json`.
+4. Store newly uploaded seminar assets in `vie-group-content/assets/seminars/`.
+5. Configure `VIE_SITE_SYNC_TOKEN` for automatic cross-repo sync.
+6. Migrate legacy `media/` only after the content workflow is stable.
 
 ## Review Rules
 

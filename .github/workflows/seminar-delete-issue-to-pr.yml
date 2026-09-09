@@ -1,0 +1,145 @@
+name: Seminar Delete Issue to Pull Request
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  reject-unauthorized:
+    if: >
+      (contains(github.event.issue.labels.*.name, 'seminar-delete') || startsWith(github.event.issue.title, '[Delete Seminar]')) &&
+      !contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close unauthorized delete issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue close "$ISSUE_NUMBER" --comment "This seminar delete request was not processed automatically because the submitter is not an owner, member, or collaborator of the repository."
+
+  delete:
+    if: >
+      (contains(github.event.issue.labels.*.name, 'seminar-delete') || startsWith(github.event.issue.title, '[Delete Seminar]')) &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Store delete issue body
+        env:
+          DELETE_ISSUE_BODY: ${{ github.event.issue.body }}
+        run: node -e 'require("node:fs").writeFileSync("/tmp/seminar-delete-issue.md", process.env.DELETE_ISSUE_BODY || "")'
+      - id: delete_request
+        name: Parse delete request
+        env:
+          DELETE_ISSUE_BODY_PATH: /tmp/seminar-delete-issue.md
+        run: node scripts/delete-seminar-from-issue.mjs parse
+      - id: verify
+        name: Verify original seminar issue ownership
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          DELETE_ISSUE_NUMBER: ${{ github.event.issue.number }}
+          DELETE_AUTHOR: ${{ github.event.issue.user.login }}
+          ORIGINAL_ISSUE_NUMBER: ${{ steps.delete_request.outputs.original_issue_number }}
+          REQUESTED_ID: ${{ steps.delete_request.outputs.requested_id }}
+        run: |
+          set -euo pipefail
+          echo "authorized=false" >> "$GITHUB_OUTPUT"
+
+          original_repository="$REPOSITORY"
+          if [ -n "${REQUESTED_ID}" ]; then
+            source_repository="$(node -e 'const fs=require("fs"); const id=process.env.REQUESTED_ID; const items=JSON.parse(fs.readFileSync("data/seminars.json", "utf8")); const item=items.find((entry)=>entry.id===id); process.stdout.write(item?.source?.repository || "");')"
+            if [ -n "${source_repository}" ]; then
+              original_repository="${source_repository}"
+            fi
+          fi
+
+          if ! original_author="$(gh api "repos/${original_repository}/issues/${ORIGINAL_ISSUE_NUMBER}" --jq '.user.login')"; then
+            gh issue close "$DELETE_ISSUE_NUMBER" --comment "Could not find original seminar issue ${original_repository}#${ORIGINAL_ISSUE_NUMBER}; no files were changed."
+            exit 0
+          fi
+
+          if [ "$original_author" != "$DELETE_AUTHOR" ]; then
+            gh issue close "$DELETE_ISSUE_NUMBER" --comment "This delete request was not processed because original seminar issue ${original_repository}#${ORIGINAL_ISSUE_NUMBER} was opened by @${original_author}, but this request was opened by @${DELETE_AUTHOR}."
+            exit 0
+          fi
+
+          if [ "$(gh api "repos/${original_repository}/issues/${ORIGINAL_ISSUE_NUMBER}" --jq 'has("pull_request")')" = "true" ]; then
+            gh issue close "$DELETE_ISSUE_NUMBER" --comment "Issue ${original_repository}#${ORIGINAL_ISSUE_NUMBER} is a pull request, not a seminar submission issue; no files were changed."
+            exit 0
+          fi
+
+          is_submission="$(gh api "repos/${original_repository}/issues/${ORIGINAL_ISSUE_NUMBER}" --jq '((.labels // []) | map(.name) | index("seminar-submission") != null) or ((.title // "") | startswith("[Seminar]"))')"
+          if [ "$is_submission" != "true" ]; then
+            gh issue close "$DELETE_ISSUE_NUMBER" --comment "Issue ${original_repository}#${ORIGINAL_ISSUE_NUMBER} is not recognized as a seminar submission; no files were changed."
+            exit 0
+          fi
+
+          gh api "repos/${original_repository}/issues/${ORIGINAL_ISSUE_NUMBER}" --jq '.body // ""' > /tmp/original-seminar-issue.md
+          echo "authorized=true" >> "$GITHUB_OUTPUT"
+          echo "original_author=${original_author}" >> "$GITHUB_OUTPUT"
+          echo "original_repository=${original_repository}" >> "$GITHUB_OUTPUT"
+      - id: seminar
+        name: Delete seminar content
+        if: steps.verify.outputs.authorized == 'true'
+        env:
+          DELETE_ISSUE_BODY_PATH: /tmp/seminar-delete-issue.md
+          ORIGINAL_ISSUE_BODY_PATH: /tmp/original-seminar-issue.md
+          ORIGINAL_ISSUE_NUMBER: ${{ steps.delete_request.outputs.original_issue_number }}
+          ORIGINAL_ISSUE_AUTHOR: ${{ steps.verify.outputs.original_author }}
+          ORIGINAL_ISSUE_REPOSITORY: ${{ steps.verify.outputs.original_repository }}
+        run: node scripts/delete-seminar-from-issue.mjs delete
+      - if: steps.verify.outputs.authorized == 'true'
+        run: npm run validate
+      - name: Create or update PR
+        if: steps.verify.outputs.authorized == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          SEMINAR_TITLE: ${{ steps.seminar.outputs.title }}
+          SEMINAR_ID: ${{ steps.seminar.outputs.id }}
+          BASE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          branch="seminar-delete-${ISSUE_NUMBER}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+
+          if git diff --quiet -- data/seminars.json assets/seminars; then
+            gh issue close "$ISSUE_NUMBER" --comment "No content change was detected for \`${SEMINAR_ID}\`; this seminar may already have been deleted."
+            exit 0
+          fi
+
+          git add data/seminars.json
+          if [ -d assets/seminars ] || [ -n "$(git ls-files -- assets/seminars)" ]; then
+            git add -A assets/seminars
+          fi
+          git commit -m "Delete seminar: ${SEMINAR_TITLE}"
+          git push --force origin "$branch"
+
+          pr_url="$(gh pr list --base "$BASE_BRANCH" --head "$branch" --json url --jq '.[0].url')"
+          body="Automated seminar content deletion from ${ISSUE_URL}.
+
+          Verified against original seminar issue for \`${SEMINAR_ID}\`.
+
+          Closes #${ISSUE_NUMBER}"
+          if [ -z "$pr_url" ]; then
+            pr_url="$(gh pr create --base "$BASE_BRANCH" --head "$branch" --title "Delete seminar: ${SEMINAR_TITLE}" --body "$body")"
+          else
+            gh pr edit "$pr_url" --title "Delete seminar: ${SEMINAR_TITLE}" --body "$body"
+          fi
+          gh pr merge "$pr_url" --squash --delete-branch
+          gh issue close "$ISSUE_NUMBER" --comment "Created/updated and merged content deletion PR: ${pr_url}"

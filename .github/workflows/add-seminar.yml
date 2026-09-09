@@ -1,0 +1,72 @@
+name: Add Seminar Record
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "YYYY-MM-DD"
+        required: true
+      speaker:
+        description: "Speaker name"
+        required: true
+      title:
+        description: "Seminar title"
+        required: true
+      image_url:
+        description: "Image URL or content repo path"
+        required: false
+      paper_url:
+        description: "Paper URL or content repo path"
+        required: false
+      slides_url:
+        description: "Slides URL or content repo path"
+        required: false
+      video_url:
+        description: "Video URL"
+        required: false
+      code_url:
+        description: "Code URL"
+        required: false
+      tags:
+        description: "Comma-separated tags"
+        required: false
+      abstract:
+        description: "Short abstract"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Update seminar data
+        env:
+          SEMINAR_DATE: ${{ inputs.date }}
+          SEMINAR_SPEAKER: ${{ inputs.speaker }}
+          SEMINAR_TITLE: ${{ inputs.title }}
+          SEMINAR_IMAGE_URL: ${{ inputs.image_url }}
+          SEMINAR_PAPER_URL: ${{ inputs.paper_url }}
+          SEMINAR_SLIDES_URL: ${{ inputs.slides_url }}
+          SEMINAR_VIDEO_URL: ${{ inputs.video_url }}
+          SEMINAR_CODE_URL: ${{ inputs.code_url }}
+          SEMINAR_TAGS: ${{ inputs.tags }}
+          SEMINAR_ABSTRACT: ${{ inputs.abstract }}
+        run: npm run add:seminar
+      - run: npm run validate
+      - name: Commit changes
+        env:
+          COMMIT_TITLE: ${{ inputs.title }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/seminars.json
+          git commit -m "Add seminar: ${COMMIT_TITLE}" || exit 0
+          git push

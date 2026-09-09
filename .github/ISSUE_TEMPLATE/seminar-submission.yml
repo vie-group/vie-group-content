@@ -1,0 +1,108 @@
+name: Seminar material submission
+description: Submit group seminar metadata and links for review.
+title: "[Seminar] YYYY-MM-DD Speaker - Title"
+labels: ["seminar-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill this form if you do not have direct write access. A workflow will turn the issue into a pull request.
+        If the paper already has a PDF link, put it in Paper URL.
+        To submit a cover image, PPT, or PDF file, click inside the matching Attachment box and drag the file there. GitHub will insert an upload link automatically.
+        The workflow will copy GitHub attachments into this repository before updating the website.
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: Use YYYY-MM-DD.
+      placeholder: "2024-04-07"
+    validations:
+      required: true
+  - type: input
+    id: speaker
+    attributes:
+      label: Speaker
+      placeholder: "Name"
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      placeholder: "Paper or talk title"
+    validations:
+      required: true
+  - type: input
+    id: image_url
+    attributes:
+      label: Image URL
+      placeholder: "https://.../cover.png"
+    validations:
+      required: false
+  - type: textarea
+    id: image_attachment
+    attributes:
+      label: Image Attachment
+      description: Drag a seminar cover image into this box if no Image URL is available.
+      placeholder: "Drop cover image here."
+    validations:
+      required: false
+  - type: input
+    id: paper_url
+    attributes:
+      label: Paper URL
+      placeholder: "https://arxiv.org/pdf/..."
+    validations:
+      required: false
+  - type: input
+    id: slides_url
+    attributes:
+      label: Slides URL
+      placeholder: "https://github.com/.../slides.pptx"
+    validations:
+      required: false
+  - type: textarea
+    id: paper_attachment
+    attributes:
+      label: Paper Attachment
+      description: If no Paper URL is available, drag the paper PDF into this box.
+      placeholder: "Drop paper PDF here."
+    validations:
+      required: false
+  - type: textarea
+    id: slides_attachment
+    attributes:
+      label: Slides Attachment
+      description: Drag the seminar PPT/PDF into this box.
+      placeholder: "Drop slides PDF/PPT here."
+    validations:
+      required: false
+  - type: input
+    id: code_url
+    attributes:
+      label: Code URL
+      placeholder: "https://github.com/..."
+    validations:
+      required: false
+  - type: input
+    id: video_url
+    attributes:
+      label: Video URL
+      placeholder: "Optional"
+    validations:
+      required: false
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated.
+      placeholder: "IQA, diffusion"
+    validations:
+      required: false
+  - type: textarea
+    id: abstract
+    attributes:
+      label: Abstract
+      placeholder: "Optional short summary."
+    validations:
+      required: false

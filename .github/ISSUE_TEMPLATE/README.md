@@ -1,5 +1,5 @@
 # Issue Templates
 
-Content submission issue templates will move here after the website repository is updated to consume this repository as its content source.
+Content submission issue templates live here because this repository is the source of truth for website content.
 
-Until that migration is complete, keep public seminar submission issues in `vie-group/vie-group.github.io`.
+The public website's `upload-seminar/` page opens pre-filled seminar issues in this repository.
