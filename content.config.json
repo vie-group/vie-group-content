@@ -3,6 +3,8 @@
   "websiteRepository": "vie-group/vie-group.github.io",
   "contentRepository": "vie-group/vie-group-content",
   "contentRoot": ".",
+  "publicBaseUrl": "https://vie-group.github.io/vie-group-content/",
+  "rssUrl": "https://vie-group.github.io/vie-group-content/rss.xml",
   "paths": {
     "data": "data",
     "seminarAssets": "assets/seminars",

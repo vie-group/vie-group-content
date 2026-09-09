@@ -61,6 +61,16 @@ if (config.websiteRepository !== "vie-group/vie-group.github.io") {
 if (config.contentRepository !== "vie-group/vie-group-content") {
   fail("content.config.json contentRepository must be vie-group/vie-group-content.");
 }
+if (!String(config.publicBaseUrl || "").startsWith("https://vie-group.github.io/vie-group-content/")) {
+  fail("content.config.json publicBaseUrl must use https://vie-group.github.io/vie-group-content/.");
+}
+if (!String(config.rssUrl || "").startsWith("https://vie-group.github.io/vie-group-content/")) {
+  fail("content.config.json rssUrl must use https://vie-group.github.io/vie-group-content/.");
+}
+const rss = await readFile("rss.xml", "utf8");
+if (!rss.includes(config.rssUrl)) {
+  fail("rss.xml must use content.config.json rssUrl as its self URL.");
+}
 
 if (!data["data/site.json"].name || !data["data/site.json"].repository) {
   fail("data/site.json must include name and repository.");

@@ -101,6 +101,8 @@ jobs:
           ORIGINAL_ISSUE_REPOSITORY: ${{ steps.verify.outputs.original_repository }}
         run: node scripts/delete-seminar-from-issue.mjs delete
       - if: steps.verify.outputs.authorized == 'true'
+        run: npm run build:rss
+      - if: steps.verify.outputs.authorized == 'true'
         run: npm run validate
       - name: Create or update PR
         if: steps.verify.outputs.authorized == 'true'
@@ -123,7 +125,7 @@ jobs:
             exit 0
           fi
 
-          git add data/seminars.json
+          git add data/seminars.json rss.xml
           if [ -d assets/seminars ] || [ -n "$(git ls-files -- assets/seminars)" ]; then
             git add -A assets/seminars
           fi

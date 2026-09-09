@@ -67,10 +67,22 @@ This repository currently contains:
 - content update workflows for News, Publications, and Seminars
 - validation scripts and CI
 
-`vie-group.github.io` is the presentation and deployment layer. It consumes this repository through `content-source.json` and its `Sync Content Repository` workflow.
+`vie-group.github.io` is the presentation layer. It consumes this repository at runtime through `content-source.json`.
 
-## Website Sync
+## Published URLs
 
-After content changes land on `main`, the validation workflow attempts to trigger `vie-group.github.io`'s `Sync Content Repository` workflow if `VIE_SITE_SYNC_TOKEN` is configured.
+GitHub Pages publishes this repository at:
 
-Without that secret, run the website sync manually from the website repository's Actions tab.
+```text
+https://vie-group.github.io/vie-group-content/
+```
+
+Important public endpoints:
+
+```text
+https://vie-group.github.io/vie-group-content/data/seminars.json
+https://vie-group.github.io/vie-group-content/assets/seminars/
+https://vie-group.github.io/vie-group-content/rss.xml
+```
+
+The website repository does not need a sync commit after content changes.

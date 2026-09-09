@@ -48,6 +48,7 @@ jobs:
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: node scripts/issue-form-to-data.mjs seminar
+      - run: npm run build:rss
       - run: npm run validate
       - name: Create or update PR
         env:
@@ -69,7 +70,7 @@ jobs:
             exit 0
           fi
 
-          git add data/seminars.json
+          git add data/seminars.json rss.xml
           if [ -d assets/seminars ]; then
             git add assets/seminars
           fi

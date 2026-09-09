@@ -44,7 +44,7 @@
     "homeNewsExpand": "Show all news",
     "homeNewsCollapse": "Show less",
     "archiveNoteLabel": "Archive note.",
-    "archiveNoteText": "The old VIE site has been recovered into a static GitHub Pages archive. Papers and seminar files are served locally from this repository.",
+    "archiveNoteText": "The old VIE site has been recovered into a static GitHub Pages archive. New content and seminar files are served from the VIE content repository.",
     "latestPublicationLabel": "Latest publication",
     "latestSeminarLabel": "Latest seminar",
     "archiveTimelineLabel": "Publication archive",
@@ -79,10 +79,10 @@
     "operationPublicationText": "Update records and commit to GitHub from the browser.",
     "operationSeminarIndex": "02",
     "operationSeminarTitle": "Upload Seminar",
-    "operationSeminarText": "Commit PPT/PDF files and metadata in one change.",
+    "operationSeminarText": "Submit PPT/PDF files and metadata through the content repository.",
     "operationGuideIndex": "03",
     "operationGuideTitle": "Maintenance Guide",
-    "operationGuideText": "Repository layout, token scope, and fallback workflows.",
+    "operationGuideText": "Content repository layout, token scope, and maintenance workflows.",
     "footerRss": "RSS",
     "beian": "京ICP备2022030672号-1"
   }

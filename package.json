@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:rss": "node scripts/generate-rss.mjs",
     "validate": "node scripts/validate-content.mjs",
     "add:news": "node scripts/update-data.mjs add-news",
     "add:seminar": "node scripts/update-data.mjs add-seminar",

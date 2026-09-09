@@ -65,6 +65,7 @@ jobs:
           PUBLICATION_POSTER_URL: ${{ inputs.poster_url }}
           PUBLICATION_TAGS: ${{ inputs.tags }}
         run: npm run add:publication
+      - run: npm run build:rss
       - run: npm run validate
       - name: Commit changes
         env:
@@ -72,6 +73,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/publications.json
+          git add data/publications.json rss.xml
           git commit -m "Add publication: ${COMMIT_TITLE}" || exit 0
           git push

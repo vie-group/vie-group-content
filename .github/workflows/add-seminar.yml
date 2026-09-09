@@ -60,6 +60,7 @@ jobs:
           SEMINAR_TAGS: ${{ inputs.tags }}
           SEMINAR_ABSTRACT: ${{ inputs.abstract }}
         run: npm run add:seminar
+      - run: npm run build:rss
       - run: npm run validate
       - name: Commit changes
         env:
@@ -67,6 +68,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/seminars.json
+          git add data/seminars.json rss.xml
           git commit -m "Add seminar: ${COMMIT_TITLE}" || exit 0
           git push
