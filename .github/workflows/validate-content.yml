@@ -9,6 +9,13 @@ permissions:
 
 jobs:
   validate:
+    if: >
+      github.event_name != 'pull_request' ||
+      (
+        startsWith(github.head_ref, 'seminar-edit-') == false &&
+        startsWith(github.head_ref, 'seminar-submission-') == false &&
+        startsWith(github.head_ref, 'seminar-delete-') == false
+      )
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
