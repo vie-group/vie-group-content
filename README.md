@@ -97,8 +97,8 @@ The website repository does not need a sync commit after content changes.
 
 Preferred path:
 
-1. Open the Seminar page on the website.
-2. Click `EDIT` on the seminar row to edit, or open `https://vie-group.github.io/edit-seminar/` and choose a record.
+1. Open `https://vie-group.github.io/presentation/?manage=1`.
+2. Click `EDIT` on the seminar row to edit, or open `https://vie-group.github.io/edit-seminar/?manage=1` and choose a record.
 3. Check the pre-filled metadata and links.
 4. Keep an existing URL/path if it should remain unchanged.
 5. Clear a URL/path if the field should be removed.
