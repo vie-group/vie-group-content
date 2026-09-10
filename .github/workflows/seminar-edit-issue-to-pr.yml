@@ -1,0 +1,92 @@
+name: Seminar Edit Issue to Pull Request
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  reject-unauthorized:
+    if: >
+      (contains(github.event.issue.labels.*.name, 'seminar-edit') || startsWith(github.event.issue.title, '[Edit Seminar]')) &&
+      !contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close unauthorized seminar edit issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue close "$ISSUE_NUMBER" --comment "This seminar edit request was not processed automatically because the submitter is not an owner, member, or collaborator of the repository."
+
+  create-pr:
+    if: >
+      (contains(github.event.issue.labels.*.name, 'seminar-edit') || startsWith(github.event.issue.title, '[Edit Seminar]')) &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Store edit issue body
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: node -e 'require("node:fs").writeFileSync("/tmp/seminar-edit-issue.md", process.env.ISSUE_BODY || "")'
+      - id: seminar
+        name: Convert edit issue to content data
+        env:
+          ISSUE_BODY_PATH: /tmp/seminar-edit-issue.md
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: npm run issue:seminar-edit
+      - run: npm run build:rss
+      - run: npm run validate
+      - name: Create or update PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          SEMINAR_TITLE: ${{ steps.seminar.outputs.title }}
+          SEMINAR_ID: ${{ steps.seminar.outputs.id }}
+          BASE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          branch="seminar-edit-${ISSUE_NUMBER}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+
+          if git diff --quiet -- data/seminars.json rss.xml assets/seminars && [ -z "$(git ls-files --others --exclude-standard -- assets/seminars)" ]; then
+            gh issue close "$ISSUE_NUMBER" --comment "No content change was detected for \`${SEMINAR_ID}\`; this edit may already have been processed."
+            exit 0
+          fi
+
+          git add data/seminars.json rss.xml
+          if [ -d assets/seminars ] || [ -n "$(git ls-files -- assets/seminars)" ]; then
+            git add -A assets/seminars
+          fi
+          git commit -m "Edit seminar: ${SEMINAR_TITLE}"
+          git push --force origin "$branch"
+
+          pr_url="$(gh pr list --base "$BASE_BRANCH" --head "$branch" --json url --jq '.[0].url')"
+          body="Automated seminar content edit from ${ISSUE_URL}.
+
+          Updated seminar: \`${SEMINAR_ID}\`.
+
+          Closes #${ISSUE_NUMBER}"
+          if [ -z "$pr_url" ]; then
+            pr_url="$(gh pr create --base "$BASE_BRANCH" --head "$branch" --title "Edit seminar: ${SEMINAR_TITLE}" --body "$body")"
+          else
+            gh pr edit "$pr_url" --title "Edit seminar: ${SEMINAR_TITLE}" --body "$body"
+          fi
+          gh pr merge "$pr_url" --squash --delete-branch
+          gh issue close "$ISSUE_NUMBER" --comment "Created/updated and merged content edit PR: ${pr_url}"

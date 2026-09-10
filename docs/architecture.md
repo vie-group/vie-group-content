@@ -22,6 +22,8 @@ Student or maintainer opens a content issue
   -> website reads the updated content repo Pages URL at runtime
 ```
 
+Seminar edit issues replace one selected seminar record by stable `id`. Metadata and links are interpreted as the desired final state; blank optional links remove those links, and uploaded attachments replace the matching file/link field.
+
 ## Near-Term Migration Plan
 
 1. Keep `vie-group.github.io` serving the current site.

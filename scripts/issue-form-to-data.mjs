@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile, appendFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile, appendFile, rm } from "node:fs/promises";
 
 const command = process.argv[2];
 const attachmentContentTypes = new Map([
@@ -135,6 +135,22 @@ async function localizeAttachmentLinks(links, record) {
   return localized;
 }
 
+function isOwnedSeminarAsset(value, id) {
+  const path = String(value || "").replace(/^\/+/, "");
+  return path.startsWith("assets/seminars/") && path.includes(`/${id}/`) && !path.split("/").includes("..");
+}
+
+async function pruneReplacedOwnedLinks(existing, nextLinks) {
+  const retained = new Set(Object.values(nextLinks || {}).filter(Boolean).map((value) => String(value).replace(/^\/+/, "")));
+  for (const value of Object.values(existing.links || {})) {
+    const path = String(value || "").replace(/^\/+/, "");
+    if (isOwnedSeminarAsset(path, existing.id) && !retained.has(path)) {
+      await rm(path, { force: true });
+      console.log(`Removed replaced seminar asset: ${path}`);
+    }
+  }
+}
+
 function parseIssueForm(body) {
   const fields = {};
   let current = null;
@@ -234,6 +250,67 @@ async function addSeminarFromIssue() {
   console.log(`Prepared seminar PR data for ${record.id}`);
 }
 
+async function editSeminarFromIssue() {
+  const bodyPath = process.env.ISSUE_BODY_PATH;
+  if (!bodyPath) throw new Error("ISSUE_BODY_PATH is required.");
+  const fields = parseIssueForm(await readFile(bodyPath, "utf8"));
+  const id = field(fields, "Original Seminar ID", true).trim();
+
+  const date = field(fields, "Date", true);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("Date must use YYYY-MM-DD.");
+
+  const title = field(fields, "Title", true);
+  const speaker = field(fields, "Speaker", true);
+  const rawLinks = {};
+  for (const [key, label, attachmentLabel] of [
+    ["image", "Image URL", "Image Attachment"],
+    ["paper", "Paper URL", "Paper Attachment"],
+    ["slides", "Slides URL", "Slides Attachment"],
+    ["code", "Code URL"],
+    ["video", "Video URL"]
+  ]) {
+    const value = firstUrl(field(fields, attachmentLabel)) || field(fields, label);
+    if (value) rawLinks[key] = value;
+  }
+
+  const path = "data/seminars.json";
+  const items = JSON.parse(await readFile(path, "utf8"));
+  const index = items.findIndex((item) => item.id === id);
+  if (index < 0) throw new Error(`Seminar not found: ${id}`);
+
+  const existing = items[index];
+  const links = await localizeAttachmentLinks(rawLinks, { ...existing, date, id });
+  await pruneReplacedOwnedLinks(existing, links);
+
+  const record = {
+    ...existing,
+    date,
+    speaker,
+    title,
+    abstract: field(fields, "Abstract"),
+    links,
+    tags: splitTags(field(fields, "Tags")),
+    lastEdit:
+      process.env.ISSUE_NUMBER && process.env.ISSUE_AUTHOR
+        ? {
+            type: "github-issue",
+            repository: process.env.GITHUB_REPOSITORY || "vie-group/vie-group-content",
+            issueNumber: Number(process.env.ISSUE_NUMBER),
+            issueUrl: process.env.ISSUE_URL || "",
+            author: process.env.ISSUE_AUTHOR
+          }
+        : existing.lastEdit
+  };
+
+  items[index] = record;
+  const next = items.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  await writeFile(path, `${JSON.stringify(next, null, 2)}\n`, "utf8");
+  await writeOutput("id", record.id);
+  await writeOutput("title", record.title);
+  await writeOutput("speaker", record.speaker);
+  console.log(`Prepared seminar edit PR data for ${record.id}`);
+}
+
 async function localizeExistingSeminars() {
   const path = "data/seminars.json";
   const items = JSON.parse(await readFile(path, "utf8"));
@@ -256,8 +333,10 @@ async function localizeExistingSeminars() {
 
 if (command === "seminar") {
   await addSeminarFromIssue();
+} else if (command === "edit") {
+  await editSeminarFromIssue();
 } else if (command === "localize") {
   await localizeExistingSeminars();
 } else {
-  throw new Error("Usage: node scripts/issue-form-to-data.mjs seminar|localize");
+  throw new Error("Usage: node scripts/issue-form-to-data.mjs seminar|edit|localize");
 }

@@ -63,7 +63,7 @@ This repository currently contains:
 
 - current `data/*.json`
 - current workflow-localized seminar assets under `assets/seminars/`
-- seminar submission and deletion issue templates
+- seminar submission, edit, and deletion issue templates
 - content update workflows for News, Publications, and Seminars
 - validation scripts and CI
 
@@ -92,3 +92,19 @@ https://vie-group.github.io/vie-group-content/rss.xml
 ```
 
 The website repository does not need a sync commit after content changes.
+
+## Editing One Seminar
+
+Preferred path:
+
+1. Open the Seminar page on the website.
+2. Click `EDIT` on the seminar row to edit, or open `https://vie-group.github.io/edit-seminar/` and choose a record.
+3. Check the pre-filled metadata and links.
+4. Keep an existing URL/path if it should remain unchanged.
+5. Clear a URL/path if the field should be removed.
+6. On the GitHub issue page, drag a replacement file into the matching attachment section when replacing image, paper, or slides.
+7. Submit the issue.
+
+The `seminar-edit` workflow treats the issue as the complete desired final record for that seminar. `Original Seminar ID` remains stable even if date or title changes. Attachments override matching URL fields and are copied into `assets/seminars/<year>/<seminar-id>/`.
+
+Unlike seminar deletion, editing is not limited to the original submitter. Any repository `OWNER`, `MEMBER`, or `COLLABORATOR` can edit any selected seminar record; outside users are rejected by the workflow.
