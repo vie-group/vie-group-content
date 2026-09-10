@@ -57,8 +57,8 @@ function cleanValue(value) {
 }
 
 function firstUrl(value) {
-  const match = String(value || "").match(/https?:\/\/[^\s)>\]]+/);
-  return match ? match[0].replace(/[.,;]+$/, "") : "";
+  const match = String(value || "").match(/https?:\/\/[^\s"'<>()[\]]+/);
+  return match ? match[0].replace(/[.,;"']+$/, "") : "";
 }
 
 function isGitHubAttachmentUrl(value) {

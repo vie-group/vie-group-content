@@ -9,37 +9,51 @@ permissions:
   issues: write
   pull-requests: write
 
-jobs:
-  reject-unauthorized:
-    if: >
-      (contains(github.event.issue.labels.*.name, 'seminar-edit') || startsWith(github.event.issue.title, '[Edit Seminar]')) &&
-      !contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Close unauthorized seminar edit issue
-        env:
-          GH_TOKEN: ${{ github.token }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          gh issue close "$ISSUE_NUMBER" --comment "This seminar edit request was not processed automatically because the submitter is not an owner, member, or collaborator of the repository."
-
   create-pr:
     if: >
-      (contains(github.event.issue.labels.*.name, 'seminar-edit') || startsWith(github.event.issue.title, '[Edit Seminar]')) &&
-      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+      contains(github.event.issue.labels.*.name, 'seminar-edit') || startsWith(github.event.issue.title, '[Edit Seminar]')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - id: authorize
+        name: Verify issue author permission
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+        run: |
+          set -euo pipefail
+          association="$(gh api "repos/${REPOSITORY}/issues/${ISSUE_NUMBER}" --jq '.author_association // ""')"
+          permission="$(gh api "repos/${REPOSITORY}/collaborators/${ISSUE_AUTHOR}/permission" --jq '.permission // ""' 2>/dev/null || true)"
+          echo "Issue author @${ISSUE_AUTHOR}: association=${association:-unknown}, permission=${permission:-none}"
+
+          authorized=false
+          case "$association" in
+            OWNER|MEMBER|COLLABORATOR) authorized=true ;;
+          esac
+          case "$permission" in
+            admin|maintain|write) authorized=true ;;
+          esac
+          echo "authorized=${authorized}" >> "$GITHUB_OUTPUT"
+
+          if [ "$authorized" != "true" ]; then
+            gh issue close "$ISSUE_NUMBER" --repo "$REPOSITORY" --comment "This seminar edit request was not processed automatically because @${ISSUE_AUTHOR} is not an owner, member, collaborator, or repository writer. Detected association: ${association:-unknown}; repository permission: ${permission:-none}."
+          fi
+      - if: steps.authorize.outputs.authorized == 'true'
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.repository.default_branch }}
-      - uses: actions/setup-node@v4
+      - if: steps.authorize.outputs.authorized == 'true'
+        uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Store edit issue body
+      - if: steps.authorize.outputs.authorized == 'true'
+        name: Store edit issue body
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: node -e 'require("node:fs").writeFileSync("/tmp/seminar-edit-issue.md", process.env.ISSUE_BODY || "")'
       - id: seminar
+        if: steps.authorize.outputs.authorized == 'true'
         name: Convert edit issue to content data
         env:
           ISSUE_BODY_PATH: /tmp/seminar-edit-issue.md
@@ -48,9 +62,12 @@ jobs:
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: npm run issue:seminar-edit
-      - run: npm run build:rss
-      - run: npm run validate
+      - if: steps.authorize.outputs.authorized == 'true'
+        run: npm run build:rss
+      - if: steps.authorize.outputs.authorized == 'true'
+        run: npm run validate
       - name: Create or update PR
+        if: steps.authorize.outputs.authorized == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
