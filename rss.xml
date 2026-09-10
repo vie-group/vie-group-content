@@ -264,12 +264,148 @@
       <category>shape prior</category>
     </item>
     <item>
+      <title>Seminar: DDG-Net: Discriminability-Driven Graph Network forWeakly-supervised Temporal Action Localization</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-10-27-ddg-net-discriminability-driven-graph-network-forweakly-supervised-temporal-acti</guid>
+      <pubDate>Fri, 27 Oct 2023 12:00:00 GMT</pubDate>
+      <description>Qiyue Li</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: Set-level Guidance Attack: Boosting Adversarial Transferability of Vision-Language Pre-training Models</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-10-27-set-level-guidance-attack-boosting-adversarial-transferability-of-vision-languag</guid>
+      <pubDate>Fri, 27 Oct 2023 12:00:00 GMT</pubDate>
+      <description>Chenxi Yang</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: Blindly Assess Image Quality in the Wild Guided by A Self-Adaptive Hyper Network</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-10-11-blindly-assess-image-quality-in-the-wild-guided-by-a-self-adaptive-hyper-network</guid>
+      <pubDate>Wed, 11 Oct 2023 12:00:00 GMT</pubDate>
+      <description>Yan Zhong</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: Deep Evidential Regression</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-10-11-deep-evidential-regression</guid>
+      <pubDate>Wed, 11 Oct 2023 12:00:00 GMT</pubDate>
+      <description>Xueqing Yu</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: MA-SAM- Modality-agnostic SAM Adaptation for 3D Medical Image Segmentation</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-09-22-ma-sam-modality-agnostic-sam-adaptation-for-3d-medical-image-segmentation</guid>
+      <pubDate>Fri, 22 Sep 2023 12:00:00 GMT</pubDate>
+      <description>Ruohua Shi</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: Segment and Track Anything</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-09-15-segment-and-track-anything</guid>
+      <pubDate>Fri, 15 Sep 2023 12:00:00 GMT</pubDate>
+      <description>Qiyue Li</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: MARS: Model-agnostic Biased Object Removal without Additional Supervision for Weakly-Supervised Semantic Segmentation</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-08-18-mars-model-agnostic-biased-object-removal-without-additional-supervision-for-wea</guid>
+      <pubDate>Fri, 18 Aug 2023 12:00:00 GMT</pubDate>
+      <description>Weining Ye</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: DreamBooth: Fine Tuning Text-to-Image Diffusion Models for Subject-Driven Generation</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-08-18-dreambooth-fine-tuning-text-to-image-diffusion-models-for-subject-driven-generat</guid>
+      <pubDate>Fri, 18 Aug 2023 12:00:00 GMT</pubDate>
+      <description>Chao Liu</description>
+      <category>seminar</category>
+    </item>
+    <item>
       <title>News: Congratulations to Zhixuan Li and Weining Ye for their paper &quot;MUVA: A New Large-Scale Benc...</title>
       <link>https://www.vie.group/home/</link>
       <guid isPermaLink="false">news:2023-07-18:2</guid>
       <pubDate>Tue, 18 Jul 2023 12:00:00 GMT</pubDate>
       <description>Congratulations to Zhixuan Li and Weining Ye for their paper &quot;MUVA: A New Large-Scale Benchmark for Multi-view Amodal Instance Segmentation in the Shopping Scenario&quot; being accepted by ICCV 2023!</description>
       <category>news</category>
+    </item>
+    <item>
+      <title>Seminar: Blind image quality assessment based on progressive multi-task learning</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-07-14-blind-image-quality-assessment-based-on-progressive-multi-task-learning</guid>
+      <pubDate>Fri, 14 Jul 2023 12:00:00 GMT</pubDate>
+      <description>Yan Zhong</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: Soft-Landing Strategy for Alleviating the Task Discrepancy Problem in Temporal Action Localization Tasks</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-07-14-soft-landing-strategy-for-alleviating-the-task-discrepancy-problem-in-temporal-a</guid>
+      <pubDate>Fri, 14 Jul 2023 12:00:00 GMT</pubDate>
+      <description>Yanfeng Yang</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: RSPrompter: Learning to Prompt for Remote Sensing Instance Segmentation based on Visual Foundation Model</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-07-06-rsprompter-learning-to-prompt-for-remote-sensing-instance-segmentation-based-on-</guid>
+      <pubDate>Thu, 06 Jul 2023 12:00:00 GMT</pubDate>
+      <description>Ruohua Shi</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: E-LPIPS: Robust Perceptual Image Similarity via Random Transformation Ensembles</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-06-30-e-lpips-robust-perceptual-image-similarity-via-random-transformation-ensembles</guid>
+      <pubDate>Fri, 30 Jun 2023 12:00:00 GMT</pubDate>
+      <description>Chenxi Yang</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: SegGPT: Segmenting Everything In Context</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-06-30-seggpt-segmenting-everything-in-context</guid>
+      <pubDate>Fri, 30 Jun 2023 12:00:00 GMT</pubDate>
+      <description>Zhaochen Liu</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: Volumetric memory network for interactive medical image segmentation</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-06-23-volumetric-memory-network-for-interactive-medical-image-segmentation</guid>
+      <pubDate>Fri, 23 Jun 2023 12:00:00 GMT</pubDate>
+      <description>Chao Liu</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: Semi-Supervised Authentically Distorted Image Quality Assessment with Consistency-Preserving Dual-Branch Convolutional Neural Network</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-06-16-semi-supervised-authentically-distorted-image-quality-assessment-with-consistenc</guid>
+      <pubDate>Fri, 16 Jun 2023 12:00:00 GMT</pubDate>
+      <description>Yan Zhong</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: 3D Cinemagraphy from a Single Image</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-06-09-3d-cinemagraphy-from-a-single-image</guid>
+      <pubDate>Fri, 09 Jun 2023 12:00:00 GMT</pubDate>
+      <description>Weining Ye</description>
+      <category>seminar</category>
+    </item>
+    <item>
+      <title>Seminar: Decomposed Cross-modal Distillation for RGB-based Temporal Action Detection</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-06-09-decomposed-cross-modal-distillation-for-rgb-based-temporal-action-detection</guid>
+      <pubDate>Fri, 09 Jun 2023 12:00:00 GMT</pubDate>
+      <description>Yanfeng Yang</description>
+      <category>seminar</category>
     </item>
     <item>
       <title>News: Congratulations to Ruohua for her paper &quot;PS-Net: Human perception-guided segmentation netw...</title>
@@ -280,312 +416,124 @@
       <category>news</category>
     </item>
     <item>
-      <title>News: Congratulations to Zhixuan Li and Ruohua Shi for their paper &quot;OAFormer: Learning Occlusion...</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2023-02-17:4</guid>
-      <pubDate>Fri, 17 Feb 2023 12:00:00 GMT</pubDate>
-      <description>Congratulations to Zhixuan Li and Ruohua Shi for their paper &quot;OAFormer: Learning Occlusion Distinguishable Feature for Amodal Instance Segmentation&quot; being accepted by ICASSP 2023!</description>
-      <category>news</category>
+      <title>Seminar: Perceptual Attacks of No-Reference Image Quality Models with Human-in-the-Loop</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-05-19-perceptual-attacks-of-no-reference-image-quality-models-with-human-in-the-loop</guid>
+      <pubDate>Fri, 19 May 2023 12:00:00 GMT</pubDate>
+      <description>Chenxi Yang</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>Publication: CI-Net: Clinical-Inspired Network for Automated Skin Lesion Recognition</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:liu-2023-ci-net</guid>
-      <pubDate>Sun, 01 Jan 2023 12:00:00 GMT</pubDate>
-      <description>Zihao Liu, Ruiqin Xiong, Tingting Jiang. IEEE Transactions on Medical Imaging. Vol. 42, Issue 3, pp. 619-632, March 2023</description>
-      <category>publication</category>
-      <category>journal</category>
-      <category>medical image</category>
-      <category>skin lesion</category>
+      <title>Seminar: Knowledge-Guided Blind Image Quality Assessment with Few Training Samples</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-05-12-knowledge-guided-blind-image-quality-assessment-with-few-training-samples</guid>
+      <pubDate>Fri, 12 May 2023 12:00:00 GMT</pubDate>
+      <description>Yingjian Song</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>Publication: OAFormer: Learning Occlusion Distinguishable Feature for Amodal Instance Segmentation</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:li-2023-oaformer</guid>
-      <pubDate>Sun, 01 Jan 2023 12:00:00 GMT</pubDate>
-      <description>Zhixuan Li, Ruohua Shi, Tiejun Huang, Tingting Jiang. ICASSP 2023. Rhodes Island, Greece, June 2023, pp. 1-5</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>amodal segmentation</category>
-      <category>occlusion</category>
+      <title>Seminar: PIDNet- A Real-time Semantic Segmentation Network Inspired by PID Controllers</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-04-28-pidnet-a-real-time-semantic-segmentation-network-inspired-by-pid-controllers</guid>
+      <pubDate>Fri, 28 Apr 2023 12:00:00 GMT</pubDate>
+      <description>Ruohua Shi</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>Publication: MUVA: A New Large-Scale Benchmark for Multi-view Amodal Instance Segmentation in the Shopping Scenario</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:li-2023-muva</guid>
-      <pubDate>Sun, 01 Jan 2023 12:00:00 GMT</pubDate>
-      <description>Zhixuan Li, Weining Ye, Juan Terven, Zachary Bennett, Ying Zheng, Tingting Jiang, Tiejun Huang. ICCV 2023. Paris, France, October 2023, pp. 23447-23456</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>dataset</category>
-      <category>multi-view</category>
-      <category>amodal segmentation</category>
+      <title>Seminar: Images Speak in Images: A Generalist Painter for In-Context Visual Learning</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-04-28-images-speak-in-images-a-generalist-painter-for-in-context-visual-learning</guid>
+      <pubDate>Fri, 28 Apr 2023 12:00:00 GMT</pubDate>
+      <description>Zhaochen Liu</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>Publication: PS-Net: Human perception-guided segmentation network for EM cell membrane</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:shi-2023-ps-net</guid>
-      <pubDate>Sun, 01 Jan 2023 12:00:00 GMT</pubDate>
-      <description>Ruohua Shi, Keyan Bi, Kai Du, Lei Ma, Fang Fang, Lingyu Duan, Tingting Jiang, Tiejun Huang. Bioinformatics. Vol. 39, Issue 8, August 2023, btad464</description>
-      <category>publication</category>
-      <category>journal</category>
-      <category>bioinformatics</category>
-      <category>segmentation</category>
+      <title>Seminar: Sibling-Attack: Rethinking Transferable Adversarial Attacks against Face Recognition</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-04-21-sibling-attack-rethinking-transferable-adversarial-attacks-against-face-recognit</guid>
+      <pubDate>Fri, 21 Apr 2023 12:00:00 GMT</pubDate>
+      <description>Yujia Liu</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>Publication: Diffusion Action Segmentation</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:liu-2023-diffusion-action</guid>
-      <pubDate>Sun, 01 Jan 2023 12:00:00 GMT</pubDate>
-      <description>Daochang Liu, Qiyue Li, AnhDung Dinh, Tingting Jiang, Mubarak Shah, Chang Xu. ICCV 2023. Paris, France, October 2023, pp. 10139-10149</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>action segmentation</category>
-      <category>diffusion</category>
+      <title>Seminar: Image Quality Assessment using Semi-Supervised Representation Learning</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-04-14-image-quality-assessment-using-semi-supervised-representation-learning</guid>
+      <pubDate>Fri, 14 Apr 2023 12:00:00 GMT</pubDate>
+      <description>Yan Zhong</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>News: Congratulations to Fangqiu Yi and Yanfeng Yang for their paper &quot;Not End-to-End: Explore Mu...</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2022-09-20:5</guid>
-      <pubDate>Tue, 20 Sep 2022 12:00:00 GMT</pubDate>
-      <description>Congratulations to Fangqiu Yi and Yanfeng Yang for their paper &quot;Not End-to-End: Explore Multi-Stage Architecture for Online Surgical Phase Recognition&quot; being accepted by ACCV 2022!</description>
-      <category>news</category>
+      <title>Seminar: Segment Anything</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-04-14-segment-anything</guid>
+      <pubDate>Fri, 14 Apr 2023 12:00:00 GMT</pubDate>
+      <description>Chao Liu</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>News: Congratulations to Zhixuan Li and Weining Ye for their paper &quot;2D Amodal Instance Segmentat...</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2022-08-01:6</guid>
-      <pubDate>Mon, 01 Aug 2022 12:00:00 GMT</pubDate>
-      <description>Congratulations to Zhixuan Li and Weining Ye for their paper &quot;2D Amodal Instance Segmentation Guided by 3D Shape Prior&quot; being accepted by ECCV 2022!</description>
-      <category>news</category>
+      <title>Seminar: FineDiving: A Fine-grained Dataset for Procedure-aware Action Quality Assessment</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-04-07-finediving-a-fine-grained-dataset-for-procedure-aware-action-quality-assessment</guid>
+      <pubDate>Fri, 07 Apr 2023 12:00:00 GMT</pubDate>
+      <description>Qiyue Li</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>News: Congratulations to Yujia Liu for her paper &quot;LabelFool: A Trick In The Label Space&quot; being a...</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2022-04-27:7</guid>
-      <pubDate>Wed, 27 Apr 2022 12:00:00 GMT</pubDate>
-      <description>Congratulations to Yujia Liu for her paper &quot;LabelFool: A Trick In The Label Space&quot; being accepted by IJCNN 2022!</description>
-      <category>news</category>
+      <title>Seminar: Unsupervised Pre-training for Temporal Action Localization Tasks</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-03-31-unsupervised-pre-training-for-temporal-action-localization-tasks</guid>
+      <pubDate>Fri, 31 Mar 2023 12:00:00 GMT</pubDate>
+      <description>Yanfeng Yang</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>News: Congratulations to Ruohua Shi and Zhixuan Li for their work &quot;U-RISC: An Annotated Ultra-Hi...</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2022-04-11:8</guid>
-      <pubDate>Mon, 11 Apr 2022 12:00:00 GMT</pubDate>
-      <description>Congratulations to Ruohua Shi and Zhixuan Li for their work &quot;U-RISC: An Annotated Ultra-High-Resolution Electron Microscopy Dataset Challenging the Existing Deep Learning Algorithms&quot; being accepted by Frontiers in Computational Neuroscience!</description>
-      <category>news</category>
+      <title>Seminar: Towards Implicit Text-Guided 3D Shape Generation: Supplementary Material</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-03-31-towards-implicit-text-guided-3d-shape-generation-supplementary-material</guid>
+      <pubDate>Fri, 31 Mar 2023 12:00:00 GMT</pubDate>
+      <description>Weining Ye</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>Publication: U-RISC: an Annotated Ultra-high-resolution Electron Microscopy Dataset Challenging Existing Deep Learning Algorithms</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:shi-2022-u-risc</guid>
-      <pubDate>Sat, 01 Jan 2022 12:00:00 GMT</pubDate>
-      <description>Ruohua Shi, Wenyao Wang, Zhixuan Li, Liuyuan He, Kaiwen Sheng, Lei Ma, Kai Du, Tingting Jiang, Tiejun Huang. Frontiers in Computational Neuroscience. Vol. 16, No. 842760, April 2022</description>
-      <category>publication</category>
-      <category>journal</category>
-      <category>dataset</category>
-      <category>electron microscopy</category>
+      <title>Seminar: HCSC: Hierarchical Contrastive Selective Coding</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-03-24-hcsc-hierarchical-contrastive-selective-coding</guid>
+      <pubDate>Fri, 24 Mar 2023 12:00:00 GMT</pubDate>
+      <description>Chenxi Yang</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>Publication: LabelFool: A Trick in the Label Space</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:liu-2022-labelfool</guid>
-      <pubDate>Sat, 01 Jan 2022 12:00:00 GMT</pubDate>
-      <description>Yujia Liu, Ming Jiang, Tingting Jiang. IJCNN 2022. Padua, Italy, July 2022, pp. 1-8</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>adversarial learning</category>
+      <title>Seminar: PolyFormer: Referring Image Segmentation as Sequential Polygon Generation</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-03-17-polyformer-referring-image-segmentation-as-sequential-polygon-generation</guid>
+      <pubDate>Fri, 17 Mar 2023 12:00:00 GMT</pubDate>
+      <description>Zhixuan Li</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>Publication: Transferable Adversarial Examples Based on Global Smooth Perturbations</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:liu-2022-smooth-perturbations</guid>
-      <pubDate>Sat, 01 Jan 2022 12:00:00 GMT</pubDate>
-      <description>Yujia Liu, Ming Jiang, Tingting Jiang. Computers &amp; Security. Vol. 121, 102816, October 2022</description>
-      <category>publication</category>
-      <category>journal</category>
-      <category>adversarial learning</category>
-      <category>security</category>
+      <title>Seminar: PATCHDCT: PATCH REFINEMENT FOR HIGH QUALITY INSTANCE SEGMENTATION</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-03-17-patchdct-patch-refinement-for-high-quality-instance-segmentation</guid>
+      <pubDate>Fri, 17 Mar 2023 12:00:00 GMT</pubDate>
+      <description>Ruohua Shi</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>Publication: 2D Amodal Instance Segmentation Guided by 3D Shape Prior</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:li-2022-amodal-3d-prior</guid>
-      <pubDate>Sat, 01 Jan 2022 12:00:00 GMT</pubDate>
-      <description>Zhixuan Li, Weining Ye, Tingting Jiang, Tiejun Huang. ECCV 2022. Tel Aviv, Israel, October 2022, pp. 165-181</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>amodal segmentation</category>
-      <category>3D prior</category>
+      <title>Seminar: No Reference Opinion Unaware Quality Assessment of Authentically Distorted Images</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-03-10-no-reference-opinion-unaware-quality-assessment-of-authentically-distorted-image</guid>
+      <pubDate>Fri, 10 Mar 2023 12:00:00 GMT</pubDate>
+      <description>Yingjian Song</description>
+      <category>seminar</category>
     </item>
     <item>
-      <title>Publication: Not End-to-End: Explore Multi-Stage Architecture for Online Surgical Phase Recognition</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:yi-2022-surgical-phase</guid>
-      <pubDate>Sat, 01 Jan 2022 12:00:00 GMT</pubDate>
-      <description>Fangqiu Yi*, Yanfeng Yang*, Tingting Jiang. ACCV 2022. December 2022, pp. 417-432</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>surgical workflow</category>
-      <category>action recognition</category>
-    </item>
-    <item>
-      <title>Publication: Contrastive and Selective Hidden Embeddings for Medical Image Segmentation</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:li-2022-medical-segmentation</guid>
-      <pubDate>Sat, 01 Jan 2022 12:00:00 GMT</pubDate>
-      <description>Zihao Liu, Zhuowei Li, Zhiqiang Hu, Qing Xia, Ruiqin Xiong, Shaoting Zhang, Tingting Jiang. IEEE Transactions on Medical Imaging. Vol. 41, Issue 11, pp. 3398-3410, November 2022</description>
-      <category>publication</category>
-      <category>journal</category>
-      <category>medical image</category>
-      <category>segmentation</category>
-    </item>
-    <item>
-      <title>News: Congratulations to Fangqiu Yi and Hongyu Wen for their work &quot;ASFormer: Transformer for Act...</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2021-10-16:9</guid>
-      <pubDate>Sat, 16 Oct 2021 12:00:00 GMT</pubDate>
-      <description>Congratulations to Fangqiu Yi and Hongyu Wen for their work &quot;ASFormer: Transformer for Action Segmentation&quot; being accepted by BMVC 2021!</description>
-      <category>news</category>
-    </item>
-    <item>
-      <title>News: Congratulations to Zihao Liu for his paper &quot;Multi-level Relationship Capture Network for A...</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2021-05-19:10</guid>
-      <pubDate>Wed, 19 May 2021 12:00:00 GMT</pubDate>
-      <description>Congratulations to Zihao Liu for his paper &quot;Multi-level Relationship Capture Network for Automated Skin Lesion Recognition&quot; being accepted by MICCAI 2021!</description>
-      <category>news</category>
-    </item>
-    <item>
-      <title>News: Congratulations to Daochang Liu and Qiyue Li for their paper being accepted by CVPR 2021!</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2021-03-06:11</guid>
-      <pubDate>Sat, 06 Mar 2021 12:00:00 GMT</pubDate>
-      <description>Congratulations to Daochang Liu and Qiyue Li for their paper being accepted by CVPR 2021!</description>
-      <category>news</category>
-    </item>
-    <item>
-      <title>News: Congratulations to Dingquan Li for passing Ph.D. Defense successfully!</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2021-01-07:12</guid>
-      <pubDate>Thu, 07 Jan 2021 12:00:00 GMT</pubDate>
-      <description>Congratulations to Dingquan Li for passing Ph.D. Defense successfully!</description>
-      <category>news</category>
-    </item>
-    <item>
-      <title>Publication: Towards Unified Surgical Skill Assessment</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:liu-2021-surgical-skill</guid>
-      <pubDate>Fri, 01 Jan 2021 12:00:00 GMT</pubDate>
-      <description>Daochang Liu, Qiyue Li, Tingting Jiang, Yizhou Wang, Rulin Miao, Fei Shan, Ziyu Li. CVPR 2021. Virtual, June 2021</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>surgical skill</category>
-      <category>video understanding</category>
-    </item>
-    <item>
-      <title>Publication: Unified Quality Assessment of In-the-Wild Videos with Mixed Datasets Training</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:li-2021-unified-quality</guid>
-      <pubDate>Fri, 01 Jan 2021 12:00:00 GMT</pubDate>
-      <description>Dingquan Li, Tingting Jiang, Ming Jiang. International Journal of Computer Vision. Special Issue on Computer Vision in the Wild, Vol. 129, No. 4, pp. 1238-1257, January 2021</description>
-      <category>publication</category>
-      <category>journal</category>
-      <category>video quality assessment</category>
-    </item>
-    <item>
-      <title>Publication: Multi-level Relationship Capture Network for Automated Skin Lesion Recognition</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:liu-2021-mlr-net</guid>
-      <pubDate>Fri, 01 Jan 2021 12:00:00 GMT</pubDate>
-      <description>Zihao Liu, Ruiqin Xiong, Tingting Jiang. MICCAI 2021</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>medical image</category>
-      <category>skin lesion</category>
-    </item>
-    <item>
-      <title>Publication: ASFormer: Transformer for Action Segmentation</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:yi-2021-asformer</guid>
-      <pubDate>Fri, 01 Jan 2021 12:00:00 GMT</pubDate>
-      <description>Fangqiu Yi, Hongyu Wen, Tingting Jiang. BMVC 2021</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>action segmentation</category>
-      <category>transformer</category>
-    </item>
-    <item>
-      <title>News: Congratulations to Dingquan Li for his paper being accepted by IJCV!</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2020-11-05:13</guid>
-      <pubDate>Thu, 05 Nov 2020 12:00:00 GMT</pubDate>
-      <description>Congratulations to Dingquan Li for his paper being accepted by IJCV!</description>
-      <category>news</category>
-    </item>
-    <item>
-      <title>News: Congratulations to Daochang Liu for his paper being accepted by IJCARS!</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2020-09-19:14</guid>
-      <pubDate>Sat, 19 Sep 2020 12:00:00 GMT</pubDate>
-      <description>Congratulations to Daochang Liu for his paper being accepted by IJCARS!</description>
-      <category>news</category>
-    </item>
-    <item>
-      <title>News: We are recruiting one Master Student in computer science! The candidate should have a good...</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2020-07-30:15</guid>
-      <pubDate>Thu, 30 Jul 2020 12:00:00 GMT</pubDate>
-      <description>We are recruiting one Master Student in computer science! The candidate should have a good background in math, English, and programming, and great passion for research. If you are interested in joining our group, please send your CV to ttjiang@pku.edu.cn.</description>
-      <category>news</category>
-    </item>
-    <item>
-      <title>News: Congratulations to Dingquan Li for his paper being accepted by ACM MM 2020!</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2020-07-26:16</guid>
-      <pubDate>Sun, 26 Jul 2020 12:00:00 GMT</pubDate>
-      <description>Congratulations to Dingquan Li for his paper being accepted by ACM MM 2020!</description>
-      <category>news</category>
-    </item>
-    <item>
-      <title>News: Congratulations to Zihao Liu, Daochang Liu, Yuhui Wei, Chen Gong, and Zejia Fan for their ...</title>
-      <link>https://www.vie.group/home/</link>
-      <guid isPermaLink="false">news:2020-06-23:17</guid>
-      <pubDate>Tue, 23 Jun 2020 12:00:00 GMT</pubDate>
-      <description>Congratulations to Zihao Liu, Daochang Liu, Yuhui Wei, Chen Gong, and Zejia Fan for their papers being accepted by MICCAI 2020!</description>
-      <category>news</category>
-    </item>
-    <item>
-      <title>Publication: Reproducibility Companion Paper: Norm-in-Norm Loss with Faster Convergence and Better Performance for Image Quality Assessment</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:li-2020-ntire</guid>
-      <pubDate>Wed, 01 Jan 2020 12:00:00 GMT</pubDate>
-      <description>Dingquan Li, Tingting Jiang, Ming Jiang, Vajira Lasantha Thambawita, Haoliang Li. ACM MM 2021. Virtual, China, October 2021, pp. 3615-3618</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>image quality</category>
-      <category>super-resolution</category>
-    </item>
-    <item>
-      <title>Publication: Clearness of Operating Field: A Surrogate for Surgical Skills on In-Vivo Clinical Data</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:liu-2020-clearness</guid>
-      <pubDate>Wed, 01 Jan 2020 12:00:00 GMT</pubDate>
-      <description>Daochang Liu, Tingting Jiang, Yizhou Wang, Rulin Miao, Fei Shan, Ziyu Li. International Journal of Computer Assisted Radiology and Surgery. Vol. 15, No. 11, pp. 1817-1824, October 2020</description>
-      <category>publication</category>
-      <category>journal</category>
-      <category>surgical skill</category>
-      <category>clinical video</category>
-    </item>
-    <item>
-      <title>Publication: Quality Assessment of In-the-Wild Videos</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:li-2020-quality-acm-mm</guid>
-      <pubDate>Wed, 01 Jan 2020 12:00:00 GMT</pubDate>
-      <description>Dingquan Li, Tingting Jiang, Ming Jiang. ACM MM 2020</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>video quality assessment</category>
+      <title>Seminar: Towards certifying Linf robustness using neural networks with Linf-dist neurons</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2023-03-03-towards-certifying-linf-robustness-using-neural-networks-with-linf-dist-neurons</guid>
+      <pubDate>Fri, 03 Mar 2023 12:00:00 GMT</pubDate>
+      <description>Yujia Liu</description>
+      <category>seminar</category>
     </item>
   </channel>
 </rss>

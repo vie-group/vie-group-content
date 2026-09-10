@@ -69,6 +69,12 @@ This repository currently contains:
 
 `vie-group.github.io` is the presentation layer. It consumes this repository at runtime through `content-source.json`.
 
+Historical seminar rows from the recovered legacy `presentation/index.html` were imported into `data/seminars.json`. The import can be rerun from a local checkout:
+
+```bash
+npm run import:legacy-presentation
+```
+
 ## Published URLs
 
 GitHub Pages publishes this repository at:

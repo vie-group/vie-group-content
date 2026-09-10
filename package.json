@@ -10,6 +10,7 @@
     "add:seminar": "node scripts/update-data.mjs add-seminar",
     "add:publication": "node scripts/update-data.mjs add-publication",
     "issue:seminar": "node scripts/issue-form-to-data.mjs seminar",
-    "issue:seminar-delete": "node scripts/delete-seminar-from-issue.mjs delete"
+    "issue:seminar-delete": "node scripts/delete-seminar-from-issue.mjs delete",
+    "import:legacy-presentation": "node scripts/import-legacy-presentation.mjs"
   }
 }
