@@ -44,6 +44,18 @@ function collectOwnedAssetLinks(value, links = []) {
   return links;
 }
 
+function checkLinksObject(links, label) {
+  if (!links) return;
+  if (typeof links !== "object" || Array.isArray(links)) fail(`${label} links must be an object.`);
+  for (const [key, value] of Object.entries(links)) {
+    if (!value) continue;
+    if (typeof value !== "string") fail(`${label} links.${key} must be a string.`);
+    if (!/^(https?:\/\/|mailto:|\/?assets\/|\/?media\/)/i.test(value)) {
+      fail(`${label} links.${key} must be http(s), mailto, assets/, or media/: ${value}`);
+    }
+  }
+}
+
 const data = Object.fromEntries(
   await Promise.all(
     files.map(async (file) => {
@@ -92,7 +104,7 @@ for (const item of publications) {
   if (!["conference", "journal", "dataset"].includes(item.type)) {
     fail(`publication ${item.id} has invalid type.`);
   }
-  if (item.links && typeof item.links !== "object") fail(`publication ${item.id} links must be an object.`);
+  checkLinksObject(item.links, `publication ${item.id}`);
 }
 
 const seminars = data["data/seminars.json"];
@@ -101,7 +113,7 @@ for (const item of seminars) {
   requireString(item, "title", "seminar");
   requireString(item, "speaker", "seminar");
   if (!isIsoDate(item.date)) fail(`seminar ${item.id} must use YYYY-MM-DD date.`);
-  if (item.links && typeof item.links !== "object") fail(`seminar ${item.id} links must be an object.`);
+  checkLinksObject(item.links, `seminar ${item.id}`);
   if (item.source) {
     if (typeof item.source !== "object") fail(`seminar ${item.id} source must be an object.`);
     if (item.source.repository && typeof item.source.repository !== "string") {
