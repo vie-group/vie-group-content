@@ -6,6 +6,7 @@
     "title": "MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training",
     "abstract": "",
     "links": {
+      "image": "assets/seminars/2026/2026-09-04-mopd-multi-teacher-on-policy-distillation-for-capability-integration-in-llm-post/image.png",
       "paper": "https://arxiv.org/pdf/2606.30406",
       "slides": "assets/seminars/2026/2026-09-04-mopd-multi-teacher-on-policy-distillation-for-capability-integration-in-llm-post/slides.zip"
     },
@@ -15,6 +16,13 @@
       "repository": "vie-group/vie-group.github.io",
       "issueNumber": 1,
       "issueUrl": "https://github.com/vie-group/vie-group.github.io/issues/1",
+      "author": "frank3215"
+    },
+    "lastEdit": {
+      "type": "github-issue",
+      "repository": "vie-group/vie-group-content",
+      "issueNumber": 1,
+      "issueUrl": "https://github.com/vie-group/vie-group-content/issues/1",
       "author": "frank3215"
     }
   },
