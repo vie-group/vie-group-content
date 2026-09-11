@@ -1,0 +1,145 @@
+name: Edit publication record
+description: Edit one published publication record and optionally replace its files.
+title: "[Edit Publication] publication-id"
+labels: ["publication-edit"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to edit one publication record.
+        Original Publication ID identifies the record and stays stable even if Year, Title, or Authors change.
+        Year, Type, Authors, Title, and Venue are required. Optional URL fields are the full desired final values; leave an optional URL blank to clear it.
+        If you drag a file into an Attachment box, that attachment replaces the corresponding URL and is copied into this repository.
+  - type: input
+    id: original_publication_id
+    attributes:
+      label: Original Publication ID
+      description: The current publication id from the website edit page.
+      placeholder: "liu-2024-blade"
+    validations:
+      required: true
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: "2024"
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - conference
+        - journal
+        - dataset
+    validations:
+      required: true
+  - type: input
+    id: authors
+    attributes:
+      label: Authors
+      placeholder: "Author A, Author B, Tingting Jiang"
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      placeholder: "Publication title"
+    validations:
+      required: true
+  - type: input
+    id: venue
+    attributes:
+      label: Venue
+      placeholder: "CVPR 2024"
+    validations:
+      required: true
+  - type: textarea
+    id: note
+    attributes:
+      label: Note
+      description: Pages, location, volume/issue, month, or other note. Leave blank to clear.
+      placeholder: "Optional publication note."
+    validations:
+      required: false
+  - type: input
+    id: pdf_url
+    attributes:
+      label: PDF URL
+      description: Full desired PDF URL/path. Leave blank to clear unless using PDF Attachment.
+      placeholder: "media/pdf/example.pdf"
+    validations:
+      required: false
+  - type: textarea
+    id: pdf_attachment
+    attributes:
+      label: PDF Attachment
+      description: Drag a replacement paper PDF here.
+      placeholder: "Drop replacement PDF here."
+    validations:
+      required: false
+  - type: input
+    id: slide_url
+    attributes:
+      label: Slide URL
+      description: Full desired slide URL/path. Leave blank to clear unless using Slide Attachment.
+      placeholder: "assets/publications/2024/example/slide.pptx"
+    validations:
+      required: false
+  - type: textarea
+    id: slide_attachment
+    attributes:
+      label: Slide Attachment
+      description: Drag replacement slides here.
+      placeholder: "Drop replacement slides PDF/PPT here."
+    validations:
+      required: false
+  - type: input
+    id: poster_url
+    attributes:
+      label: Poster URL
+      description: Full desired poster URL/path. Leave blank to clear unless using Poster Attachment.
+      placeholder: "assets/publications/2024/example/poster.pdf"
+    validations:
+      required: false
+  - type: textarea
+    id: poster_attachment
+    attributes:
+      label: Poster Attachment
+      description: Drag a replacement poster PDF/image here.
+      placeholder: "Drop replacement poster here."
+    validations:
+      required: false
+  - type: input
+    id: code_url
+    attributes:
+      label: Code URL
+      description: Full desired code URL/path. Leave blank to clear unless using Code Attachment.
+      placeholder: "https://github.com/..."
+    validations:
+      required: false
+  - type: textarea
+    id: code_attachment
+    attributes:
+      label: Code Attachment
+      description: Drag replacement code archive here.
+      placeholder: "Drop replacement code zip here."
+    validations:
+      required: false
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated full desired tag list. Leave blank to clear.
+      placeholder: "segmentation, weak supervision"
+    validations:
+      required: false
+  - type: textarea
+    id: edit_note
+    attributes:
+      label: Edit Note
+      placeholder: "What changed and why?"
+    validations:
+      required: false

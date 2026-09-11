@@ -12,6 +12,7 @@
     "issue:seminar": "node scripts/issue-form-to-data.mjs seminar",
     "issue:seminar-edit": "node scripts/issue-form-to-data.mjs edit",
     "issue:seminar-delete": "node scripts/delete-seminar-from-issue.mjs delete",
+    "issue:publication-edit": "node scripts/publication-issue-to-data.mjs",
     "import:legacy-presentation": "node scripts/import-legacy-presentation.mjs"
   }
 }

@@ -40,7 +40,7 @@ docs/
 
 - `data/` contains reviewable JSON records.
 - `assets/seminars/` contains files uploaded through seminar issue workflows.
-- `assets/publications/` is reserved for future publication PDFs, posters, and slides.
+- `assets/publications/` contains files uploaded through publication edit workflows.
 - `assets/activities/` is reserved for recovered or newly added activity photos.
 - `archive/manifests/` stores recovery and migration manifests.
 - `archive/legacy-media/` is reserved for later migration of old `media/` assets from the website repository.
@@ -64,6 +64,7 @@ This repository currently contains:
 - current `data/*.json`
 - current workflow-localized seminar assets under `assets/seminars/`
 - seminar submission, edit, and deletion issue templates
+- publication edit issue template
 - content update workflows for News, Publications, and Seminars
 - validation scripts and CI
 
@@ -108,3 +109,17 @@ Preferred path:
 The `seminar-edit` workflow treats the issue as the complete desired final record for that seminar. `Original Seminar ID` remains stable even if date or title changes. Attachments override matching URL fields and are copied into `assets/seminars/<year>/<seminar-id>/`.
 
 Unlike seminar deletion, editing is not limited to the original submitter. Any repository `OWNER`, `MEMBER`, or `COLLABORATOR` can edit any selected seminar record; outside users are rejected by the workflow.
+
+## Editing One Publication
+
+Preferred path:
+
+1. Open `https://vie-group.github.io/publication/?manage=1`.
+2. Click `(edit publication...)`, or open `https://vie-group.github.io/edit-publication/?manage=1` and choose a record.
+3. Check the pre-filled metadata and links.
+4. Keep an existing URL/path if it should remain unchanged.
+5. Clear a URL/path if the field should be removed.
+6. On the GitHub issue page, drag a replacement file into the matching attachment section when replacing PDF, slide, poster, or code.
+7. Submit the issue.
+
+The `publication-edit` workflow treats the issue as the complete desired final record for that publication. `Original Publication ID` remains stable even if year, authors, or title changes. Attachments override matching URL fields and are copied into `assets/publications/<year>/<publication-id>/`.
