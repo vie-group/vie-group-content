@@ -1,19 +1,5 @@
 [
   {
-    "id": "shi-2024-evidential",
-    "type": "conference",
-    "year": 2024,
-    "authors": "Ruohua Shi, Lingyu Duan, Tiejun Huang, Tingting Jiang",
-    "title": "Evidential Uncertainty-guided Mitochondria Segmentation for 3D EM Images",
-    "venue": "AAAI 2024",
-    "note": "Association for the Advancement of Artificial Intelligence, February 2024",
-    "links": {
-      "pdf": "media/pdf/AAAI2024_SRH_cr.pdf",
-      "poster": "media/pdf/poster_srh_aaai_S3M6ZRr.pdf"
-    },
-    "tags": ["medical image", "segmentation", "uncertainty"]
-  },
-  {
     "id": "liu-2024-blade",
     "type": "conference",
     "year": 2024,
@@ -26,7 +12,44 @@
       "slide": "media/pdf/BLADE_PPT_v3.pdf",
       "poster": "media/pdf/AAAI_BLADE_Poster_v3_Resized.pdf"
     },
-    "tags": ["amodal segmentation", "weak supervision"]
+    "tags": [
+      "amodal segmentation",
+      "weak supervision"
+    ],
+    "rawCitation": "Zhaochen Liu*, Zhixuan Li*, Tingting Jiang. BLADE: Box-Level Supervised Amodal Segmentation through Directed Expansion, Association for the Advancement of Artificial Intelligence (AAAI), Vancouver, Canada, February 2024.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 2
+    }
+  },
+  {
+    "id": "shi-2024-evidential",
+    "type": "conference",
+    "year": 2024,
+    "authors": "Ruohua Shi, Lingyu Duan, Tiejun Huang, Tingting Jiang",
+    "title": "Evidential Uncertainty-guided Mitochondria Segmentation for 3D EM Images",
+    "venue": "AAAI 2024",
+    "note": "Association for the Advancement of Artificial Intelligence, February 2024",
+    "links": {
+      "pdf": "media/pdf/AAAI2024_SRH_cr.pdf",
+      "poster": "media/pdf/poster_srh_aaai_S3M6ZRr.pdf"
+    },
+    "tags": [
+      "medical image",
+      "segmentation",
+      "uncertainty"
+    ],
+    "rawCitation": "Ruohua Shi, Lingyu Duan, Tiejun Huang, Tingting Jiang. Evidential Uncertainty-guided Mitochondria Segmentation for 3D EM Images, Association for the Advancement of Artificial Intelligence (AAAI), February 2024",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 1
+    }
   },
   {
     "id": "liu-2024-robustness",
@@ -37,7 +60,10 @@
     "venue": "CVPR 2024",
     "note": "",
     "links": {},
-    "tags": ["robustness", "large-scale models"]
+    "tags": [
+      "robustness",
+      "large-scale models"
+    ]
   },
   {
     "id": "liu-2023-ci-net",
@@ -50,47 +76,18 @@
     "links": {
       "pdf": "media/pdf/TMI_2023.pdf"
     },
-    "tags": ["medical image", "skin lesion"]
-  },
-  {
-    "id": "li-2023-oaformer",
-    "type": "conference",
-    "year": 2023,
-    "authors": "Zhixuan Li, Ruohua Shi, Tiejun Huang, Tingting Jiang",
-    "title": "OAFormer: Learning Occlusion Distinguishable Feature for Amodal Instance Segmentation",
-    "venue": "ICASSP 2023",
-    "note": "Rhodes Island, Greece, June 2023, pp. 1-5",
-    "links": {
-      "pdf": "media/pdf/OAFormer_Learning_Occlusion_Distinguishable_Feature_for_Amodal_Instance_Segmentation.pdf",
-      "poster": "media/pdf/302_poster.pdf"
-    },
-    "tags": ["amodal segmentation", "occlusion"]
-  },
-  {
-    "id": "li-2023-muva",
-    "type": "conference",
-    "year": 2023,
-    "authors": "Zhixuan Li, Weining Ye, Juan Terven, Zachary Bennett, Ying Zheng, Tingting Jiang, Tiejun Huang",
-    "title": "MUVA: A New Large-Scale Benchmark for Multi-view Amodal Instance Segmentation in the Shopping Scenario",
-    "venue": "ICCV 2023",
-    "note": "Paris, France, October 2023, pp. 23447-23456",
-    "links": {
-      "pdf": "media/pdf/ICCV_2023_ZhixuanLi.pdf"
-    },
-    "tags": ["dataset", "multi-view", "amodal segmentation"]
-  },
-  {
-    "id": "shi-2023-ps-net",
-    "type": "journal",
-    "year": 2023,
-    "authors": "Ruohua Shi, Keyan Bi, Kai Du, Lei Ma, Fang Fang, Lingyu Duan, Tingting Jiang, Tiejun Huang",
-    "title": "PS-Net: Human perception-guided segmentation network for EM cell membrane",
-    "venue": "Bioinformatics",
-    "note": "Vol. 39, Issue 8, August 2023, btad464",
-    "links": {
-      "pdf": "media/pdf/btad464.pdf"
-    },
-    "tags": ["bioinformatics", "segmentation"]
+    "tags": [
+      "medical image",
+      "skin lesion"
+    ],
+    "rawCitation": "Zihao Liu, Ruiqin Xiong, Tingting Jiang. CI-Net: Clinical-Inspired Network for Automated Skin Lesion Recognition. IEEE Transactions on Medical Imaging (TMI), Vol. 42, Issue. 3, pp. 619-632, March 2023.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 1
+    }
   },
   {
     "id": "liu-2023-diffusion-action",
@@ -103,47 +100,93 @@
     "links": {
       "pdf": "media/pdf/ICCV_2023_DaochangLiu.pdf"
     },
-    "tags": ["action segmentation", "diffusion"]
+    "tags": [
+      "action segmentation",
+      "diffusion"
+    ],
+    "rawCitation": "Daochang Liu and Qiyue Li and AnhDung Dinh and Tingting Jiang and Mubarak Shah, Chang Xu, Diffusion Action Segmentation, International Conference on Computer Vision (ICCV), Paris, France, October 2023,pp.10139-10149.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 5
+    }
   },
   {
-    "id": "shi-2022-u-risc",
-    "type": "journal",
-    "year": 2022,
-    "authors": "Ruohua Shi, Wenyao Wang, Zhixuan Li, Liuyuan He, Kaiwen Sheng, Lei Ma, Kai Du, Tingting Jiang, Tiejun Huang",
-    "title": "U-RISC: an Annotated Ultra-high-resolution Electron Microscopy Dataset Challenging Existing Deep Learning Algorithms",
-    "venue": "Frontiers in Computational Neuroscience",
-    "note": "Vol. 16, No. 842760, April 2022",
-    "links": {
-      "pdf": "media/pdf/fncom-16-842760.pdf"
-    },
-    "tags": ["dataset", "electron microscopy"]
-  },
-  {
-    "id": "liu-2022-labelfool",
+    "id": "li-2023-muva",
     "type": "conference",
-    "year": 2022,
-    "authors": "Yujia Liu, Ming Jiang, Tingting Jiang",
-    "title": "LabelFool: A Trick in the Label Space",
-    "venue": "IJCNN 2022",
-    "note": "Padua, Italy, July 2022, pp. 1-8",
+    "year": 2023,
+    "authors": "Zhixuan Li, Weining Ye, Juan Terven, Zachary Bennett, Ying Zheng, Tingting Jiang, Tiejun Huang",
+    "title": "MUVA: A New Large-Scale Benchmark for Multi-view Amodal Instance Segmentation in the Shopping Scenario",
+    "venue": "ICCV 2023",
+    "note": "Paris, France, October 2023, pp. 23447-23456",
     "links": {
-      "pdf": "media/pdf/LabelFool_A_Trick_In_The_Label_Space.pdf",
-      "poster": "media/pdf/LabelFool_poster.pdf"
+      "pdf": "media/pdf/ICCV_2023_ZhixuanLi.pdf"
     },
-    "tags": ["adversarial learning"]
+    "tags": [
+      "dataset",
+      "multi-view",
+      "amodal segmentation"
+    ],
+    "rawCitation": "Zhixuan Li, Weining Ye, Juan Terven, Zachary Bennett, Ying Zheng, Tingting Jiang, Tiejun Huang, MUVA: A New Large-Scale Benchmark for Multi-view Amodal Instance Segmentation in the Shopping Scenario, International Conference on Computer Vision (ICCV), Paris, France, October 2023, pp. 23447-23456.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 4
+    }
   },
   {
-    "id": "liu-2022-smooth-perturbations",
-    "type": "journal",
-    "year": 2022,
-    "authors": "Yujia Liu, Ming Jiang, Tingting Jiang",
-    "title": "Transferable Adversarial Examples Based on Global Smooth Perturbations",
-    "venue": "Computers & Security",
-    "note": "Vol. 121, 102816, October 2022",
+    "id": "li-2023-oaformer",
+    "type": "conference",
+    "year": 2023,
+    "authors": "Zhixuan Li, Ruohua Shi, Tiejun Huang, Tingting Jiang",
+    "title": "OAFormer: Learning Occlusion Distinguishable Feature for Amodal Instance Segmentation",
+    "venue": "ICASSP 2023",
+    "note": "Rhodes Island, Greece, June 2023, pp. 1-5",
     "links": {
-      "pdf": "media/pdf/Transferable_adversarial_examples_based_on_global_smooth_perturbations.pdf"
+      "pdf": "media/pdf/OAFormer_Learning_Occlusion_Distinguishable_Feature_for_Amodal_Instance_Segmentation.pdf",
+      "slide": "media/pdf/302_video_slide.pptx",
+      "poster": "media/pdf/302_poster.pdf"
     },
-    "tags": ["adversarial learning", "security"]
+    "tags": [
+      "amodal segmentation",
+      "occlusion"
+    ],
+    "rawCitation": "Zhixuan Li, Ruohua Shi, Tiejun Huang, and Tingting Jiang, OAFormer: Learning Occlusion Distinguishable Feature for Amodal Instance Segmentation, International Conference on Acoustics, Speech, & Signal Processing (ICASSP), Rhodes Island, Greece, June 2023, pp. 1-5.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 3
+    }
+  },
+  {
+    "id": "shi-2023-ps-net",
+    "type": "journal",
+    "year": 2023,
+    "authors": "Ruohua Shi, Keyan Bi, Kai Du, Lei Ma, Fang Fang, Lingyu Duan, Tingting Jiang, Tiejun Huang",
+    "title": "PS-Net: Human perception-guided segmentation network for EM cell membrane",
+    "venue": "Bioinformatics",
+    "note": "Vol. 39, Issue 8, August 2023, btad464",
+    "links": {
+      "pdf": "media/pdf/btad464.pdf"
+    },
+    "tags": [
+      "bioinformatics",
+      "segmentation"
+    ],
+    "rawCitation": "Ruohua Shi, Keyan Bi, Kai Du, Lei Ma, Fang Fang, Lingyu Duan, Tingting Jiang, Tiejun Huang, PS-Net: Human perception-guided segmentation network for EM cell membrane, Bioinformatics,Volume 39, Issue 8, August 2023, , btad464.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 2
+    }
   },
   {
     "id": "li-2022-amodal-3d-prior",
@@ -158,7 +201,67 @@
       "slide": "media/pdf/2272_video_slide.pptx",
       "poster": "media/pdf/2272_poster.pdf"
     },
-    "tags": ["amodal segmentation", "3D prior"]
+    "tags": [
+      "amodal segmentation",
+      "3D prior"
+    ],
+    "rawCitation": "Zhixuan Li, Weining Ye, Tingting Jiang, and Tiejun Huang, 2D Amodal Instance Segmentation Guided by 3D Shape Prior, European Conference on Computer Vision (ECCV), Tel Aviv, Israel, October 2022, pp. 165-181.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 7
+    }
+  },
+  {
+    "id": "li-2022-medical-segmentation",
+    "type": "journal",
+    "year": 2022,
+    "authors": "Zihao Liu, Zhuowei Li, Zhiqiang Hu, Qing Xia, Ruiqin Xiong, Shaoting Zhang, Tingting Jiang",
+    "title": "Contrastive and Selective Hidden Embeddings for Medical Image Segmentation",
+    "venue": "IEEE Transactions on Medical Imaging",
+    "note": "Vol. 41, Issue 11, pp. 3398-3410, November 2022",
+    "links": {
+      "pdf": "media/pdf/seg_WQE0Dfg.pdf"
+    },
+    "tags": [
+      "medical image",
+      "segmentation"
+    ],
+    "rawCitation": "Zihao Liu, Zhuowei Li, Zhiqiang Hu, Qing Xia, Ruiqin Xiong, Shaoting Zhang and Tingting Jiang. Contrastive and Selective Hidden Embeddings for Medical Image Segmentation. IEEE Transactions on Medical Imaging (TMI), Vol. 41, Issue. 11, pp. 3398-3410, November 2022.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 5
+    }
+  },
+  {
+    "id": "liu-2022-labelfool",
+    "type": "conference",
+    "year": 2022,
+    "authors": "Yujia Liu, Ming Jiang, Tingting Jiang",
+    "title": "LabelFool: A Trick in the Label Space",
+    "venue": "IJCNN 2022",
+    "note": "Padua, Italy, July 2022, pp. 1-8",
+    "links": {
+      "pdf": "media/pdf/LabelFool_A_Trick_In_The_Label_Space.pdf",
+      "code": "media/code/IJCNN_LabelFool.zip",
+      "poster": "media/pdf/LabelFool_poster.pdf"
+    },
+    "tags": [
+      "adversarial learning"
+    ],
+    "rawCitation": "Yujia Liu, Ming Jiang, Tingting Jiang, LabelFool: A Trick in the Label Space, International Joint Conference on Neural Networks (IJCNN), Padua, Italy, July 2022, pp.1--8.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 6
+    }
   },
   {
     "id": "yi-2022-surgical-phase",
@@ -172,48 +275,112 @@
       "pdf": "media/pdf/0508_1.pdf",
       "poster": "media/pdf/0508-Poster.pdf"
     },
-    "tags": ["surgical workflow", "action recognition"]
+    "tags": [
+      "surgical workflow",
+      "action recognition"
+    ],
+    "rawCitation": "Fangqiu Yi*, Yanfeng Yang*, and Tingting Jiang, Not End-to-End: Explore Multi-Stage Architecture for Online Surgical Phase Recognition, Asian Conference on Computer Vision (ACCV), December 2022, pp. 417-432.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 8
+    }
   },
   {
-    "id": "li-2022-medical-segmentation",
+    "id": "wenkang-qin-2022-pathtr-context-aware-memory-transformer-for-tumor-localization-in-gigapixel-path",
+    "type": "conference",
+    "year": 2022,
+    "authors": "Wenkang Qin, Rui Xu, Shan Jiang, Tingting Jiang, Lin Luo",
+    "title": "PathTR: Context-Aware Memory Transformer for Tumor Localization in Gigapixel Pathology Images",
+    "venue": "Asian Conference on Computer Vision (ACCV)",
+    "note": "December 2022, pp. 3603-3619",
+    "links": {
+      "pdf": "media/pdf/ACCV_2022.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Wenkang Qin, Rui Xu, Shan Jiang, Tingting Jiang, Lin Luo, PathTR: Context-Aware Memory Transformer for Tumor Localization in Gigapixel Pathology Images, Asian Conference on Computer Vision (ACCV), December 2022, pp. 3603-3619.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 9
+    }
+  },
+  {
+    "id": "liu-2022-smooth-perturbations",
     "type": "journal",
     "year": 2022,
-    "authors": "Zihao Liu, Zhuowei Li, Zhiqiang Hu, Qing Xia, Ruiqin Xiong, Shaoting Zhang, Tingting Jiang",
-    "title": "Contrastive and Selective Hidden Embeddings for Medical Image Segmentation",
-    "venue": "IEEE Transactions on Medical Imaging",
-    "note": "Vol. 41, Issue 11, pp. 3398-3410, November 2022",
+    "authors": "Yujia Liu, Ming Jiang, Tingting Jiang",
+    "title": "Transferable Adversarial Examples Based on Global Smooth Perturbations",
+    "venue": "Computers & Security",
+    "note": "Vol. 121, 102816, October 2022",
     "links": {
-      "pdf": "media/pdf/seg_WQE0Dfg.pdf"
+      "pdf": "media/pdf/Transferable_adversarial_examples_based_on_global_smooth_perturbations.pdf"
     },
-    "tags": ["medical image", "segmentation"]
+    "tags": [
+      "adversarial learning",
+      "security"
+    ],
+    "rawCitation": "Yujia Liu, Ming Jiang, Tingting Jiang, Transferable Adversarial Examples Based on Global Smooth Perturbations, Computers & Security, Vol. 121, 102816, October 2022.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 4
+    }
   },
   {
-    "id": "liu-2021-surgical-skill",
+    "id": "shi-2022-u-risc",
+    "type": "journal",
+    "year": 2022,
+    "authors": "Ruohua Shi, Wenyao Wang, Zhixuan Li, Liuyuan He, Kaiwen Sheng, Lei Ma, Kai Du, Tingting Jiang, Tiejun Huang",
+    "title": "U-RISC: an Annotated Ultra-high-resolution Electron Microscopy Dataset Challenging Existing Deep Learning Algorithms",
+    "venue": "Frontiers in Computational Neuroscience",
+    "note": "Vol. 16, No. 842760, April 2022",
+    "links": {
+      "pdf": "media/pdf/fncom-16-842760.pdf"
+    },
+    "tags": [
+      "dataset",
+      "electron microscopy"
+    ],
+    "rawCitation": "Ruohua Shi, Wenyao Wang, Zhixuan Li, Liuyuan He, Kaiwen Sheng, Lei Ma, Kai Du, Tingting Jiang and Tiejun Huang. U-RISC: an Annotated Ultra-high-resolution Electron Microscopy Dataset Challenging Existing Deep Learning Algorithms. Frontiers in Computational Neuroscience, Vol.16, No. 842760, April 2022.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 3
+    }
+  },
+  {
+    "id": "yi-2021-asformer",
     "type": "conference",
     "year": 2021,
-    "authors": "Daochang Liu, Qiyue Li, Tingting Jiang, Yizhou Wang, Rulin Miao, Fei Shan, Ziyu Li",
-    "title": "Towards Unified Surgical Skill Assessment",
-    "venue": "CVPR 2021",
-    "note": "Virtual, June 2021",
+    "authors": "Fangqiu Yi, Hongyu Wen, Tingting Jiang",
+    "title": "ASFormer: Transformer for Action Segmentation",
+    "venue": "BMVC 2021",
+    "note": "",
     "links": {
-      "pdf": "media/pdf/CVPR_2021.pdf",
-      "slide": "media/pdf/CVPR2021_SLIDES.pptx",
-      "poster": "media/pdf/CVPR2021_POSTER.pdf"
+      "pdf": "media/pdf/0183.pdf",
+      "slide": "media/pdf/0183_talk.pptx"
     },
-    "tags": ["surgical skill", "video understanding"]
-  },
-  {
-    "id": "li-2021-unified-quality",
-    "type": "journal",
-    "year": 2021,
-    "authors": "Dingquan Li, Tingting Jiang, Ming Jiang",
-    "title": "Unified Quality Assessment of In-the-Wild Videos with Mixed Datasets Training",
-    "venue": "International Journal of Computer Vision",
-    "note": "Special Issue on Computer Vision in the Wild, Vol. 129, No. 4, pp. 1238-1257, January 2021",
-    "links": {
-      "pdf": "media/pdf/Li-2021-Unified-quality-assessment-of-in-th.pdf"
-    },
-    "tags": ["video quality assessment"]
+    "tags": [
+      "action segmentation",
+      "transformer"
+    ],
+    "rawCitation": "Fangqiu Yi , Hongyu Wen and Tingting Jiang. ASFormer: Transformer for Action Segmentation. The British Machine Vision Conference (BMVC), Virtual, November 2021, pp. 1-15.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 13
+    }
   },
   {
     "id": "liu-2021-mlr-net",
@@ -228,34 +395,69 @@
       "slide": "media/pdf/Presentation_270.pptx",
       "poster": "media/pdf/Graph_Abstract_270.pdf"
     },
-    "tags": ["medical image", "skin lesion"]
+    "tags": [
+      "medical image",
+      "skin lesion"
+    ],
+    "rawCitation": "Zihao Liu, Ruiqin Xiong, Tingting Jiang. Multi-level Relationship Capture Network for Automated Skin Lesion Recognition. International Conference On Medical Image Computing and Computer Assisted Intervention (MICCAI), October 2021, Virtual.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 12
+    }
   },
   {
-    "id": "yi-2021-asformer",
+    "id": "liu-2021-surgical-skill",
     "type": "conference",
     "year": 2021,
-    "authors": "Fangqiu Yi, Hongyu Wen, Tingting Jiang",
-    "title": "ASFormer: Transformer for Action Segmentation",
-    "venue": "BMVC 2021",
-    "note": "",
+    "authors": "Daochang Liu, Qiyue Li, Tingting Jiang, Yizhou Wang, Rulin Miao, Fei Shan, Ziyu Li",
+    "title": "Towards Unified Surgical Skill Assessment",
+    "venue": "CVPR 2021",
+    "note": "Virtual, June 2021",
     "links": {
-      "pdf": "media/pdf/0183.pdf",
-      "slide": "media/pdf/0183_talk.pptx"
+      "pdf": "media/pdf/CVPR_2021.pdf",
+      "code": "media/code/Towards-Unified-Surgical-Skill-Assessment-main.zip",
+      "slide": "media/pdf/CVPR2021_SLIDES.pptx",
+      "poster": "media/pdf/CVPR2021_POSTER.pdf"
     },
-    "tags": ["action segmentation", "transformer"]
+    "tags": [
+      "surgical skill",
+      "video understanding"
+    ],
+    "rawCitation": "Daochang Liu, Qiyue Li, Tingting Jiang, Yizhou Wang, Rulin Miao, Fei Shan and Ziyu Li, Towards Unified Surgical Skill Assessment, IEEE Conference on Computer Vision and Pattern Recognition (CVPR), virtual, June 2021, pp. 9522--9531.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 10
+    }
   },
   {
-    "id": "li-2020-ntire",
-    "type": "conference",
-    "year": 2020,
-    "authors": "Dingquan Li, Tingting Jiang, Ming Jiang, Vajira Lasantha Thambawita, Haoliang Li",
-    "title": "Reproducibility Companion Paper: Norm-in-Norm Loss with Faster Convergence and Better Performance for Image Quality Assessment",
-    "venue": "ACM MM 2021",
-    "note": "Virtual, China, October 2021, pp. 3615-3618",
+    "id": "li-2021-unified-quality",
+    "type": "journal",
+    "year": 2021,
+    "authors": "Dingquan Li, Tingting Jiang, Ming Jiang",
+    "title": "Unified Quality Assessment of In-the-Wild Videos with Mixed Datasets Training",
+    "venue": "International Journal of Computer Vision",
+    "note": "Special Issue on Computer Vision in the Wild, Vol. 129, No. 4, pp. 1238-1257, January 2021",
     "links": {
-      "pdf": "media/pdf/rcp0011-liA.pdf"
+      "pdf": "media/pdf/Li-2021-Unified-quality-assessment-of-in-th.pdf",
+      "code": "media/code/MDTVSFA-main.zip"
     },
-    "tags": ["image quality", "super-resolution"]
+    "tags": [
+      "video quality assessment"
+    ],
+    "rawCitation": "Dingquan Li, Tingting Jiang, and Ming Jiang. Unified Quality Assessment of In-the-Wild Videos with Mixed Datasets Training, International Journal of Computer Vision, Special Issue on Computer Vision in the Wild, Vol. 129, No. 4, pp. 1238--1257, January 2021.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 6
+    }
   },
   {
     "id": "liu-2020-clearness",
@@ -268,22 +470,41 @@
     "links": {
       "pdf": "media/pdf/IJCARS.pdf"
     },
-    "tags": ["surgical skill", "clinical video"]
+    "tags": [
+      "surgical skill",
+      "clinical video"
+    ],
+    "rawCitation": "Daochang Liu, Tingting Jiang, Yizhou Wang, Rulin Miao, Fei Shan, and Ziyu Li , Clearness of Operating Field: A Surrogate for Surgical Skills on In-Vivo Clinical Data, International Journal of Computer Assisted Radiology and Surgery, Vol. 15, No. 11, pp. 1817--1824, October 2020.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 7
+    }
   },
   {
-    "id": "li-2020-quality-acm-mm",
+    "id": "zihao-liu-2020-clinical-inspired-network-for-skin-lesion-recognition",
     "type": "conference",
     "year": 2020,
-    "authors": "Dingquan Li, Tingting Jiang, Ming Jiang",
-    "title": "Quality Assessment of In-the-Wild Videos",
-    "venue": "ACM MM 2020",
-    "note": "",
+    "authors": "Zihao Liu, Ruiqin Xiong and Tingting Jiang",
+    "title": "Clinical-Inspired Network for Skin Lesion Recognition",
+    "venue": "International Conference On Medical Image Computing and Computer Assisted Intervention (MICCAI)",
+    "note": "October 2020, Virtual",
     "links": {
-      "pdf": "media/pdf/fp775-liA.pdf",
-      "slide": "media/pdf/P5B-01_presentation_with_videos.pptx",
-      "poster": "media/pdf/P5B-01.pdf"
+      "pdf": "media/pdf/Paper617_wn1mj2e.pdf",
+      "slide": "media/pdf/Presentation_617.pptx",
+      "poster": "media/pdf/Abstract_617.pdf"
     },
-    "tags": ["video quality assessment"]
+    "tags": [],
+    "rawCitation": "Zihao Liu, Ruiqin Xiong and Tingting Jiang. Clinical-Inspired Network for Skin Lesion Recognition. International Conference On Medical Image Computing and Computer Assisted Intervention (MICCAI), October 2020, Virtual",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 18
+    }
   },
   {
     "id": "li-2020-graph-tracking",
@@ -295,25 +516,166 @@
     "note": "",
     "links": {
       "pdf": "media/pdf/0028_Wsjq0ED.pdf",
+      "code": "media/code/GNMOT-master.zip",
       "slide": "media/pdf/0028_aq47djc.pdf",
       "poster": "media/pdf/poster_Mdjyg2b.pdf"
     },
-    "tags": ["object tracking", "graph networks"]
+    "tags": [
+      "object tracking",
+      "graph networks"
+    ],
+    "rawCitation": "Jiahe Li, Xu Gao, and Tingting Jiang. Graph Networks for Multiple Object Tracking. Winter Conference on Applications of Computer Vision (WACV), Snowmass Village, CO, USA, March 2020, pp. 708--717.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 14
+    }
   },
   {
-    "id": "li-2020-skeleton-compression",
+    "id": "zihao-liu-2020-multi-class-skin-lesion-segmentation-for-cutaneous-t-cell-lymphomas-on-high-reso",
     "type": "conference",
-    "year": 2019,
-    "authors": "Sheng Li, Tingting Jiang, Tiejun Huang, Yonghong Tian",
-    "title": "Global Co-occurrence Feature Learning and Active Coordinate System Conversion for Skeleton Based Action Recognition",
-    "venue": "WACV 2020",
+    "year": 2020,
+    "authors": "Zihao Liu, Haihao Pan, Chen Gong, Zejia Fan, Yujie Wen, Tingting Jiang, Ruiqin Xiong, Hang Li, and Yang Wang",
+    "title": "Multi-class Skin Lesion Segmentation for Cutaneous T-cell Lymphomas on High-Resolution Clinical Images",
+    "venue": "International Conference On Medical Image Computing and Computer Assisted Intervention (MICCAI)",
+    "note": "October 2020, Virtual",
+    "links": {
+      "pdf": "media/pdf/Paper_618.pdf",
+      "slide": "media/pdf/Presentation_618.pptx",
+      "poster": "media/pdf/Abstract_618.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Zihao Liu, Haihao Pan, Chen Gong, Zejia Fan, Yujie Wen, Tingting Jiang, Ruiqin Xiong, Hang Li, and Yang Wang. Multi-class Skin Lesion Segmentation for Cutaneous T-cell Lymphomas on High-Resolution Clinical Images. International Conference On Medical Image Computing and Computer Assisted Intervention (MICCAI), October 2020, Virtual",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 19
+    }
+  },
+  {
+    "id": "dingquan-li-2020-norm-in-norm-loss-with-faster-convergence-and-better-performance-for-image-quali",
+    "type": "conference",
+    "year": 2020,
+    "authors": "Dingquan Li, Tingting Jiang, and Ming Jiang",
+    "title": "Norm-in-Norm Loss with Faster Convergence and Better Performance for Image Quality Assessment",
+    "venue": "ACM International Conference on Multimedia (ACM MM), Seattle, WA, USA",
+    "note": "October 2020, pp. 789--797",
+    "links": {
+      "pdf": "media/pdf/2008.03889.pdf",
+      "code": "media/code/LinearityIQA-master.zip",
+      "slide": "media/pdf/MM20-fp0612.mp4",
+      "poster": "media/pdf/MM20-fp0612-one-slide.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Dingquan Li, Tingting Jiang, and Ming Jiang. Norm-in-Norm Loss with Faster Convergence and Better Performance for Image Quality Assessment. ACM International Conference on Multimedia (ACM MM), Seattle, WA, USA, October 2020, pp. 789--797.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 17
+    }
+  },
+  {
+    "id": "daochang-liu-2020-october-2020",
+    "type": "conference",
+    "year": 2020,
+    "authors": "Daochang Liu*, Yuhui Wei*, Tingting Jiang, Yizhou Wang, Rulin Miao, Fei Shan, and Ziyu Li, Unsupervised Surgical Instrument Segmentation via Anchor Generation and Semantic Diffusion, Medical Image Computing and Computer Assisted Intervention (MICCAI), Lima, Peru",
+    "title": "October 2020",
+    "venue": "pp. 657--667",
     "note": "",
     "links": {
-      "pdf": "media/pdf/0559.pdf",
-      "slide": "media/pdf/short-oral.pptx",
-      "poster": "media/pdf/poster_update.pdf"
+      "pdf": "media/pdf/paper204.pdf",
+      "code": "media/code/AGSD-Surgical-Instrument-Segmentation-master.zip",
+      "slide": "media/pdf/MICCAI_2020_Slides.pdf",
+      "poster": "media/pdf/Abstract_204.pdf"
     },
-    "tags": ["action recognition", "skeleton"]
+    "tags": [],
+    "rawCitation": "Daochang Liu*, Yuhui Wei*, Tingting Jiang, Yizhou Wang, Rulin Miao, Fei Shan, and Ziyu Li, Unsupervised Surgical Instrument Segmentation via Anchor Generation and Semantic Diffusion, Medical Image Computing and Computer Assisted Intervention (MICCAI), Lima, Peru, October 2020, pp. 657--667.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 16
+    }
+  },
+  {
+    "id": "li-2020-quality-acm-mm",
+    "type": "conference",
+    "year": 2020,
+    "authors": "Dingquan Li, Tingting Jiang, Ming Jiang",
+    "title": "Quality Assessment of In-the-Wild Videos",
+    "venue": "ACM MM 2020",
+    "note": "",
+    "links": {
+      "pdf": "media/pdf/fp775-liA.pdf",
+      "code": "media/code/VSFA_MWd9Ruv.zip",
+      "slide": "media/pdf/P5B-01_presentation_with_videos.pptx",
+      "poster": "media/pdf/P5B-01.pdf"
+    },
+    "tags": [
+      "video quality assessment"
+    ],
+    "rawCitation": "Dingquan Li, Tingting Jiang, and Ming Jiang. Quality Assessment of In-the-Wild Videos. ACM International Conference on Multimedia (ACM MM), Nice, France, October 2019, pp. 2351--2359.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 23
+    }
+  },
+  {
+    "id": "li-2020-ntire",
+    "type": "conference",
+    "year": 2020,
+    "authors": "Dingquan Li, Tingting Jiang, Ming Jiang, Vajira Lasantha Thambawita, Haoliang Li",
+    "title": "Reproducibility Companion Paper: Norm-in-Norm Loss with Faster Convergence and Better Performance for Image Quality Assessment",
+    "venue": "ACM MM 2021",
+    "note": "Virtual, China, October 2021, pp. 3615-3618",
+    "links": {
+      "pdf": "media/pdf/rcp0011-liA.pdf",
+      "code": "media/code/LinearityIQA-master_0l2Pjrf.zip"
+    },
+    "tags": [
+      "image quality",
+      "super-resolution"
+    ],
+    "rawCitation": "Dingquan Li, Tingting Jiang, Ming Jiang, Vajira Lasantha Thambawita, and Haoliang Wang. Reproducibility Companion Paper: Norm-in-Norm Loss with Faster Convergence and Better Performance for Image Quality Assessment. ACM International Conference on Multimedia (ACM MM), Virtual, China, October 2021, pp. 3615--3618.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 11
+    }
+  },
+  {
+    "id": "sheng-li-2019-3d-human-skeleton-data-compression-for-action-recognition",
+    "type": "conference",
+    "year": 2019,
+    "authors": "Sheng Li, Tingting Jiang, Yonghong Tian, and Tiejun Huang",
+    "title": "3D Human Skeleton Data Compression for Action Recognition",
+    "venue": "IEEE Visual Communications and Image Processing (VCIP), Sydney, Australia",
+    "note": "December 2019, pp. 1--4",
+    "links": {
+      "pdf": "media/pdf/229.pdf",
+      "poster": "media/pdf/VCIP_poster_1.2.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Sheng Li, Tingting Jiang, Yonghong Tian, and Tiejun Huang. 3D Human Skeleton Data Compression for Action Recognition, IEEE Visual Communications and Image Processing (VCIP), Sydney, Australia, December 2019, pp. 1--4.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 25
+    }
   },
   {
     "id": "liu-2019-cmcs",
@@ -329,7 +691,18 @@
       "slide": "media/pdf/1273-supp.zip",
       "poster": "media/pdf/CVPR海报_ldc_final.pdf"
     },
-    "tags": ["temporal action localization", "weak supervision"]
+    "tags": [
+      "temporal action localization",
+      "weak supervision"
+    ],
+    "rawCitation": "Daochang Liu, Tingting Jiang, and Yizhou Wang, Completeness Modeling and Context Separation for Weakly Supervised Temporal Action Localization, IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Long Beach, CA, USA, June 2019, pp. 1298--1307.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 20
+    }
   },
   {
     "id": "huang-2019-distortion",
@@ -342,21 +715,66 @@
     "links": {
       "pdf": "media/pdf/ICME_2019.pdf"
     },
-    "tags": ["image quality assessment"]
+    "tags": [
+      "image quality assessment"
+    ],
+    "rawCitation": "Chen Huang, Tingting Jiang, and Ming Jiang, Encoding Distortions for Multi-Task Full-Reference Image Quality Assessment, IEEE International Conference on Multimedia and Expo (ICME), Shanghai, China, July 2019, pp. 1864--1869.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 22
+    }
   },
   {
-    "id": "li-2019-clear-blue-sky",
-    "type": "journal",
+    "id": "li-2020-skeleton-compression",
+    "type": "conference",
     "year": 2019,
-    "authors": "Dingquan Li, Tingting Jiang, Weisi Lin, Ming Jiang",
-    "title": "Which Has Better Visual Quality: The Clear Blue Sky or a Blurry Animal?",
-    "venue": "IEEE Transactions on Multimedia",
-    "note": "Vol. 21, No. 5, pp. 1221-1234, May 2019",
+    "authors": "Sheng Li, Tingting Jiang, Tiejun Huang, Yonghong Tian",
+    "title": "Global Co-occurrence Feature Learning and Active Coordinate System Conversion for Skeleton Based Action Recognition",
+    "venue": "WACV 2020",
+    "note": "",
     "links": {
-      "pdf": "media/pdf/08489929.pdf",
-      "slide": "media/pdf/PKU-NTU_Workshop_Macau2018-TMM_presentation.pdf"
+      "pdf": "media/pdf/0559.pdf",
+      "code": "media/code/WACV.rar",
+      "slide": "media/pdf/short-oral.pptx",
+      "poster": "media/pdf/poster_update.pdf"
     },
-    "tags": ["image quality assessment", "pairwise comparison"]
+    "tags": [
+      "action recognition",
+      "skeleton"
+    ],
+    "rawCitation": "Sheng Li, Tingting Jiang, Tiejun Huang, and Yonghong Tian. Global Co-occurrence Feature Learning and Active Coordinate System Conversion for Skeleton-Based Action Recognition. Winter Conference on Applications of Computer Vision (WACV), Snowmass Village, CO, USA, March 2020, pp. 575--583.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 15
+    }
+  },
+  {
+    "id": "fangqiu-yi-2019-hard-frame-detection-and-online-mapping-for-surgical-phase-recognition-medical-i",
+    "type": "conference",
+    "year": 2019,
+    "authors": "Fangqiu Yi, Tingting Jiang",
+    "title": "Hard Frame Detection and Online Mapping for Surgical Phase Recognition, Medical Image Computing and Computer Assisted Intervention (MICCAI), Shenzhen, China, October 2019, pp",
+    "venue": "449--457",
+    "note": "",
+    "links": {
+      "pdf": "media/pdf/paper96.pdf",
+      "code": "media/code/miccai19-master.zip"
+    },
+    "tags": [],
+    "rawCitation": "Fangqiu Yi, Tingting Jiang. Hard Frame Detection and Online Mapping for Surgical Phase Recognition, Medical Image Computing and Computer Assisted Intervention (MICCAI), Shenzhen, China, October 2019, pp. 449--457.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 24
+    }
   },
   {
     "id": "heng-2019-surveillance-quality",
@@ -369,7 +787,41 @@
     "links": {
       "pdf": "media/pdf/TCSVT_2019.pdf"
     },
-    "tags": ["video quality assessment", "face recognition"]
+    "tags": [
+      "video quality assessment",
+      "face recognition"
+    ],
+    "rawCitation": "Wen Heng, Tingting Jiang, and Wen Gao. How to Assess the Quality of Compressed Surveillance Videos Using Face Recognition, IEEE Transactions on Circuits and Systems for Video Technology, Vol. 29, No. 8, pp. 2229-2243, August 2019.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 9
+    }
+  },
+  {
+    "id": "daochang-liu-2019-oral",
+    "type": "conference",
+    "year": 2019,
+    "authors": "Daochang Liu, Tingting Jiang, Yizhou Wang, Rulin Miao, Fei Shan, and Ziyu Li, Surgical Skill Assessment on In-Vivo Clinical Data via the Clearness of Operating Field, Medical Image Computing and Computer Assisted Intervention (MICCAI), Shenzhen, China, October 2019",
+    "title": "Oral",
+    "venue": "pp. 476--484",
+    "note": "",
+    "links": {
+      "pdf": "media/pdf/paper37.pdf",
+      "slide": "media/pdf/7_2_Daochang_2sag3xD.pptx",
+      "poster": "media/pdf/MICCAI_2019_Poster_QpBvnvQ.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Daochang Liu, Tingting Jiang, Yizhou Wang, Rulin Miao, Fei Shan, and Ziyu Li, Surgical Skill Assessment on In-Vivo Clinical Data via the Clearness of Operating Field, Medical Image Computing and Computer Assisted Intervention (MICCAI), Shenzhen, China, October 2019, Oral, pp. 476--484.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 21
+    }
   },
   {
     "id": "li-2019-vqa-review",
@@ -382,7 +834,64 @@
     "links": {
       "pdf": "media/pdf/Li_et_al.-2019ZTE_Communications-Recent_Advances_and_Challenges_in_Video_Quality_Assessment.pdf"
     },
-    "tags": ["video quality assessment"]
+    "tags": [
+      "video quality assessment"
+    ],
+    "rawCitation": "Dingquan Li, Tingting Jiang, and Ming Jiang. Recent Advances and Challenges in Video Quality Assessment, ZTE COMMUNICATIONS, Vol. 17, No. 1, pp. 3--11, March 2019.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 10
+    }
+  },
+  {
+    "id": "li-2019-clear-blue-sky",
+    "type": "journal",
+    "year": 2019,
+    "authors": "Dingquan Li, Tingting Jiang, Weisi Lin, Ming Jiang",
+    "title": "Which Has Better Visual Quality: The Clear Blue Sky or a Blurry Animal?",
+    "venue": "IEEE Transactions on Multimedia",
+    "note": "Vol. 21, No. 5, pp. 1221-1234, May 2019",
+    "links": {
+      "pdf": "media/pdf/08489929.pdf",
+      "code": "media/code/SFA-SFA-v2.0.zip",
+      "slide": "media/pdf/PKU-NTU_Workshop_Macau2018-TMM_presentation.pdf"
+    },
+    "tags": [
+      "image quality assessment",
+      "pairwise comparison"
+    ],
+    "rawCitation": "Dingquan Li, Tingting Jiang, Weisi Lin, and Ming Jiang. Which Has Better Visual Quality: The Clear Blue Sky or a Blurry Animal?, IEEE Transactions on Multimedia, Vol. 21, No. 5, pp. 1221--1234, May 2019.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 8
+    }
+  },
+  {
+    "id": "feng-qi-2018-a-3d-visual-comfort-metric-based-on-binocular-asymmetry-factor",
+    "type": "conference",
+    "year": 2018,
+    "authors": "Feng Qi, Tingting Jiang, Jian Zhang, Huizhu Jia and Xilin Chen",
+    "title": "A 3D Visual Comfort Metric Based on Binocular Asymmetry Factor",
+    "venue": "IEEE Fourth International Conference on Multimedia Big Data (BigMM), Xi'an, China",
+    "note": "September 2018, pp. 1--4",
+    "links": {
+      "pdf": "media/pdf/BigMM_2018.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Feng Qi, Tingting Jiang, Jian Zhang, Huizhu Jia and Xilin Chen, A 3D Visual Comfort Metric Based on Binocular Asymmetry Factor, IEEE Fourth International Conference on Multimedia Big Data (BigMM), Xi'an, China, September 2018, pp. 1--4.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 29
+    }
   },
   {
     "id": "gao-2018-osmo",
@@ -398,7 +907,63 @@
       "slide": "media/pdf/196_FF_Slide.pptx",
       "poster": "media/pdf/OSMO_poster.pdf"
     },
-    "tags": ["object tracking", "occlusion"]
+    "tags": [
+      "object tracking",
+      "occlusion"
+    ],
+    "rawCitation": "Xu Gao, Tingting Jiang. OSMO: Online Specific Models for Occlusion in Multiple Object Tracking Under Surveillance Scene. ACM International Conference on Multimedia (ACM MM), Seoul, Republic of Korea, October 2018, pp. 201--210.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 26
+    }
+  },
+  {
+    "id": "qin-he-2018-quality-assessment-for-tone-mapped-hdr-images-using-multi-scale-and-multi-layer-",
+    "type": "conference",
+    "year": 2018,
+    "authors": "Qin He, Dingquan Li, Tingting Jiang, and Ming Jiang",
+    "title": "Quality Assessment for Tone-Mapped HDR Images Using Multi-Scale and Multi-Layer Information",
+    "venue": "IEEE International Conference on Multimedia and Expo Workshop (ICMEw), San Diego, CA, USA",
+    "note": "July 2018, pp. 1--6",
+    "links": {
+      "pdf": "media/pdf/TMIQA_fV.pdf",
+      "code": "media/code/TMIQA-code_Ghb6STQ.zip"
+    },
+    "tags": [],
+    "rawCitation": "Qin He, Dingquan Li, Tingting Jiang, and Ming Jiang. Quality Assessment for Tone-Mapped HDR Images Using Multi-Scale and Multi-Layer Information. IEEE International Conference on Multimedia and Expo Workshop (ICMEw), San Diego, CA, USA, July 2018, pp. 1--6.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 27
+    }
+  },
+  {
+    "id": "daochang-liu-2018-september-2018",
+    "type": "conference",
+    "year": 2018,
+    "authors": "Daochang Liu and Tingting Jiang, Deep Reinforcement Learning for Surgical Gesture Segmentation and Classification, Medical Image Computing and Computer Assisted Intervention (MICCAI), Granada, Spain",
+    "title": "September 2018",
+    "venue": "pp. 247--255",
+    "note": "",
+    "links": {
+      "pdf": "media/pdf/paper.pdf",
+      "code": "media/code/RL-Surgical-Gesture-Segmentation-master.zip",
+      "poster": "media/pdf/MICCAI_Poster_v7.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Daochang Liu and Tingting Jiang, Deep Reinforcement Learning for Surgical Gesture Segmentation and Classification, Medical Image Computing and Computer Assisted Intervention (MICCAI), Granada, Spain, September 2018, pp. 247--255.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 28
+    }
   },
   {
     "id": "fan-2017-active-sampling",
@@ -411,7 +976,147 @@
     "links": {
       "pdf": "media/pdf/TMM_2017.pdf"
     },
-    "tags": ["image quality assessment", "active sampling"]
+    "tags": [
+      "image quality assessment",
+      "active sampling"
+    ],
+    "rawCitation": "Zhiwei Fan,Tingting Jiang, and Tiejun Huang, Active Sampling Exploiting Reliable Informativeness for Subjective Image Quality Assessment Based on Pairwise Comparison, IEEE Transactions on Multimedia, Vol. 19, No. 12, pp. 2720--2735, December 2017.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 11
+    }
+  },
+  {
+    "id": "shu-yang-2017-an-objective-assessment-method-based-on-multi-level-factors-for-panoramic-videos",
+    "type": "conference",
+    "year": 2017,
+    "authors": "Shu Yang, Junzhe Zhao, Tingting Jiang, Jing Wang, Tariq Rahim, Bo Zhang, Zhaoji Xu, and Zesong Fei",
+    "title": "An Objective Assessment Method Based on Multi-level Factors for Panoramic Videos",
+    "venue": "IEEE Visual Communications and Image Processing (VCIP), St. Petersburg, FL, USA",
+    "note": "December 2017, pp. 1--4",
+    "links": {
+      "pdf": "media/pdf/VCIP_2017.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Shu Yang, Junzhe Zhao, Tingting Jiang, Jing Wang, Tariq Rahim, Bo Zhang, Zhaoji Xu, and Zesong Fei, An Objective Assessment Method Based on Multi-level Factors for Panoramic Videos, IEEE Visual Communications and Image Processing (VCIP), St. Petersburg, FL, USA, December 2017, pp. 1--4.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 35
+    }
+  },
+  {
+    "id": "dingquan-li-2017-blur-specific-no-reference-image-quality-assessment-a-classification-and-review-",
+    "type": "conference",
+    "year": 2017,
+    "authors": "Dingquan Li and Tingting Jiang",
+    "title": "Blur-Specific No-Reference Image Quality Assessment: A Classification and Review of Representative Methods",
+    "venue": "International Conference on Sensing and Imaging (ICSI)",
+    "note": "2017",
+    "links": {
+      "pdf": "media/pdf/Blur-Specific_NR-IQA_A_Classification_and_Review_of_Representative_Methods.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Dingquan Li and Tingting Jiang. Blur-Specific No-Reference Image Quality Assessment: A Classification and Review of Representative Methods, International Conference on Sensing and Imaging (ICSI), 2017.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 34
+    }
+  },
+  {
+    "id": "dingquan-li-2017-exploiting-high-level-semantics-for-no-reference-image-quality-assessment-of-rea",
+    "type": "conference",
+    "year": 2017,
+    "authors": "Dingquan Li, Tingting Jiang, and Ming Jiang",
+    "title": "Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images",
+    "venue": "ACM International Conference on Multimedia (ACM MM), Mountain View, CA, USA",
+    "note": "October 2017, pp. 378--386",
+    "links": {
+      "pdf": "media/pdf/acmmm2017.pdf",
+      "code": "media/code/SFA-SFA-v1.0.zip",
+      "slide": "media/pdf/frp303-fast_forward.pptx",
+      "poster": "media/pdf/acmmm17_poster-updated_3BofFhr.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Dingquan Li, Tingting Jiang, and Ming Jiang, Exploiting High-Level Semantics for No-Reference Image Quality Assessment of Realistic Blur Images, ACM International Conference on Multimedia (ACM MM), Mountain View, CA, USA, October 2017, pp. 378--386.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 30
+    }
+  },
+  {
+    "id": "wen-heng-2017-from-image-quality-to-patch-quality-an-image-patch-model-for-no-reference-image-",
+    "type": "conference",
+    "year": 2017,
+    "authors": "Wen Heng, Tingting Jiang",
+    "title": "From Image Quality to Patch Quality: An Image-Patch Model for No-Reference Image Quality Assessment",
+    "venue": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), New Orleans, LA, USA",
+    "note": "March 2017, pp. 1238--1242",
+    "links": {
+      "pdf": "media/pdf/ICASSP_2017.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Wen Heng, Tingting Jiang, From Image Quality to Patch Quality: An Image-Patch Model for No-Reference Image Quality Assessment, IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), New Orleans, LA, USA, March 2017, pp. 1238--1242.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 33
+    }
+  },
+  {
+    "id": "zhiwei-fan-2017-international",
+    "type": "conference",
+    "year": 2017,
+    "authors": "Zhiwei Fan, Congliang Chen, and Tingting Jiang, A Semi-Automatic Editing Method for Surgery Videos",
+    "title": "International",
+    "venue": "IEEE Workshop on Multimedia Services and Technologies for E-health (MUST-EH), Hong Kong, China",
+    "note": "July 2017, pp. 115--120",
+    "links": {
+      "pdf": "media/pdf/08026213.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Zhiwei Fan, Congliang Chen, and Tingting Jiang, A Semi-Automatic Editing Method for Surgery Videos, International IEEE Workshop on Multimedia Services and Technologies for E-health (MUST-EH), Hong Kong, China, July 2017, pp. 115--120.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 32
+    }
+  },
+  {
+    "id": "wen-heng-2017-thematic-workshop-of",
+    "type": "conference",
+    "year": 2017,
+    "authors": "Wen Heng, Tingting Jiang, Surveillance Video Quality Assessment Based on Face Recognition",
+    "title": "Thematic Workshop of",
+    "venue": "ACM International Conference on Multimedia (ACM MMw), Mountain View, CA, USA",
+    "note": "October 2017, pp. 520--528",
+    "links": {
+      "pdf": "media/pdf/MM_2017_workshop.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Wen Heng, Tingting Jiang, Surveillance Video Quality Assessment Based on Face Recognition, Thematic Workshop of ACM International Conference on Multimedia (ACM MMw), Mountain View, CA, USA, October 2017, pp. 520--528.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 31
+    }
   },
   {
     "id": "huang-2016-contour-region",
@@ -424,7 +1129,59 @@
     "links": {
       "pdf": "media/pdf/JCM_2016.pdf"
     },
-    "tags": ["image quality assessment"]
+    "tags": [
+      "image quality assessment"
+    ],
+    "rawCitation": "Chen Huang, Ming Jiang, Tingting Jiang, Image Quality Assessment Based on Contour and Region, Journal of Computational Mathematics, Vol. 34, No.6, pp. 703--720, December 2016.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 12
+    }
+  },
+  {
+    "id": "zhaoxiong-cui-2016-no-reference-video-shakiness-quality-assessment",
+    "type": "conference",
+    "year": 2016,
+    "authors": "Zhaoxiong Cui, Tingting Jiang",
+    "title": "No-Reference Video Shakiness Quality Assessment",
+    "venue": "Asian Conference on Computer Vision (ACCV)",
+    "note": "2016",
+    "links": {
+      "pdf": "media/pdf/ACCV_2016.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Zhaoxiong Cui, Tingting Jiang, No-Reference Video Shakiness Quality Assessment, Asian Conference on Computer Vision (ACCV), 2016.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 36
+    }
+  },
+  {
+    "id": "yeji-shen-2016-ranking-consistent-rate-new-evaluation-criterion-on-pairwise-subjective-experime",
+    "type": "conference",
+    "year": 2016,
+    "authors": "Yeji Shen, Tingting Jiang",
+    "title": "Ranking Consistent Rate: New Evaluation Criterion on Pairwise Subjective Experiments",
+    "venue": "International Conference on Image Processing (ICIP), Phoenix, AZ, USA",
+    "note": "September 2016, pp. 2077-2081",
+    "links": {
+      "pdf": "media/pdf/ICIP_2016.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Yeji Shen, Tingting Jiang, Ranking Consistent Rate: New Evaluation Criterion on Pairwise Subjective Experiments, International Conference on Image Processing (ICIP), Phoenix, AZ, USA, September 2016, pp. 2077-2081.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 37
+    }
   },
   {
     "id": "qi-2016-stereoscopic-video",
@@ -437,7 +1194,38 @@
     "links": {
       "pdf": "media/pdf/SVIP_2015.pdf"
     },
-    "tags": ["video quality assessment"]
+    "tags": [
+      "video quality assessment"
+    ],
+    "rawCitation": "Feng Qi, Debin Zhao, Xiaopeng Fan, and Tingting Jiang, Stereoscopic Video Quality Assessment Based on Visual Attention and Just-Noticeable Difference Models, Signal, Image and Video Processing, Vol. 10, No. 4, pp. 737--744, April 2016.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 13
+    }
+  },
+  {
+    "id": "xiang-zhang-2015-sparse-structural-similarity-for-objective-image-quality-assessment",
+    "type": "conference",
+    "year": 2015,
+    "authors": "Xiang Zhang, Shiqi Wang, Ke Gu, Tingting Jiang, Siwei Ma and Wen Gao",
+    "title": "Sparse Structural Similarity for Objective Image Quality Assessment",
+    "venue": "IEEE International Conference on Systems, Man, and Cybernetics (SMC), Kowloon Tong, Hong Kong",
+    "note": "October 2015, pp. 1561--1566",
+    "links": {
+      "pdf": "media/pdf/SMC_2015.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Xiang Zhang, Shiqi Wang, Ke Gu, Tingting Jiang, Siwei Ma and Wen Gao, Sparse Structural Similarity for Objective Image Quality Assessment, IEEE International Conference on Systems, Man, and Cybernetics (SMC), Kowloon Tong, Hong Kong, October 2015, pp. 1561--1566.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 38
+    }
   },
   {
     "id": "guo-2014-shape-reconstructability",
@@ -450,7 +1238,81 @@
     "links": {
       "pdf": "media/pdf/IJCV_2014.pdf"
     },
-    "tags": ["object detection", "shape"]
+    "tags": [
+      "object detection",
+      "shape"
+    ],
+    "rawCitation": "Ge Guo, Yizhou Wang, Tingting Jiang, Alan L. Yuille, Fang Fang, and Wen Gao, A Shape Reconstructability Measure of Object Part Importance With Applications to Object Detection and Localization, International Journal of Computer Vision, Vol. 108, No. 3, pp. 241-258, March 2014.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 14
+    }
+  },
+  {
+    "id": "tingting-jiang-2014-first-person-multiple-object-tracking-in-complex-traffic-scenes",
+    "type": "conference",
+    "year": 2014,
+    "authors": "Tingting Jiang, Zhao Zhang, Yuansheng Xu, Yichong Bai, and Yizhou Wang",
+    "title": "First-Person Multiple Object Tracking in Complex Traffic Scenes",
+    "venue": "International Conference on Image Processing (ICIP), Paris, France",
+    "note": "October 2014, pp. 2343--2347",
+    "links": {
+      "pdf": "media/pdf/ICIP_2014.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Tingting Jiang, Zhao Zhang, Yuansheng Xu, Yichong Bai, and Yizhou Wang, First-Person Multiple Object Tracking in Complex Traffic Scenes, International Conference on Image Processing (ICIP), Paris, France, October 2014, pp. 2343--2347.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 39
+    }
+  },
+  {
+    "id": "zhengying-chen-2014-quality-assessment-for-comparing-image-enhancement-algorithms",
+    "type": "conference",
+    "year": 2014,
+    "authors": "Zhengying Chen, Tingting Jiang, and Yonghong Tian",
+    "title": "Quality Assessment for Comparing Image Enhancement Algorithms",
+    "venue": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Columbus, OH, USA",
+    "note": "June 2014, pp. 3003--3010",
+    "links": {
+      "pdf": "media/pdf/CVPR_2014.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Zhengying Chen, Tingting Jiang, and Yonghong Tian, Quality Assessment for Comparing Image Enhancement Algorithms, IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Columbus, OH, USA, June 2014, pp. 3003--3010.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 41
+    }
+  },
+  {
+    "id": "zhiwei-fan-2014-september-2014",
+    "type": "conference",
+    "year": 2014,
+    "authors": "Zhiwei Fan, Tingting Jiang, Subjective Quality Assessment of Mobile 3D Videos, International Workshop on Quality of Multimedia Experience (QoMEX), Singapore",
+    "title": "September 2014",
+    "venue": "pp. 226--231",
+    "note": "",
+    "links": {
+      "pdf": "media/pdf/QoMEX_2014.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Zhiwei Fan, Tingting Jiang, Subjective Quality Assessment of Mobile 3D Videos, International Workshop on Quality of Multimedia Experience (QoMEX), Singapore, September 2014, pp. 226--231.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 40
+    }
   },
   {
     "id": "guo-2013-shape-completion",
@@ -463,7 +1325,80 @@
     "links": {
       "pdf": "media/pdf/CSB_2013.pdf"
     },
-    "tags": ["shape completion"]
+    "tags": [
+      "shape completion"
+    ],
+    "rawCitation": "Ge Guo, Tingting Jiang, Yizhou Wang and Wen Gao, 2-D Shape Completion With Shape Priors, Chinese Science Bulletin, Vol.58, No.27, pp. 3430-3436, September 2013.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 15
+    }
+  },
+  {
+    "id": "liang-wang-2013-46-no",
+    "type": "journal",
+    "year": 2013,
+    "authors": "Liang Wang, Yizhou Wang, Tingting Jiang, Debin Zhao, and Wen Gao, Learning Discriminative Features for Fast Frame-Based Action Recognition, Pattern Recognition, Vol",
+    "title": "46, No",
+    "venue": "7, pp. 1832–1840",
+    "note": "July 2013",
+    "links": {
+      "pdf": "media/pdf/PR_2012.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Liang Wang, Yizhou Wang, Tingting Jiang, Debin Zhao, and Wen Gao, Learning Discriminative Features for Fast Frame-Based Action Recognition, Pattern Recognition, Vol. 46, No. 7, pp. 1832–1840, July 2013.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 16
+    }
+  },
+  {
+    "id": "chang-ma-2013-a-method-of-perceptual-based-shape-decomposition",
+    "type": "conference",
+    "year": 2013,
+    "authors": "Chang Ma, Zhongqian Dong, Tingting Jiang, Yizhou Wang and Wen Gao",
+    "title": "A Method of Perceptual-Based Shape Decomposition",
+    "venue": "International Conference on Computer Vision (ICCV), Sydney, Australia",
+    "note": "December 2013",
+    "links": {
+      "pdf": "media/pdf/ICCV_2013.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Chang Ma, Zhongqian Dong, Tingting Jiang, Yizhou Wang and Wen Gao, A Method of Perceptual-Based Shape Decomposition, International Conference on Computer Vision (ICCV), Sydney, Australia, December 2013.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 42
+    }
+  },
+  {
+    "id": "feng-qi-2013-stereoscopic-video-quality-assessment-based-on-stereo-just-noticeable-difference",
+    "type": "conference",
+    "year": 2013,
+    "authors": "Feng Qi, Tingting Jiang, Xiaopeng Fan, Siwei Ma, and Debin Zhao",
+    "title": "Stereoscopic Video Quality Assessment Based on Stereo Just-Noticeable Difference Model",
+    "venue": "International Conference on Image Processing (ICIP), Melbourne, Australia",
+    "note": "September 2013, pp. 34--38",
+    "links": {
+      "pdf": "media/pdf/ICIP_2013.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Feng Qi, Tingting Jiang, Xiaopeng Fan, Siwei Ma, and Debin Zhao, Stereoscopic Video Quality Assessment Based on Stereo Just-Noticeable Difference Model, International Conference on Image Processing (ICIP), Melbourne, Australia, September 2013, pp. 34--38.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 43
+    }
   },
   {
     "id": "xu-2012-hodgerank",
@@ -476,6 +1411,479 @@
     "links": {
       "pdf": "media/pdf/TMM_2012.pdf"
     },
-    "tags": ["video quality assessment", "HodgeRank"]
+    "tags": [
+      "video quality assessment",
+      "HodgeRank"
+    ],
+    "rawCitation": "Qianqian Xu, Qingming Huang, Tingting Jiang, Bowei Yan, Weisi Lin, and Yuan Yao, HodgeRank on Random Graphs for Subjective Video Quality Assessment, IEEE Transactions on Multimedia, Vol. 14, No. 3, pp. 844-857, June 2012.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 18
+    }
+  },
+  {
+    "id": "ge-guo-2012-ieee-signal-processing-letters-vol",
+    "type": "journal",
+    "year": 2012,
+    "authors": "Ge Guo, Tingting Jiang, Yizhou Wang and Wen Gao, Recovering Missing Data for Occluded Object Detection",
+    "title": "IEEE Signal Processing Letters, Vol",
+    "venue": "19, No. 8, pp. 463-466",
+    "note": "August 2012",
+    "links": {
+      "pdf": "media/pdf/SPL_2012.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Ge Guo, Tingting Jiang, Yizhou Wang and Wen Gao, Recovering Missing Data for Occluded Object Detection. IEEE Signal Processing Letters, Vol. 19, No. 8, pp. 463-466, August 2012.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 17
+    }
+  },
+  {
+    "id": "yue-wang-2012-novel-spatio-temporal-structural-information-based-video-quality-metric",
+    "type": "journal",
+    "year": 2012,
+    "authors": "Yue Wang,Tingting Jiang, Siwei Ma, and Wen Gao",
+    "title": "Novel Spatio-Temporal Structural Information Based Video Quality Metric",
+    "venue": "IEEE Transactions on Circuits and Systems for Video Technology, Vol. 22, No. 7, pp. 989-998",
+    "note": "July 2012",
+    "links": {
+      "pdf": "media/pdf/TCSVT_2012.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Yue Wang,Tingting Jiang, Siwei Ma, and Wen Gao, Novel Spatio-Temporal Structural Information Based Video Quality Metric, IEEE Transactions on Circuits and Systems for Video Technology, Vol. 22, No. 7, pp. 989-998, July 2012.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 19
+    }
+  },
+  {
+    "id": "yue-wang-2012-november-2012",
+    "type": "conference",
+    "year": 2012,
+    "authors": "Yue Wang, Tingting Jiang, Siwei Ma, and Wen Gao, Spatio-Temporal SSIM Index for Video Quality Assessment, Visual Communications and Image Processing（VCIP), San Diego, CA, USA",
+    "title": "November 2012",
+    "venue": "pp. 1--6",
+    "note": "",
+    "links": {
+      "pdf": "media/pdf/VCIP_2012_0193.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Yue Wang, Tingting Jiang, Siwei Ma, and Wen Gao, Spatio-Temporal SSIM Index for Video Quality Assessment, Visual Communications and Image Processing（VCIP), San Diego, CA, USA, November 2012, pp. 1--6.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 45
+    }
+  },
+  {
+    "id": "feng-qi-2012-quality-of-experience-assessment-for-stereoscopic-images",
+    "type": "conference",
+    "year": 2012,
+    "authors": "Feng Qi, Tingting Jiang, Siwei Ma, and Debin Zhao",
+    "title": "Quality of Experience Assessment for Stereoscopic Images",
+    "venue": "IEEE International Symposium on Circuits and Systems (ISCAS), Seoul, Korea (South)",
+    "note": "May 2012, pp. 1712--1715",
+    "links": {
+      "pdf": "media/pdf/ISCAS_2012.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Feng Qi, Tingting Jiang, Siwei Ma, and Debin Zhao, Quality of Experience Assessment for Stereoscopic Images, IEEE International Symposium on Circuits and Systems (ISCAS), Seoul, Korea (South), May 2012, pp. 1712--1715.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 47
+    }
+  },
+  {
+    "id": "jingjing-han-2012-stereoscopic-video-quality-assessment-model-based-on-spatial-temporal-structural",
+    "type": "conference",
+    "year": 2012,
+    "authors": "Jingjing Han,Tingting Jiang, and Siwei Ma",
+    "title": "Stereoscopic Video Quality Assessment Model Based on Spatial-Temporal Structural Information",
+    "venue": "IEEE Visual Communications and Image Processing (VCIP), San Diego, CA, USA",
+    "note": "November 2012, pp. 1--6",
+    "links": {
+      "pdf": "media/pdf/VCIP_2012_0119.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Jingjing Han,Tingting Jiang, and Siwei Ma, Stereoscopic Video Quality Assessment Model Based on Spatial-Temporal Structural Information, IEEE Visual Communications and Image Processing (VCIP), San Diego, CA, USA, November 2012, pp. 1--6.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 46
+    }
+  },
+  {
+    "id": "tingting-jiang-2012-toward-perception-based-shape-decomposition",
+    "type": "conference",
+    "year": 2012,
+    "authors": "Tingting Jiang, Zhongqian Dong, Chang Ma, and Yizhou Wang",
+    "title": "Toward Perception-Based Shape Decomposition",
+    "venue": "Asian Conference on Computer Vision (ACCV), Daejeon, Korea",
+    "note": "November 2012, pp. 188--201",
+    "links": {
+      "pdf": "media/pdf/ACCV_2012.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Tingting Jiang, Zhongqian Dong, Chang Ma, and Yizhou Wang, Toward Perception-Based Shape Decomposition, Asian Conference on Computer Vision (ACCV), Daejeon, Korea, November 2012, pp. 188--201.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 44
+    }
+  },
+  {
+    "id": "ge-guo-2011-computing-importance-of-2d-contour-parts-by-reconstructability",
+    "type": "conference",
+    "year": 2011,
+    "authors": "Ge Guo, Yizhou Wang, Tingting Jiang, Alan Yuille, and Wen Gao",
+    "title": "Computing Importance of 2D Contour Parts by Reconstructability",
+    "venue": "International Conference on Computer Vision Workshop (ICCVw), Barcelona, Spain",
+    "note": "November 2011, pp. 1364--1371",
+    "links": {
+      "pdf": "media/pdf/ICCV_2011.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Ge Guo, Yizhou Wang, Tingting Jiang, Alan Yuille, and Wen Gao, Computing Importance of 2D Contour Parts by Reconstructability, International Conference on Computer Vision Workshop (ICCVw), Barcelona, Spain, November 2011, pp. 1364--1371.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 48
+    }
+  },
+  {
+    "id": "liang-wang-2011-instantly-telling-what-happens-in-a-video-sequence-using-simple-features",
+    "type": "conference",
+    "year": 2011,
+    "authors": "Liang Wang, Yizhou Wang, Tingting Jiang, and Wen Gao",
+    "title": "Instantly Telling What Happens in a Video Sequence Using Simple Features",
+    "venue": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Colorado Springs, CO, USA",
+    "note": "June 2011, pp. 3257--3264",
+    "links": {
+      "pdf": "media/pdf/CVPR_2011_0295_1dKycjz.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Liang Wang, Yizhou Wang, Tingting Jiang, and Wen Gao, Instantly Telling What Happens in a Video Sequence Using Simple Features, IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Colorado Springs, CO, USA, June 2011, pp. 3257--3264.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 53
+    }
+  },
+  {
+    "id": "xiaoming-li-2011-november-2011",
+    "type": "conference",
+    "year": 2011,
+    "authors": "Xiaoming Li, Yue Wang, Debin Zhao, Tingting Jiang, and Nan Zhang, Joint Just Noticeable Difference Model Based on Depth Perception for Stereoscopic Images, Visual Communications and Image Processing (VCIP), Tainan, Taiwan",
+    "title": "November 2011",
+    "venue": "pp. 1--4",
+    "note": "",
+    "links": {
+      "pdf": "media/pdf/VCIP_2011.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Xiaoming Li, Yue Wang, Debin Zhao, Tingting Jiang, and Nan Zhang, Joint Just Noticeable Difference Model Based on Depth Perception for Stereoscopic Images, Visual Communications and Image Processing (VCIP), Tainan, Taiwan, November 2011, pp. 1--4.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 50
+    }
+  },
+  {
+    "id": "qianqian-xu-2011-random-partial-paired-comparison-for-subjective-video-quality-assessment-via-hod",
+    "type": "conference",
+    "year": 2011,
+    "authors": "Qianqian Xu, Tingting Jiang, Yuan Yao, Qingming Huang, Bowei Yan, and Weisi Lin",
+    "title": "Random Partial Paired Comparison for Subjective Video Quality Assessment via HodgeRank",
+    "venue": "ACM International Conference on Multimedia (ACM MM), Scottsdale, AZ, USA",
+    "note": "November 2011, pp. 393--402",
+    "links": {
+      "pdf": "media/pdf/MM_2011.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Qianqian Xu, Tingting Jiang, Yuan Yao, Qingming Huang, Bowei Yan, and Weisi Lin, Random Partial Paired Comparison for Subjective Video Quality Assessment via HodgeRank, ACM International Conference on Multimedia (ACM MM), Scottsdale, AZ, USA, November 2011, pp. 393--402.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 49
+    }
+  },
+  {
+    "id": "wei-wang-2011-simulating-human-saccadic-scanpaths-on-natural-images",
+    "type": "conference",
+    "year": 2011,
+    "authors": "Wei Wang, Cheng Chen, Yizhou Wang, Tingting Jiang, Fang Fang, and Yuan Yao",
+    "title": "Simulating Human Saccadic Scanpaths on Natural Images",
+    "venue": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Colorado Springs, CO, USA",
+    "note": "June 2011, pp. 441--448",
+    "links": {
+      "pdf": "media/pdf/CVPR_2011_0470_Q9svrhf.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Wei Wang, Cheng Chen, Yizhou Wang, Tingting Jiang, Fang Fang, and Yuan Yao, Simulating Human Saccadic Scanpaths on Natural Images, IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Colorado Springs, CO, USA, June 2011, pp. 441--448.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 52
+    }
+  },
+  {
+    "id": "zhebin-zhang-2011-stereoscopic-learning-for-disparity-estimation",
+    "type": "conference",
+    "year": 2011,
+    "authors": "Zhebin Zhang, Yizhou Wang, Tingting Jiang, and Wen Gao",
+    "title": "Stereoscopic Learning for Disparity Estimation",
+    "venue": "IEEE International Symposium on Circuits and Systems (ISCAS), Rio de Janeiro, Brazil",
+    "note": "May 2011, pp. 365--368",
+    "links": {
+      "pdf": "media/pdf/ISCAS_2011.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Zhebin Zhang, Yizhou Wang, Tingting Jiang, and Wen Gao, Stereoscopic Learning for Disparity Estimation, IEEE International Symposium on Circuits and Systems (ISCAS), Rio de Janeiro, Brazil, May 2011, pp. 365--368.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 54
+    }
+  },
+  {
+    "id": "zhebin-zhang-2011-visual-pertinent-2d-to-3d-video-conversion-by-multi-cue-fusion",
+    "type": "conference",
+    "year": 2011,
+    "authors": "Zhebin Zhang, Yizhou Wang, Tingting Jiang, and Wen Gao",
+    "title": "Visual Pertinent 2D-to-3D Video Conversion by Multi-Cue Fusion",
+    "venue": "International Conference on Image Processing (ICIP), Brussels, Belgium",
+    "note": "September 2011, pp. 909--912",
+    "links": {
+      "pdf": "media/pdf/ICIP_2011.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Zhebin Zhang, Yizhou Wang, Tingting Jiang, and Wen Gao, Visual Pertinent 2D-to-3D Video Conversion by Multi-Cue Fusion, International Conference on Image Processing (ICIP), Brussels, Belgium, September 2011, pp. 909--912.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 51
+    }
+  },
+  {
+    "id": "yue-wang-2010-december-2010",
+    "type": "conference",
+    "year": 2010,
+    "authors": "Yue Wang, Tingting Jiang, Siwei Ma and Wen Gao, Image Quality Assessment Based on Local Orientation Distribution, Picture Coding Symposium (PCS), Nagoya, Japan",
+    "title": "December 2010",
+    "venue": "pp. 274--277",
+    "note": "",
+    "links": {
+      "pdf": "media/pdf/PCS_2010.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Yue Wang, Tingting Jiang, Siwei Ma and Wen Gao, Image Quality Assessment Based on Local Orientation Distribution, Picture Coding Symposium (PCS), Nagoya, Japan, December 2010, pp. 274--277.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 55
+    }
+  },
+  {
+    "id": "ge-guo-2010-finding-multiple-object-instances-with-occlusion",
+    "type": "conference",
+    "year": 2010,
+    "authors": "Ge Guo, Tingting Jiang, Yizhou Wang and Wen Gao",
+    "title": "Finding Multiple Object Instances With Occlusion",
+    "venue": "International Conference on Pattern Recognition (ICPR), Istanbul, Turkey",
+    "note": "August 2010, pp. 3878--3881",
+    "links": {
+      "pdf": "media/pdf/ICPR_2010.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Ge Guo, Tingting Jiang, Yizhou Wang and Wen Gao, Finding Multiple Object Instances With Occlusion, International Conference on Pattern Recognition (ICPR), Istanbul, Turkey, August 2010, pp. 3878--3881.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 56
+    }
+  },
+  {
+    "id": "tingting-jiang-2009-learning-shape-prior-models-for-object-matching",
+    "type": "conference",
+    "year": 2009,
+    "authors": "Tingting Jiang, Frederic Jurie and Cordelia Schmid",
+    "title": "Learning Shape Prior Models for Object Matching",
+    "venue": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Miami, Florida, USA",
+    "note": "June 2009, pp. 848--855",
+    "links": {
+      "pdf": "media/pdf/CVPR_2009.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Tingting Jiang, Frederic Jurie and Cordelia Schmid, Learning Shape Prior Models for Object Matching, IEEE Conference on Computer Vision and Pattern Recognition (CVPR), Miami, Florida, USA, June 2009, pp. 848--855.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 57
+    }
+  },
+  {
+    "id": "tingting-jiang-2008-robust-shape-normalization-based-on-implicit-representations",
+    "type": "conference",
+    "year": 2008,
+    "authors": "Tingting Jiang and Carlo Tomasi",
+    "title": "Robust Shape Normalization Based on Implicit Representations",
+    "venue": "International Conference on Pattern Recognition (ICPR), Tampa, Florida, USA",
+    "note": "December 2008, pp. 1--4",
+    "links": {
+      "pdf": "media/pdf/ICPR_2008.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Tingting Jiang and Carlo Tomasi, Robust Shape Normalization Based on Implicit Representations, International Conference on Pattern Recognition (ICPR), Tampa, Florida, USA, December 2008, pp. 1--4.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 58
+    }
+  },
+  {
+    "id": "tingting-jiang-2007-finite-element-level-set-curve-particles",
+    "type": "conference",
+    "year": 2007,
+    "authors": "Tingting Jiang and Carlo Tomasi",
+    "title": "Finite-Element Level-Set Curve Particles",
+    "venue": "International Conference on Computer Vision Workshop (ICCVw) on Non-rigid Registration and Tracking through Learning, Rio de Janeiro, Brazil",
+    "note": "October 2007, pp. 1--7",
+    "links": {
+      "pdf": "media/pdf/ICCV_2007.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Tingting Jiang and Carlo Tomasi, Finite-Element Level-Set Curve Particles, International Conference on Computer Vision Workshop (ICCVw) on Non-rigid Registration and Tracking through Learning, Rio de Janeiro, Brazil, October 2007, pp. 1--7.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 59
+    }
+  },
+  {
+    "id": "tingting-jiang-2007-how-to-dispatch-observers-to-track-an-evolving-boundary",
+    "type": "conference",
+    "year": 2007,
+    "authors": "Tingting Jiang, Carlo Tomasi and Scott C. Schmidler",
+    "title": "How to Dispatch Observers to Track an Evolving Boundary",
+    "venue": "International Conference on Distributed Smart Cameras (ICDSC), Vienna, Austria",
+    "note": "September 2007, pp. 305--312",
+    "links": {
+      "pdf": "media/pdf/ICDSC_2007.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Tingting Jiang, Carlo Tomasi and Scott C. Schmidler, How to Dispatch Observers to Track an Evolving Boundary, International Conference on Distributed Smart Cameras (ICDSC), Vienna, Austria, September 2007, pp. 305--312.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 60
+    }
+  },
+  {
+    "id": "tingting-jiang-2006-level-set-curve-particles",
+    "type": "conference",
+    "year": 2006,
+    "authors": "Tingting Jiang and Carlo Tomasi",
+    "title": "Level-Set Curve Particles",
+    "venue": "European Conference on Computer Vision (ECCV), Graz, Austria",
+    "note": "May 2006, pp. 633--644",
+    "links": {
+      "pdf": "media/pdf/ECCV_2006.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Tingting Jiang and Carlo Tomasi, Level-Set Curve Particles, European Conference on Computer Vision (ECCV), Graz, Austria, May 2006, pp. 633--644.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 61
+    }
+  },
+  {
+    "id": "zheng-sun-2005-narrow-passage-sampling-for-probabilistic-roadmap-planning",
+    "type": "journal",
+    "year": 2005,
+    "authors": "Zheng Sun, David Hsu, Tingting Jiang, Hanna Kurniawati and John Reif",
+    "title": "Narrow Passage Sampling for Probabilistic Roadmap Planning",
+    "venue": "IEEE Transactions on Robotics, Vol. 21, No. 6, pp. 1105-1115",
+    "note": "December 2005",
+    "links": {
+      "pdf": "media/pdf/TR_2005.pdf"
+    },
+    "tags": [],
+    "rawCitation": "Zheng Sun, David Hsu, Tingting Jiang, Hanna Kurniawati and John Reif, Narrow Passage Sampling for Probabilistic Roadmap Planning, IEEE Transactions on Robotics, Vol. 21, No. 6, pp. 1105-1115, December 2005.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Journal Publications",
+      "legacyOrder": 20
+    }
+  },
+  {
+    "id": "david-hsu-2003-the-bridge-test-for-sampling-narrow-passages-with-probabilistic-roadmap-planners",
+    "type": "conference",
+    "year": 2003,
+    "authors": "David Hsu, Tingting Jiang, John H. Reif, and Zheng Sun",
+    "title": "The Bridge Test for Sampling Narrow Passages with Probabilistic Roadmap Planners",
+    "venue": "IEEE International Conference on Robotics and Automation (ICRA), Taipei, Taiwan",
+    "note": "September 2003, pp. 4420--4426",
+    "links": {
+      "pdf": "media/pdf/ICRA_2003.pdf"
+    },
+    "tags": [],
+    "rawCitation": "David Hsu, Tingting Jiang, John H. Reif, and Zheng Sun, The Bridge Test for Sampling Narrow Passages with Probabilistic Roadmap Planners, IEEE International Conference on Robotics and Automation (ICRA), Taipei, Taiwan, September 2003, pp. 4420--4426.",
+    "source": {
+      "type": "legacy-static-publication",
+      "repository": "vie-group/vie-group.github.io",
+      "path": "publication/index.html",
+      "legacySection": "Conference Publications",
+      "legacyOrder": 62
+    }
   }
 ]

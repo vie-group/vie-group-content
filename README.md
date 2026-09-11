@@ -76,6 +76,12 @@ Historical seminar rows from the recovered legacy `presentation/index.html` were
 npm run import:legacy-presentation
 ```
 
+Historical publication rows from the recovered legacy `publication/index.html` were imported into `data/publications.json`. The import can be rerun from a local checkout:
+
+```bash
+npm run import:legacy-publication
+```
+
 ## Published URLs
 
 GitHub Pages publishes this repository at:
@@ -88,6 +94,7 @@ Important public endpoints:
 
 ```text
 https://vie-group.github.io/vie-group-content/data/seminars.json
+https://vie-group.github.io/vie-group-content/data/publications.json
 https://vie-group.github.io/vie-group-content/assets/seminars/
 https://vie-group.github.io/vie-group-content/rss.xml
 ```

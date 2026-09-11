@@ -163,6 +163,17 @@
       <category>SAM</category>
     </item>
     <item>
+      <title>Publication: BLADE: Box-Level Supervised Amodal Segmentation through Directed Expansion</title>
+      <link>https://www.vie.group/publication/</link>
+      <guid isPermaLink="false">publication:liu-2024-blade</guid>
+      <pubDate>Mon, 01 Jan 2024 12:00:00 GMT</pubDate>
+      <description>Zhaochen Liu*, Zhixuan Li*, Tingting Jiang. AAAI 2024. Vancouver, Canada, February 2024</description>
+      <category>publication</category>
+      <category>conference</category>
+      <category>amodal segmentation</category>
+      <category>weak supervision</category>
+    </item>
+    <item>
       <title>Publication: Evidential Uncertainty-guided Mitochondria Segmentation for 3D EM Images</title>
       <link>https://www.vie.group/publication/</link>
       <guid isPermaLink="false">publication:shi-2024-evidential</guid>
@@ -173,17 +184,6 @@
       <category>medical image</category>
       <category>segmentation</category>
       <category>uncertainty</category>
-    </item>
-    <item>
-      <title>Publication: BLADE: Box-Level Supervised Amodal Segmentation through Directed Expansion</title>
-      <link>https://www.vie.group/publication/</link>
-      <guid isPermaLink="false">publication:liu-2024-blade</guid>
-      <pubDate>Mon, 01 Jan 2024 12:00:00 GMT</pubDate>
-      <description>Zhaochen Liu*, Zhixuan Li*, Tingting Jiang. AAAI 2024. Vancouver, Canada, February 2024</description>
-      <category>publication</category>
-      <category>conference</category>
-      <category>amodal segmentation</category>
-      <category>weak supervision</category>
     </item>
     <item>
       <title>Publication: Understanding Zero-Shot Adversarial Robustness for Large-Scale Models</title>
