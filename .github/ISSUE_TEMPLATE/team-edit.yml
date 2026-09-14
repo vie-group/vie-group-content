@@ -1,0 +1,143 @@
+name: Edit team member
+description: Add, update, move, or delete one team member record.
+title: "[Edit Team] person-name"
+labels: ["team-edit"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to add, update, move, or delete one team member.
+        To adjust a person's status, keep Original Name/Group pointing to the current record and set Target Group plus the relevant fields.
+        If you drag an image into Image Attachment, that image replaces Image URL and is copied into this repository.
+  - type: dropdown
+    id: operation
+    attributes:
+      label: Operation
+      options:
+        - update
+        - add
+        - delete
+    validations:
+      required: true
+  - type: dropdown
+    id: original_group
+    attributes:
+      label: Original Group
+      description: For update/delete. Leave unchanged when generated from the website.
+      options:
+        - faculty
+        - current
+        - alumni
+    validations:
+      required: false
+  - type: input
+    id: original_name
+    attributes:
+      label: Original Name
+      description: For update/delete. Leave blank for a new person.
+      placeholder: "Zihao Liu"
+    validations:
+      required: false
+  - type: dropdown
+    id: target_group
+    attributes:
+      label: Target Group
+      description: The final group/status for add/update.
+      options:
+        - current
+        - alumni
+        - faculty
+    validations:
+      required: false
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: "New Person"
+    validations:
+      required: false
+  - type: input
+    id: role
+    attributes:
+      label: Role
+      description: Used for faculty/current records.
+      placeholder: "Ph.D. Student"
+    validations:
+      required: false
+  - type: input
+    id: email
+    attributes:
+      label: Email
+      placeholder: "name at pku.edu.cn"
+    validations:
+      required: false
+  - type: input
+    id: affiliation
+    attributes:
+      label: Affiliation
+      description: Used for faculty records.
+      placeholder: "School of Electronics Engineering and Computer Science, Peking University"
+    validations:
+      required: false
+  - type: input
+    id: address
+    attributes:
+      label: Address
+      description: Used for faculty records.
+      placeholder: "Room ..."
+    validations:
+      required: false
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      description: Used for alumni records.
+      placeholder: "2026"
+    validations:
+      required: false
+  - type: input
+    id: degree
+    attributes:
+      label: Degree
+      description: Used for alumni records.
+      placeholder: "PhD / MS / BS"
+    validations:
+      required: false
+  - type: input
+    id: destination
+    attributes:
+      label: Destination
+      description: Used for alumni records.
+      placeholder: "Company, university, or role"
+    validations:
+      required: false
+  - type: input
+    id: image_url
+    attributes:
+      label: Image URL
+      description: Existing image path or URL. Leave blank to clear unless using Image Attachment.
+      placeholder: "media/image/person.jpg"
+    validations:
+      required: false
+  - type: textarea
+    id: image_attachment
+    attributes:
+      label: Image Attachment
+      description: Drag a replacement portrait image here.
+      placeholder: "Drop replacement image here."
+    validations:
+      required: false
+  - type: input
+    id: profile_url
+    attributes:
+      label: Profile URL
+      placeholder: "media/page/person.html or https://..."
+    validations:
+      required: false
+  - type: textarea
+    id: edit_note
+    attributes:
+      label: Edit Note
+      placeholder: "What changed and why?"
+    validations:
+      required: false

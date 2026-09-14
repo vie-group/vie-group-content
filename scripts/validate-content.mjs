@@ -151,12 +151,20 @@ for (const item of activityDetails) {
 const team = data["data/team.json"];
 for (const group of ["faculty", "current", "alumni"]) {
   if (!Array.isArray(team[group])) fail(`team.${group} must be an array.`);
+  for (const person of team[group]) {
+    requireString(person, "name", `team.${group} person`);
+    if (person.image && typeof person.image !== "string") fail(`team.${group} ${person.name} image must be a string.`);
+    if (person.profileUrl && typeof person.profileUrl !== "string") {
+      fail(`team.${group} ${person.name} profileUrl must be a string.`);
+    }
+  }
 }
 
 const ownedAssetLinks = new Set([
   ...collectOwnedAssetLinks(publications),
   ...collectOwnedAssetLinks(seminars),
-  ...collectOwnedAssetLinks(activityDetails)
+  ...collectOwnedAssetLinks(activityDetails),
+  ...collectOwnedAssetLinks(team)
 ]);
 for (const link of ownedAssetLinks) {
   await access(link).catch(() => fail(`Missing owned asset referenced by data: ${link}`));

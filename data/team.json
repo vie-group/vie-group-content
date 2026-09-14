@@ -5,132 +5,176 @@
       "role": "Associate Professor",
       "affiliation": "School of Electronics Engineering and Computer Science, Peking University",
       "address": "Room 2641, No.2 Science Building, Peking University, Beijing, China",
-      "email": "ttjiang at pku.edu.cn"
+      "email": "ttjiang at pku.edu.cn",
+      "image": "static/pics/tingtingjiang.jpg",
+      "profileUrl": "ttj"
     }
   ],
   "current": [
     {
       "name": "Zihao Liu",
       "role": "Ph.D. Student",
-      "email": "lzh19961031 at pku.edu.cn"
+      "email": "lzh19961031 at pku.edu.cn",
+      "image": "media/image/微信图片_20191205134046_es24wY6_JXf59zH.png"
     },
     {
       "name": "Chenxi Yang",
       "role": "Ph.D. Student",
-      "email": "yangchenxi at stu.pku.edu.cn"
+      "email": "yangchenxi at stu.pku.edu.cn",
+      "image": "media/image/微信图片_20210112153817_zoMVj4Z.jpg"
     },
     {
       "name": "Ruohua Shi",
       "role": "Ph.D. Student",
-      "email": "shiruohua at pku dot edu dot cn"
+      "email": "shiruohua at pku dot edu dot cn",
+      "image": "media/image/Ruohua_Shi_YYXZPMm.png",
+      "profileUrl": "media/page/ruohua_x14v64O_uMPdclW_1qdoFqr.html?logo=media/image/Ruohua_Shi_YYXZPMm.png"
     },
     {
       "name": "Yan Zhong",
       "role": "Ph.D. Student",
-      "email": "zhongyan at stu.pku.edu.cn"
+      "email": "zhongyan at stu.pku.edu.cn",
+      "image": "media/image/ZY2_551Rvq0.jpg"
     },
     {
       "name": "Qiyue Li",
       "role": "Ph.D. Student",
-      "email": "liqiyue at pku dot edu dot cn"
+      "email": "liqiyue at pku dot edu dot cn",
+      "image": "media/image/生活照vie_2_OQbEX6U.jpg"
     },
     {
       "name": "Yanfeng Yang",
       "role": "Master Student",
-      "email": "yangyanfeng at pku.edu.cn"
+      "email": "yangyanfeng at pku.edu.cn",
+      "image": "media/image/微信图片_20221027220821_zrcLmZz.jpg"
     },
     {
       "name": "Weining Ye",
       "role": "Master Student",
-      "email": "YWNing at pku dot edu dot cn"
+      "email": "YWNing at pku dot edu dot cn",
+      "image": "media/image/YWN_wDrpRvt.jpg"
     },
     {
       "name": "Chao Liu",
       "role": "Master Student",
-      "email": "lchao at stu.pku.edu.cn"
+      "email": "lchao at stu.pku.edu.cn",
+      "image": "media/image/LC3_HoyrYYl.jpg"
     },
     {
       "name": "Zhaochen Liu",
       "role": "Master Student",
-      "email": "dreamerliu at pku dot edu dot cn"
+      "email": "dreamerliu at pku dot edu dot cn",
+      "image": "media/image/LZC_7DTNPqE.jpg"
     },
     {
       "name": "Xueqing Yu",
       "role": "Undergraduate Student",
-      "email": "yuxueqing at pku.edu.cn"
+      "email": "yuxueqing at pku.edu.cn",
+      "image": "media/image/true.jpg"
     }
   ],
   "alumni": [
     {
       "name": "Zhixuan Li",
+      "email": "zhixuanli520 at gmail dot com",
       "year": "2023",
       "degree": "PhD",
+      "image": "media/image/IMG_2342_6QgXZtO_jlNoyCn.jpg",
+      "profileUrl": "media/page/my-page-for-lab_zhixuanli.html?logo=media/image/IMG_2342_6QgXZtO_jlNoyCn.jpg",
       "destination": "Post-doc, NTU"
     },
     {
       "name": "Yujia Liu",
+      "email": "Yujia_liu at pku dot edu dot cn",
       "year": "2023",
       "degree": "PhD",
+      "image": "media/image/1_AeOPv0U.jpg",
+      "profileUrl": "media/page/yoga_html_EGhfriz_rmCxROi.html?logo=media/image/1_AeOPv0U.jpg",
       "destination": "Post-doc, PKU"
     },
     {
       "name": "Yingjian Song",
+      "email": "yingjian at pku dot edu dot cn",
       "year": "2023",
       "degree": "MS",
+      "image": "media/image/DSC_22171_8LLthoD.jpg",
       "destination": "BYD"
     },
     {
       "name": "Daochang Liu",
+      "email": "finspire13 at gmail dot com",
       "year": "2022",
       "degree": "PhD",
+      "image": "media/image/WechatIMG471_tkQLynn.jpeg",
+      "profileUrl": "media/page/my-page-for-lab_OpYUnGC_OrrgjUv.html?logo=media/image/WechatIMG471_tkQLynn.jpeg",
       "destination": "Post-doc, USYD"
     },
     {
       "name": "Fangqiu Yi",
+      "email": "chinayi at pku dot edu dot cn",
       "year": "2021",
       "degree": "MS",
+      "image": "media/image/Fangqiu_Yi_60MYUsV_20xKcuU.png",
+      "profileUrl": "media/page/yifangqiu_page_Z0xkPkN.html?logo=media/image/Fangqiu_Yi_60MYUsV_20xKcuU.png",
       "destination": "MEGVII"
     },
     {
       "name": "Dingquan Li",
+      "email": "dingquanli at pku dot edu dot cn",
       "year": "2021",
       "degree": "PhD",
+      "image": "media/image/DingquanLi_f4Wnhtn.jpeg",
+      "profileUrl": "media/page/my-page-link_wMEmlLf.html?logo=media/image/DingquanLi_f4Wnhtn.jpeg",
       "destination": "Peng Cheng Lab"
     },
     {
       "name": "Jiahe Li",
+      "email": "jiaheli at pku dot edu dot cn",
       "year": "2020",
       "degree": "MS",
+      "image": "media/image/主页照片_FqfZEkk.jpg",
+      "profileUrl": "media/page/jiaheli_QSJW9EL_BRF7Kxk.html?logo=media/image/主页照片_FqfZEkk.jpg",
       "destination": "Huawei"
     },
     {
       "name": "Sheng Li",
+      "email": "li_sheng at pku dot edu dot cn",
       "year": "2020",
       "degree": "MS",
+      "image": "media/image/WechatIMG2_U2OPZ2h.jpeg",
       "destination": "Shopee"
     },
     {
       "name": "Xu Gao",
+      "email": "gaoxu1024 at pku dot edu dot cn",
       "year": "2019",
       "degree": "MS",
+      "image": "media/image/IMG_5025_2_b26YiE7.jpg",
+      "profileUrl": "media/page/XuGao_Page20190521_TKe8y5g_0HgrGU9.htm?logo=media/image/IMG_5025_2_b26YiE7.jpg",
       "destination": "Baidu"
     },
     {
       "name": "Chen Huang",
+      "email": "hc786697890 at 163 dot com",
       "year": "2018",
       "degree": "MS",
+      "image": "media/image/HC_wz064kt.jpg",
       "destination": "Baidu"
     },
     {
       "name": "Wen Heng",
+      "email": "waynheng at gmail dot com",
       "year": "2018",
       "degree": "MS",
+      "image": "media/image/HW_7jX1Mcd.jpg",
       "destination": "Face++ -> Tencent"
     },
     {
       "name": "Zhiwei Fan",
+      "email": "fanzw at pku dot edu dot cn",
       "year": "2017",
       "degree": "MS",
+      "image": "media/image/Zhiwei.Fan_uY8qNt2.jpg",
       "destination": "Microsoft -> Hulu"
     },
     {
@@ -138,6 +182,64 @@
       "year": "2016",
       "degree": "BS",
       "destination": "University of Southern California, Ph.D."
+    },
+    {
+      "name": "Zhaoxiong Cui",
+      "year": "2016",
+      "degree": "BS"
+    },
+    {
+      "name": "Hangfeng He",
+      "year": "2017",
+      "degree": "BS",
+      "destination": "University of Pennsylvania, Ph.D. -> University of Rochester, Assistant Professor"
+    },
+    {
+      "name": "Sixue Wang",
+      "year": "2017",
+      "degree": "BS"
+    },
+    {
+      "name": "Yuwen Li",
+      "year": "2020",
+      "degree": "BS",
+      "destination": "National University of Singapore, Master"
+    },
+    {
+      "name": "Haitong Shi",
+      "year": "2020",
+      "degree": "BS",
+      "destination": "ETH Zurich, Master"
+    },
+    {
+      "name": "Shixun Wu",
+      "year": "2020",
+      "degree": "BS",
+      "destination": "Columbia University, Master"
+    },
+    {
+      "name": "Haoning Wu",
+      "year": "2021",
+      "degree": "BS",
+      "destination": "Nanyang Technological University, Ph.D."
+    },
+    {
+      "name": "Shangchen Du",
+      "year": "2021",
+      "degree": "BS",
+      "destination": "University of California, San Diego, Master"
+    },
+    {
+      "name": "Hongyu Wen",
+      "year": "2022",
+      "degree": "BS",
+      "destination": "Princeton University, Ph.D."
+    },
+    {
+      "name": "Xueying Jiang",
+      "year": "2022",
+      "degree": "BS",
+      "destination": "Nanyang Technological University, Ph.D."
     },
     {
       "name": "Zhaoxiong Wang",

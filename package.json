@@ -13,7 +13,9 @@
     "issue:seminar-edit": "node scripts/issue-form-to-data.mjs edit",
     "issue:seminar-delete": "node scripts/delete-seminar-from-issue.mjs delete",
     "issue:publication-edit": "node scripts/publication-issue-to-data.mjs",
+    "issue:team-edit": "node scripts/team-issue-to-data.mjs",
     "import:legacy-presentation": "node scripts/import-legacy-presentation.mjs",
-    "import:legacy-publication": "node scripts/import-legacy-publications.mjs"
+    "import:legacy-publication": "node scripts/import-legacy-publications.mjs",
+    "import:legacy-team": "node scripts/import-legacy-team.mjs"
   }
 }

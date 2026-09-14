@@ -15,7 +15,8 @@ jobs:
         startsWith(github.head_ref, 'seminar-edit-') == false &&
         startsWith(github.head_ref, 'seminar-submission-') == false &&
         startsWith(github.head_ref, 'seminar-delete-') == false &&
-        startsWith(github.head_ref, 'publication-edit-') == false
+        startsWith(github.head_ref, 'publication-edit-') == false &&
+        startsWith(github.head_ref, 'team-edit-') == false
       )
     runs-on: ubuntu-latest
     steps:

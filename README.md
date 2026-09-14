@@ -17,6 +17,8 @@ data/
   activity-details.json
 
 assets/
+  team/<person-name>/
+    image.*
   seminars/<year>/<seminar-id>/
     image.*
     paper.*
@@ -39,6 +41,7 @@ docs/
 ## Ownership
 
 - `data/` contains reviewable JSON records.
+- `assets/team/` contains portrait images uploaded through team edit workflows.
 - `assets/seminars/` contains files uploaded through seminar issue workflows.
 - `assets/publications/` contains files uploaded through publication edit workflows.
 - `assets/activities/` is reserved for recovered or newly added activity photos.
@@ -63,9 +66,11 @@ This repository currently contains:
 
 - current `data/*.json`
 - current workflow-localized seminar assets under `assets/seminars/`
+- legacy Team records imported into `data/team.json`
 - seminar submission, edit, and deletion issue templates
 - publication edit issue template
-- content update workflows for News, Publications, and Seminars
+- team edit issue template
+- content update workflows for News, Team, Publications, and Seminars
 - validation scripts and CI
 
 `vie-group.github.io` is the presentation layer. It consumes this repository at runtime through `content-source.json`.
@@ -82,6 +87,12 @@ Historical publication rows from the recovered legacy `publication/index.html` w
 npm run import:legacy-publication
 ```
 
+Historical team rows and portrait/profile paths from the recovered legacy `team/index.html` were imported into `data/team.json`. The import can be rerun from a local checkout:
+
+```bash
+npm run import:legacy-team
+```
+
 ## Published URLs
 
 GitHub Pages publishes this repository at:
@@ -95,6 +106,8 @@ Important public endpoints:
 ```text
 https://vie-group.github.io/vie-group-content/data/seminars.json
 https://vie-group.github.io/vie-group-content/data/publications.json
+https://vie-group.github.io/vie-group-content/data/team.json
+https://vie-group.github.io/vie-group-content/assets/team/
 https://vie-group.github.io/vie-group-content/assets/seminars/
 https://vie-group.github.io/vie-group-content/rss.xml
 ```
@@ -130,3 +143,17 @@ Preferred path:
 7. Submit the issue.
 
 The `publication-edit` workflow treats the issue as the complete desired final record for that publication. `Original Publication ID` remains stable even if year, authors, or title changes. Attachments override matching URL fields and are copied into `assets/publications/<year>/<publication-id>/`.
+
+## Editing Team Members
+
+Preferred path:
+
+1. Open `https://vie-group.github.io/team/?manage=1`.
+2. Click `[edit]` next to a person, or click `(edit team...)` and choose a person.
+3. Use `Operation=update` for existing people, `Operation=add` for new people, and `Operation=delete` to remove one person.
+4. Use `Target Group` as the final status: `faculty`, `current`, or `alumni`.
+5. To move a current student to alumni, set `Target Group=alumni` and fill `Year`, `Degree`, and `Destination`.
+6. On the GitHub issue page, drag a replacement portrait into `Image Attachment` when replacing the image.
+7. Submit the issue.
+
+The `team-edit` workflow updates exactly one team record per issue. Uploaded portraits are copied into `assets/team/<person-name>/`.
