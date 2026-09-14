@@ -128,7 +128,7 @@ Preferred path:
 
 The `seminar-edit` workflow treats the issue as the complete desired final record for that seminar. `Original Seminar ID` remains stable even if date or title changes. Attachments override matching URL fields and are copied into `assets/seminars/<year>/<seminar-id>/`.
 
-Unlike seminar deletion, editing is not limited to the original submitter. Any repository `OWNER`, `MEMBER`, or `COLLABORATOR` can edit any selected seminar record; outside users are rejected by the workflow.
+Unlike seminar deletion, editing is not limited to the original submitter. The workflow only processes issues opened by `vie-group` organization members (`MEMBER` / `OWNER` author association); outside users and external collaborators are rejected.
 
 ## Editing One Publication
 

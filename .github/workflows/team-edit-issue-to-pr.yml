@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: authorize
-        name: Verify issue author permission
+        name: Verify issue author organization membership
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
@@ -25,20 +25,16 @@ jobs:
         run: |
           set -euo pipefail
           association="$(gh api "repos/${REPOSITORY}/issues/${ISSUE_NUMBER}" --jq '.author_association // ""')"
-          permission="$(gh api "repos/${REPOSITORY}/collaborators/${ISSUE_AUTHOR}/permission" --jq '.permission // ""' 2>/dev/null || true)"
-          echo "Issue author @${ISSUE_AUTHOR}: association=${association:-unknown}, permission=${permission:-none}"
+          echo "Issue author @${ISSUE_AUTHOR}: association=${association:-unknown}"
 
           authorized=false
           case "$association" in
-            OWNER|MEMBER|COLLABORATOR) authorized=true ;;
-          esac
-          case "$permission" in
-            admin|maintain|write) authorized=true ;;
+            OWNER|MEMBER) authorized=true ;;
           esac
           echo "authorized=${authorized}" >> "$GITHUB_OUTPUT"
 
           if [ "$authorized" != "true" ]; then
-            gh issue close "$ISSUE_NUMBER" --repo "$REPOSITORY" --comment "This team edit request was not processed automatically because @${ISSUE_AUTHOR} is not an owner, member, collaborator, or repository writer. Detected association: ${association:-unknown}; repository permission: ${permission:-none}."
+            gh issue close "$ISSUE_NUMBER" --repo "$REPOSITORY" --comment "This team edit request was not processed automatically because @${ISSUE_AUTHOR} is not a member of the vie-group organization. Detected author association: ${association:-unknown}."
           fi
       - if: steps.authorize.outputs.authorized == 'true'
         uses: actions/checkout@v4

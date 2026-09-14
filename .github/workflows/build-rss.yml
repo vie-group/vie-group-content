@@ -17,6 +17,19 @@ jobs:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
+      - name: Verify workflow actor organization membership
+        env:
+          GH_TOKEN: ${{ secrets.ORG_READ_TOKEN || github.token }}
+          ORG_LOGIN: vie-group
+          ACTOR: ${{ github.actor }}
+        run: |
+          set -euo pipefail
+          if gh api "orgs/${ORG_LOGIN}/members/${ACTOR}" --silent; then
+            echo "@${ACTOR} is a member of ${ORG_LOGIN}."
+          else
+            echo "::error::@${ACTOR} is not a member of ${ORG_LOGIN}; refusing to modify content."
+            exit 1
+          fi
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:

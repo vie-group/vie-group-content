@@ -10,36 +10,47 @@ permissions:
   pull-requests: write
 
 jobs:
-  reject-unauthorized:
-    if: >
-      (contains(github.event.issue.labels.*.name, 'seminar-submission') || startsWith(github.event.issue.title, '[Seminar]')) &&
-      !contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Close unauthorized seminar issue
-        env:
-          GH_TOKEN: ${{ github.token }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          gh issue close "$ISSUE_NUMBER" --comment "This seminar submission was not processed automatically because the submitter is not an owner, member, or collaborator of the repository."
-
   create-pr:
     if: >
-      (contains(github.event.issue.labels.*.name, 'seminar-submission') || startsWith(github.event.issue.title, '[Seminar]')) &&
-      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association)
+      contains(github.event.issue.labels.*.name, 'seminar-submission') || startsWith(github.event.issue.title, '[Seminar]')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - id: authorize
+        name: Verify issue author organization membership
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+        run: |
+          set -euo pipefail
+          association="$(gh api "repos/${REPOSITORY}/issues/${ISSUE_NUMBER}" --jq '.author_association // ""')"
+          echo "Issue author @${ISSUE_AUTHOR}: association=${association:-unknown}"
+
+          authorized=false
+          case "$association" in
+            OWNER|MEMBER) authorized=true ;;
+          esac
+          echo "authorized=${authorized}" >> "$GITHUB_OUTPUT"
+
+          if [ "$authorized" != "true" ]; then
+            gh issue close "$ISSUE_NUMBER" --repo "$REPOSITORY" --comment "This seminar submission was not processed automatically because @${ISSUE_AUTHOR} is not a member of the vie-group organization. Detected author association: ${association:-unknown}."
+          fi
+      - if: steps.authorize.outputs.authorized == 'true'
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.repository.default_branch }}
-      - uses: actions/setup-node@v4
+      - if: steps.authorize.outputs.authorized == 'true'
+        uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Store issue body
+      - if: steps.authorize.outputs.authorized == 'true'
+        name: Store issue body
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: node -e 'require("node:fs").writeFileSync("/tmp/seminar-issue.md", process.env.ISSUE_BODY || "")'
       - id: seminar
+        if: steps.authorize.outputs.authorized == 'true'
         name: Convert issue form to content data
         env:
           ISSUE_BODY_PATH: /tmp/seminar-issue.md
@@ -48,9 +59,12 @@ jobs:
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: node scripts/issue-form-to-data.mjs seminar
-      - run: npm run build:rss
-      - run: npm run validate
+      - if: steps.authorize.outputs.authorized == 'true'
+        run: npm run build:rss
+      - if: steps.authorize.outputs.authorized == 'true'
+        run: npm run validate
       - name: Create or update PR
+        if: steps.authorize.outputs.authorized == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
