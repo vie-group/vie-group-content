@@ -149,11 +149,12 @@ The `publication-edit` workflow treats the issue as the complete desired final r
 Preferred path:
 
 1. Open `https://vie-group.github.io/team/?manage=1`.
-2. Click `[edit]` next to a person, or click `(edit team...)` and choose a person.
-3. Use `Operation=update` for existing people, `Operation=add` for new people, and `Operation=delete` to remove one person.
-4. Use `Target Group` as the final status: `faculty`, `current`, or `alumni`.
-5. To move a current student to alumni, set `Target Group=alumni` and fill `Year`, `Degree`, and `Destination`.
-6. On the GitHub issue page, drag a replacement portrait into `Image Attachment` when replacing the image.
-7. Submit the issue.
+2. Click `(edit team...)` and choose `Add Person` or `Edit Existing People`; row `[edit]` links open the edit mode directly.
+3. Use `Add Person` for new people.
+4. Use `Edit Existing People` for single-record update/delete, or select multiple cards and stage a batch status move.
+5. Use `Target Group` or `Batch Target Group` as the final status: `faculty`, `current`, or `alumni`.
+6. To move current students to alumni, move the selected cards to alumni and fill shared `Year`, `Degree`, and `Destination` values as needed.
+7. On the GitHub issue page, drag a replacement portrait into `Image Attachment` when replacing one person's image.
+8. Submit the issue.
 
-The `team-edit` workflow updates exactly one team record per issue. Uploaded portraits are copied into `assets/team/<person-name>/`.
+The `team-edit` workflow updates one team record for normal issues, or multiple team records when the website-generated issue includes `Batch Changes`. Uploaded portraits are copied into `assets/team/<person-name>/`.

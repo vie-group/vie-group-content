@@ -11,4 +11,4 @@ Content-changing issue workflows only process issues opened by `vie-group` organ
 
 For seminar edits, keep `Original Seminar ID` unchanged. The optional URL fields are the complete final values: keep a URL to retain it, clear it to remove it, or drag a replacement file into the matching attachment box to replace it with a repository-local asset.
 For publication edits, keep `Original Publication ID` unchanged. The optional URL fields are also the complete final values; attachments are copied into `assets/publications/`.
-For team edits, `Operation` controls add/update/delete, and `Target Group` is the final status (`faculty`, `current`, or `alumni`). Portrait attachments are copied into `assets/team/`.
+For team edits, `Operation` controls add/update/delete, and `Target Group` is the final status (`faculty`, `current`, or `alumni`). Website-generated batch edits include a JSON `Batch Changes` field and can update multiple existing records in one issue. Portrait attachments are copied into `assets/team/` for single-person edits.

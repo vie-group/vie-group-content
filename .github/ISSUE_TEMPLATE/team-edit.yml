@@ -1,5 +1,5 @@
 name: Edit team member
-description: Add, update, move, or delete one team member record.
+description: Add one team member, edit one record, or submit website-generated batch status changes.
 title: "[Edit Team] person-name"
 labels: ["team-edit"]
 body:
@@ -7,6 +7,7 @@ body:
     attributes:
       value: |
         Use this form to add, update, move, or delete one team member.
+        Batch status changes are generated from the website editor through the Batch Changes field in the issue body.
         To adjust a person's status, keep Original Name/Group pointing to the current record and set Target Group plus the relevant fields.
         If you drag an image into Image Attachment, that image replaces Image URL and is copied into this repository.
   - type: dropdown
