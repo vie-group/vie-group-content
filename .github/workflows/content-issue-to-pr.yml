@@ -1,0 +1,361 @@
+name: Content Issue to Pull Request
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  route-and-apply:
+    runs-on: ubuntu-latest
+    steps:
+      - id: route
+        name: Route content issue
+        run: |
+          set -euo pipefail
+          action="$(jq -r '.action // ""' "$GITHUB_EVENT_PATH")"
+          title="$(jq -r '.issue.title // ""' "$GITHUB_EVENT_PATH")"
+          labels="$(jq -r '.issue.labels[].name // empty' "$GITHUB_EVENT_PATH")"
+
+          has_label() {
+            printf '%s\n' "$labels" | grep -Fxq "$1"
+          }
+
+          route="none"
+          request_label=""
+          if has_label "team-edit" || [[ "$title" == "[Edit Team]"* ]]; then
+            route="team-edit"
+            request_label="team edit"
+          elif has_label "publication-edit" || [[ "$title" == "[Edit Publication]"* ]]; then
+            route="publication-edit"
+            request_label="publication edit"
+          elif has_label "seminar-delete" || [[ "$title" == "[Delete Seminar]"* ]]; then
+            route="seminar-delete"
+            request_label="seminar delete"
+          elif has_label "seminar-edit" || [[ "$title" == "[Edit Seminar]"* ]]; then
+            route="seminar-edit"
+            request_label="seminar edit"
+          elif has_label "seminar-submission" || [[ "$title" == "[Seminar]"* ]]; then
+            route="seminar-submission"
+            request_label="seminar submission"
+          fi
+
+          echo "action=${action}" >> "$GITHUB_OUTPUT"
+          echo "route=${route}" >> "$GITHUB_OUTPUT"
+          echo "request_label=${request_label}" >> "$GITHUB_OUTPUT"
+          if [ "$route" = "none" ]; then
+            echo "matched=false" >> "$GITHUB_OUTPUT"
+            echo "No content route matched for issue title: ${title}"
+          else
+            echo "matched=true" >> "$GITHUB_OUTPUT"
+            echo "Matched content route: ${route}"
+          fi
+      - id: authorize
+        if: steps.route.outputs.matched == 'true'
+        name: Verify issue author organization membership
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ORG_MEMBERSHIP_TOKEN: ${{ secrets.ORG_MEMBERSHIP_TOKEN }}
+          ORG_NAME: vie-group
+          REPOSITORY: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          REQUEST_LABEL: ${{ steps.route.outputs.request_label }}
+        run: |
+          set -euo pipefail
+          association="$(gh api "repos/${REPOSITORY}/issues/${ISSUE_NUMBER}" --jq '.author_association // ""')"
+          membership_token="${ORG_MEMBERSHIP_TOKEN:-$GH_TOKEN}"
+          membership_response="$(GH_TOKEN="$membership_token" gh api -i "orgs/${ORG_NAME}/members/${ISSUE_AUTHOR}" --silent 2>/tmp/org-membership.err || true)"
+          membership_status="$(printf '%s\n' "$membership_response" | awk '/^HTTP\// { code=$2 } END { print code }')"
+          permission="$(gh api "repos/${REPOSITORY}/collaborators/${ISSUE_AUTHOR}/permission" --jq '.permission // ""' 2>/dev/null || true)"
+          echo "Issue author @${ISSUE_AUTHOR}: association=${association:-unknown}, org_membership_http=${membership_status:-unknown}, repo_permission=${permission:-unknown}"
+
+          authorized=false
+          if [ "${membership_status:-}" = "204" ]; then
+            authorized=true
+          fi
+          case "$association" in
+            OWNER|MEMBER) authorized=true ;;
+          esac
+          case "$permission" in
+            admin) authorized=true ;;
+          esac
+          echo "authorized=${authorized}" >> "$GITHUB_OUTPUT"
+
+          if [ "$authorized" != "true" ]; then
+            gh issue close "$ISSUE_NUMBER" --repo "$REPOSITORY" --comment "This ${REQUEST_LABEL} request was not processed automatically because @${ISSUE_AUTHOR} was not recognized as a vie-group organization member or repository admin. Detected author association: ${association:-unknown}; organization membership HTTP status: ${membership_status:-unknown}; repository permission: ${permission:-unknown}."
+          fi
+      - if: steps.authorize.outputs.authorized == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - if: steps.authorize.outputs.authorized == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - id: process
+        if: steps.authorize.outputs.authorized == 'true'
+        name: Apply content issue and merge PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ROUTE: ${{ steps.route.outputs.route }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          BASE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+
+          issue_body_path="/tmp/content-issue.md"
+          ISSUE_BODY_PATH="$issue_body_path" node -e 'require("node:fs").writeFileSync(process.env.ISSUE_BODY_PATH, process.env.ISSUE_BODY || "")'
+
+          read_output() {
+            local key="$1"
+            local file="$2"
+            node - "$key" "$file" <<'NODE'
+          const fs = require("node:fs");
+          const [key, file] = process.argv.slice(2);
+          const text = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+          const lines = text.split(/\n/);
+          let value = "";
+          for (let i = 0; i < lines.length; i += 1) {
+            const line = lines[i];
+            if (line.startsWith(`${key}=`)) {
+              value = line.slice(key.length + 1);
+            } else if (line.startsWith(`${key}<<`)) {
+              const marker = line.slice(key.length + 2);
+              const chunk = [];
+              i += 1;
+              while (i < lines.length && lines[i] !== marker) {
+                chunk.push(lines[i]);
+                i += 1;
+              }
+              value = chunk.join("\n");
+            }
+          }
+          process.stdout.write(value);
+          NODE
+          }
+
+          has_untracked() {
+            [ -n "$(git ls-files --others --exclude-standard -- "$1" 2>/dev/null)" ]
+          }
+
+          close_no_change() {
+            local message="$1"
+            gh issue close "$ISSUE_NUMBER" --comment "$message"
+            exit 0
+          }
+
+          parser_output="$(mktemp)"
+          item_title=""
+          item_id=""
+          item_kind=""
+          branch=""
+          commit_message=""
+          pr_title=""
+          pr_body=""
+
+          case "$ROUTE" in
+            seminar-submission)
+              GITHUB_OUTPUT="$parser_output" ISSUE_BODY_PATH="$issue_body_path" ISSUE_NUMBER="$ISSUE_NUMBER" ISSUE_URL="$ISSUE_URL" ISSUE_AUTHOR="$ISSUE_AUTHOR" GITHUB_REPOSITORY="$GITHUB_REPOSITORY" node scripts/issue-form-to-data.mjs seminar
+              item_id="$(read_output id "$parser_output")"
+              item_title="$(read_output title "$parser_output")"
+              item_kind="seminar"
+              npm run build:rss
+              npm run validate
+              branch="seminar-submission-${ISSUE_NUMBER}"
+              commit_message="Add seminar: ${item_title}"
+              pr_title="$commit_message"
+              pr_body="Automated seminar content submission from ${ISSUE_URL}.
+
+          Closes #${ISSUE_NUMBER}"
+              ;;
+            seminar-edit)
+              GITHUB_OUTPUT="$parser_output" ISSUE_BODY_PATH="$issue_body_path" ISSUE_NUMBER="$ISSUE_NUMBER" ISSUE_URL="$ISSUE_URL" ISSUE_AUTHOR="$ISSUE_AUTHOR" GITHUB_REPOSITORY="$GITHUB_REPOSITORY" npm run issue:seminar-edit
+              item_id="$(read_output id "$parser_output")"
+              item_title="$(read_output title "$parser_output")"
+              item_kind="seminar"
+              npm run build:rss
+              npm run validate
+              branch="seminar-edit-${ISSUE_NUMBER}"
+              commit_message="Edit seminar: ${item_title}"
+              pr_title="$commit_message"
+              pr_body="Automated seminar content edit from ${ISSUE_URL}.
+
+          Updated seminar: \`${item_id}\`.
+
+          Closes #${ISSUE_NUMBER}"
+              ;;
+            seminar-delete)
+              GITHUB_OUTPUT="$parser_output" DELETE_ISSUE_BODY_PATH="$issue_body_path" node scripts/delete-seminar-from-issue.mjs parse
+              original_issue_number="$(read_output original_issue_number "$parser_output")"
+              requested_id="$(read_output requested_id "$parser_output")"
+
+              original_repository="$GITHUB_REPOSITORY"
+              if [ -n "${requested_id}" ]; then
+                source_repository="$(REQUESTED_ID="$requested_id" node -e 'const fs=require("fs"); const id=process.env.REQUESTED_ID; const items=JSON.parse(fs.readFileSync("data/seminars.json", "utf8")); const item=items.find((entry)=>entry.id===id); process.stdout.write(item?.source?.repository || "");')"
+                if [ -n "${source_repository}" ]; then
+                  original_repository="${source_repository}"
+                fi
+              fi
+
+              if ! original_author="$(gh api "repos/${original_repository}/issues/${original_issue_number}" --jq '.user.login')"; then
+                gh issue close "$ISSUE_NUMBER" --comment "Could not find original seminar issue ${original_repository}#${original_issue_number}; no files were changed."
+                exit 0
+              fi
+
+              if [ "$original_author" != "$ISSUE_AUTHOR" ]; then
+                gh issue close "$ISSUE_NUMBER" --comment "This delete request was not processed because original seminar issue ${original_repository}#${original_issue_number} was opened by @${original_author}, but this request was opened by @${ISSUE_AUTHOR}."
+                exit 0
+              fi
+
+              if [ "$(gh api "repos/${original_repository}/issues/${original_issue_number}" --jq 'has("pull_request")')" = "true" ]; then
+                gh issue close "$ISSUE_NUMBER" --comment "Issue ${original_repository}#${original_issue_number} is a pull request, not a seminar submission issue; no files were changed."
+                exit 0
+              fi
+
+              is_submission="$(gh api "repos/${original_repository}/issues/${original_issue_number}" --jq '((.labels // []) | map(.name) | index("seminar-submission") != null) or ((.title // "") | startswith("[Seminar]"))')"
+              if [ "$is_submission" != "true" ]; then
+                gh issue close "$ISSUE_NUMBER" --comment "Issue ${original_repository}#${original_issue_number} is not recognized as a seminar submission; no files were changed."
+                exit 0
+              fi
+
+              gh api "repos/${original_repository}/issues/${original_issue_number}" --jq '.body // ""' > /tmp/original-seminar-issue.md
+              parser_output="$(mktemp)"
+              GITHUB_OUTPUT="$parser_output" DELETE_ISSUE_BODY_PATH="$issue_body_path" ORIGINAL_ISSUE_BODY_PATH="/tmp/original-seminar-issue.md" ORIGINAL_ISSUE_NUMBER="$original_issue_number" ORIGINAL_ISSUE_AUTHOR="$original_author" ORIGINAL_ISSUE_REPOSITORY="$original_repository" node scripts/delete-seminar-from-issue.mjs delete
+              item_id="$(read_output id "$parser_output")"
+              item_title="$(read_output title "$parser_output")"
+              item_kind="seminar"
+              npm run build:rss
+              npm run validate
+              branch="seminar-delete-${ISSUE_NUMBER}"
+              commit_message="Delete seminar: ${item_title}"
+              pr_title="$commit_message"
+              pr_body="Automated seminar content deletion from ${ISSUE_URL}.
+
+          Verified against original seminar issue for \`${item_id}\`.
+
+          Closes #${ISSUE_NUMBER}"
+              ;;
+            publication-edit)
+              GITHUB_OUTPUT="$parser_output" ISSUE_BODY_PATH="$issue_body_path" ISSUE_NUMBER="$ISSUE_NUMBER" ISSUE_URL="$ISSUE_URL" ISSUE_AUTHOR="$ISSUE_AUTHOR" GITHUB_REPOSITORY="$GITHUB_REPOSITORY" npm run issue:publication-edit
+              item_id="$(read_output id "$parser_output")"
+              item_title="$(read_output title "$parser_output")"
+              item_kind="publication"
+              npm run build:rss
+              npm run validate
+              branch="publication-edit-${ISSUE_NUMBER}"
+              commit_message="Edit publication: ${item_title}"
+              pr_title="$commit_message"
+              pr_body="Automated publication content edit from ${ISSUE_URL}.
+
+          Updated publication: \`${item_id}\`.
+
+          Closes #${ISSUE_NUMBER}"
+              ;;
+            team-edit)
+              GITHUB_OUTPUT="$parser_output" ISSUE_BODY_PATH="$issue_body_path" ISSUE_NUMBER="$ISSUE_NUMBER" ISSUE_URL="$ISSUE_URL" ISSUE_AUTHOR="$ISSUE_AUTHOR" GITHUB_REPOSITORY="$GITHUB_REPOSITORY" npm run issue:team-edit
+              item_id="$(read_output name "$parser_output")"
+              item_title="$item_id"
+              item_kind="team"
+              item_operation="$(read_output operation "$parser_output")"
+              npm run validate
+              branch="team-edit-${ISSUE_NUMBER}"
+              commit_message="Edit team: ${item_title}"
+              pr_title="$commit_message"
+              pr_body="Automated team content ${item_operation} from ${ISSUE_URL}.
+
+          Team member: \`${item_id}\`.
+
+          Closes #${ISSUE_NUMBER}"
+              ;;
+            *)
+              echo "Unsupported route: ${ROUTE}"
+              exit 1
+              ;;
+          esac
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+
+          case "$ROUTE" in
+            seminar-submission)
+              if git diff --quiet -- data/seminars.json assets/seminars && ! has_untracked assets/seminars; then
+                close_no_change "No content change was detected for \`${item_id}\`; this submission may already have been processed."
+              fi
+              git add data/seminars.json rss.xml
+              if [ -d assets/seminars ] || [ -n "$(git ls-files -- assets/seminars)" ]; then
+                git add -A assets/seminars
+              fi
+              ;;
+            seminar-edit)
+              if git diff --quiet -- data/seminars.json rss.xml assets/seminars && ! has_untracked assets/seminars; then
+                close_no_change "No content change was detected for \`${item_id}\`; this edit may already have been processed."
+              fi
+              git add data/seminars.json rss.xml
+              if [ -d assets/seminars ] || [ -n "$(git ls-files -- assets/seminars)" ]; then
+                git add -A assets/seminars
+              fi
+              ;;
+            seminar-delete)
+              if git diff --quiet -- data/seminars.json assets/seminars; then
+                close_no_change "No content change was detected for \`${item_id}\`; this seminar may already have been deleted."
+              fi
+              git add data/seminars.json rss.xml
+              if [ -d assets/seminars ] || [ -n "$(git ls-files -- assets/seminars)" ]; then
+                git add -A assets/seminars
+              fi
+              ;;
+            publication-edit)
+              if git diff --quiet -- data/publications.json rss.xml assets/publications && ! has_untracked assets/publications; then
+                close_no_change "No content change was detected for \`${item_id}\`; this edit may already have been processed."
+              fi
+              git add data/publications.json rss.xml
+              if [ -d assets/publications ] || [ -n "$(git ls-files -- assets/publications)" ]; then
+                git add -A assets/publications
+              fi
+              ;;
+            team-edit)
+              if git diff --quiet -- data/team.json assets/team && ! has_untracked assets/team; then
+                close_no_change "No team content change was detected for \`${item_id}\`; this edit may already have been processed."
+              fi
+              git add data/team.json
+              if [ -d assets/team ] || [ -n "$(git ls-files -- assets/team)" ]; then
+                git add -A assets/team
+              fi
+              ;;
+          esac
+
+          git commit -m "$commit_message"
+          git push --force origin "$branch"
+
+          pr_url="$(gh pr list --base "$BASE_BRANCH" --head "$branch" --json url --jq '.[0].url')"
+          if [ -z "$pr_url" ]; then
+            pr_url="$(gh pr create --base "$BASE_BRANCH" --head "$branch" --title "$pr_title" --body "$pr_body")"
+          else
+            gh pr edit "$pr_url" --title "$pr_title" --body "$pr_body"
+          fi
+          gh pr merge "$pr_url" --squash --delete-branch
+
+          case "$ROUTE" in
+            seminar-submission)
+              gh issue close "$ISSUE_NUMBER" --comment "Created/updated and merged content PR: ${pr_url}"
+              ;;
+            seminar-edit|publication-edit)
+              gh issue close "$ISSUE_NUMBER" --comment "Created/updated and merged content edit PR: ${pr_url}"
+              ;;
+            seminar-delete)
+              gh issue close "$ISSUE_NUMBER" --comment "Created/updated and merged content deletion PR: ${pr_url}"
+              ;;
+            team-edit)
+              gh issue close "$ISSUE_NUMBER" --comment "Created/updated and merged team edit PR: ${pr_url}"
+              ;;
+          esac
