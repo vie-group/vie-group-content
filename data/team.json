@@ -12,53 +12,10 @@
   ],
   "current": [
     {
-      "name": "Zihao Liu",
-      "role": "Ph.D. Student",
-      "email": "lzh19961031 at pku.edu.cn",
-      "image": "media/image/微信图片_20191205134046_es24wY6_JXf59zH.png"
-    },
-    {
-      "name": "Chenxi Yang",
-      "role": "Ph.D. Student",
-      "email": "yangchenxi at stu.pku.edu.cn",
-      "image": "media/image/微信图片_20210112153817_zoMVj4Z.jpg"
-    },
-    {
-      "name": "Ruohua Shi",
-      "role": "Ph.D. Student",
-      "email": "shiruohua at pku dot edu dot cn",
-      "image": "media/image/Ruohua_Shi_YYXZPMm.png",
-      "profileUrl": "media/page/ruohua_x14v64O_uMPdclW_1qdoFqr.html?logo=media/image/Ruohua_Shi_YYXZPMm.png"
-    },
-    {
-      "name": "Yan Zhong",
-      "role": "Ph.D. Student",
-      "email": "zhongyan at stu.pku.edu.cn",
-      "image": "media/image/ZY2_551Rvq0.jpg"
-    },
-    {
       "name": "Qiyue Li",
       "role": "Ph.D. Student",
       "email": "liqiyue at pku dot edu dot cn",
       "image": "media/image/生活照vie_2_OQbEX6U.jpg"
-    },
-    {
-      "name": "Yanfeng Yang",
-      "role": "Master Student",
-      "email": "yangyanfeng at pku.edu.cn",
-      "image": "media/image/微信图片_20221027220821_zrcLmZz.jpg"
-    },
-    {
-      "name": "Weining Ye",
-      "role": "Master Student",
-      "email": "YWNing at pku dot edu dot cn",
-      "image": "media/image/YWN_wDrpRvt.jpg"
-    },
-    {
-      "name": "Chao Liu",
-      "role": "Master Student",
-      "email": "lchao at stu.pku.edu.cn",
-      "image": "media/image/LC3_HoyrYYl.jpg"
     },
     {
       "name": "Zhaochen Liu",
@@ -252,6 +209,49 @@
     {
       "name": "Yueyu Hu",
       "degree": "BS"
+    },
+    {
+      "name": "Yan Zhong",
+      "email": "zhongyan at stu.pku.edu.cn",
+      "image": "media/image/ZY2_551Rvq0.jpg",
+      "degree": "PhD"
+    },
+    {
+      "name": "Chao Liu",
+      "email": "lchao at stu.pku.edu.cn",
+      "image": "media/image/LC3_HoyrYYl.jpg",
+      "degree": "MS"
+    },
+    {
+      "name": "Weining Ye",
+      "email": "YWNing at pku dot edu dot cn",
+      "image": "media/image/YWN_wDrpRvt.jpg",
+      "degree": "MS"
+    },
+    {
+      "name": "Yanfeng Yang",
+      "email": "yangyanfeng at pku.edu.cn",
+      "image": "media/image/微信图片_20221027220821_zrcLmZz.jpg",
+      "degree": "MS"
+    },
+    {
+      "name": "Ruohua Shi",
+      "email": "shiruohua at pku dot edu dot cn",
+      "image": "media/image/Ruohua_Shi_YYXZPMm.png",
+      "profileUrl": "media/page/ruohua_x14v64O_uMPdclW_1qdoFqr.html?logo=media/image/Ruohua_Shi_YYXZPMm.png",
+      "degree": "PhD"
+    },
+    {
+      "name": "Chenxi Yang",
+      "email": "yangchenxi at stu.pku.edu.cn",
+      "image": "media/image/微信图片_20210112153817_zoMVj4Z.jpg",
+      "degree": "PhD"
+    },
+    {
+      "name": "Zihao Liu",
+      "email": "lzh19961031 at pku.edu.cn",
+      "image": "media/image/微信图片_20191205134046_es24wY6_JXf59zH.png",
+      "degree": "PhD"
     }
   ]
 }
