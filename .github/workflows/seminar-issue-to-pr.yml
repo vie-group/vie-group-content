@@ -2,7 +2,7 @@ name: Seminar Issue to Pull Request
 
 on:
   issues:
-    types: [opened, edited, labeled]
+    types: [opened, edited, labeled, reopened]
 
 permissions:
   contents: write
