@@ -19,22 +19,34 @@ jobs:
         name: Verify issue author organization membership
         env:
           GH_TOKEN: ${{ github.token }}
+          ORG_MEMBERSHIP_TOKEN: ${{ secrets.ORG_MEMBERSHIP_TOKEN }}
+          ORG_NAME: vie-group
           REPOSITORY: ${{ github.repository }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
         run: |
           set -euo pipefail
           association="$(gh api "repos/${REPOSITORY}/issues/${ISSUE_NUMBER}" --jq '.author_association // ""')"
-          echo "Issue author @${ISSUE_AUTHOR}: association=${association:-unknown}"
+          membership_token="${ORG_MEMBERSHIP_TOKEN:-$GH_TOKEN}"
+          membership_response="$(GH_TOKEN="$membership_token" gh api -i "orgs/${ORG_NAME}/members/${ISSUE_AUTHOR}" --silent 2>/tmp/org-membership.err || true)"
+          membership_status="$(printf '%s\n' "$membership_response" | awk '/^HTTP\// { code=$2 } END { print code }')"
+          permission="$(gh api "repos/${REPOSITORY}/collaborators/${ISSUE_AUTHOR}/permission" --jq '.permission // ""' 2>/dev/null || true)"
+          echo "Issue author @${ISSUE_AUTHOR}: association=${association:-unknown}, org_membership_http=${membership_status:-unknown}, repo_permission=${permission:-unknown}"
 
           authorized=false
+          if [ "${membership_status:-}" = "204" ]; then
+            authorized=true
+          fi
           case "$association" in
             OWNER|MEMBER) authorized=true ;;
+          esac
+          case "$permission" in
+            admin) authorized=true ;;
           esac
           echo "authorized=${authorized}" >> "$GITHUB_OUTPUT"
 
           if [ "$authorized" != "true" ]; then
-            gh issue close "$ISSUE_NUMBER" --repo "$REPOSITORY" --comment "This seminar delete request was not processed automatically because @${ISSUE_AUTHOR} is not a member of the vie-group organization. Detected author association: ${association:-unknown}."
+            gh issue close "$ISSUE_NUMBER" --repo "$REPOSITORY" --comment "This seminar delete request was not processed automatically because @${ISSUE_AUTHOR} was not recognized as a vie-group organization member or repository admin. Detected author association: ${association:-unknown}; organization membership HTTP status: ${membership_status:-unknown}; repository permission: ${permission:-unknown}."
           fi
       - if: steps.authorize.outputs.authorized == 'true'
         uses: actions/checkout@v4

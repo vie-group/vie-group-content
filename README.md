@@ -128,7 +128,9 @@ Preferred path:
 
 The `seminar-edit` workflow treats the issue as the complete desired final record for that seminar. `Original Seminar ID` remains stable even if date or title changes. Attachments override matching URL fields and are copied into `assets/seminars/<year>/<seminar-id>/`.
 
-Unlike seminar deletion, editing is not limited to the original submitter. The workflow only processes issues opened by `vie-group` organization members (`MEMBER` / `OWNER` author association); outside users and external collaborators are rejected.
+Unlike seminar deletion, editing is not limited to the original submitter. The workflow processes issues opened by recognized `vie-group` organization members, with a repository-admin fallback for organization owners whose private membership is reported by GitHub as `CONTRIBUTOR`.
+
+If GitHub private membership visibility causes false negatives for non-admin organization members, add an `ORG_MEMBERSHIP_TOKEN` repository secret with `read:org` permission so the workflow can verify membership through the organization API.
 
 ## Editing One Publication
 
