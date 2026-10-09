@@ -9,22 +9,28 @@ permissions:
 
 jobs:
   validate:
-    if: >
-      github.event_name != 'pull_request' ||
-      (
-        startsWith(github.head_ref, 'seminar-edit-') == false &&
-        startsWith(github.head_ref, 'seminar-submission-') == false &&
-        startsWith(github.head_ref, 'seminar-delete-') == false &&
-        startsWith(github.head_ref, 'publication-edit-') == false &&
-        startsWith(github.head_ref, 'team-edit-') == false
-      )
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - id: duplicate-automation-pr
+        if: >
+          github.event_name == 'pull_request' &&
+          (
+            startsWith(github.head_ref, 'seminar-edit-') ||
+            startsWith(github.head_ref, 'seminar-submission-') ||
+            startsWith(github.head_ref, 'seminar-delete-') ||
+            startsWith(github.head_ref, 'publication-edit-') ||
+            startsWith(github.head_ref, 'team-edit-')
+          )
+        run: echo "skip=true" >> "$GITHUB_OUTPUT"
+      - if: steps.duplicate-automation-pr.outputs.skip != 'true'
+        uses: actions/checkout@v4
+      - if: steps.duplicate-automation-pr.outputs.skip != 'true'
+        uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm run build:rss
-      - run: npm run validate
-      - if: github.event_name == 'pull_request'
+      - if: steps.duplicate-automation-pr.outputs.skip != 'true'
+        run: npm run build:rss
+      - if: steps.duplicate-automation-pr.outputs.skip != 'true'
+        run: npm run validate
+      - if: github.event_name == 'pull_request' && steps.duplicate-automation-pr.outputs.skip != 'true'
         run: git diff --exit-code -- rss.xml
