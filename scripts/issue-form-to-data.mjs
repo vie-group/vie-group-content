@@ -172,12 +172,6 @@ function parseIssueForm(body) {
   return Object.fromEntries(Object.entries(fields).map(([key, lines]) => [key, cleanValue(lines.join("\n"))]));
 }
 
-function preamble(body) {
-  const value = String(body || "");
-  const firstField = value.search(/^###\s+/m);
-  return firstField >= 0 ? value.slice(0, firstField) : value;
-}
-
 function inferAttachmentKind(sourceUrl) {
   if (!isGitHubAttachmentUrl(sourceUrl)) return "";
   const extension = extensionFromFilename(new URL(sourceUrl).pathname);
@@ -189,7 +183,7 @@ function inferAttachmentKind(sourceUrl) {
 
 function fallbackAttachmentLinks(body) {
   const links = {};
-  for (const url of allUrls(preamble(body))) {
+  for (const url of allUrls(body)) {
     const kind = inferAttachmentKind(url);
     if (kind && !links[kind]) links[kind] = url;
   }
