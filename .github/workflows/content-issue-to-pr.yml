@@ -3,6 +3,8 @@ name: Content Issue to Pull Request
 on:
   issues:
     types: [opened, edited, reopened]
+  issue_comment:
+    types: [created]
 
 permissions:
   contents: write
@@ -11,15 +13,53 @@ permissions:
 
 jobs:
   route-and-apply:
+    if: >
+      github.event_name == 'issues' ||
+      (
+        github.event_name == 'issue_comment' &&
+        github.event.issue.pull_request == null &&
+        github.actor != 'github-actions[bot]' &&
+        (
+          contains(github.event.comment.body, '/force-merge') ||
+          contains(github.event.comment.body, '/force-retry') ||
+          contains(github.event.comment.body, '/retry-content')
+        )
+      )
     runs-on: ubuntu-latest
     steps:
       - id: route
         name: Route content issue
         run: |
           set -euo pipefail
+          event_name="${GITHUB_EVENT_NAME}"
           action="$(jq -r '.action // ""' "$GITHUB_EVENT_PATH")"
           title="$(jq -r '.issue.title // ""' "$GITHUB_EVENT_PATH")"
           labels="$(jq -r '.issue.labels[].name // empty' "$GITHUB_EVENT_PATH")"
+          comment_body="$(jq -r '.comment.body // ""' "$GITHUB_EVENT_PATH")"
+          is_pull_request="$(jq -r 'if .issue.pull_request then "true" else "false" end' "$GITHUB_EVENT_PATH")"
+
+          write_no_match() {
+            echo "event_name=${event_name}" >> "$GITHUB_OUTPUT"
+            echo "action=${action}" >> "$GITHUB_OUTPUT"
+            echo "force_command=false" >> "$GITHUB_OUTPUT"
+            echo "route=none" >> "$GITHUB_OUTPUT"
+            echo "request_label=" >> "$GITHUB_OUTPUT"
+            echo "matched=false" >> "$GITHUB_OUTPUT"
+            echo "$1"
+            exit 0
+          }
+
+          force_command=false
+          if [ "$event_name" = "issue_comment" ]; then
+            if [ "$is_pull_request" = "true" ]; then
+              write_no_match "Ignoring pull request comment."
+            fi
+            if printf '%s\n' "$comment_body" | grep -Eiq '(^|[[:space:]])/(force-merge|force-retry|retry-content)([[:space:]]|$)'; then
+              force_command=true
+            else
+              write_no_match "Ignoring issue comment without a force command."
+            fi
+          fi
 
           has_label() {
             printf '%s\n' "$labels" | grep -Fxq "$1"
@@ -44,7 +84,9 @@ jobs:
             request_label="seminar submission"
           fi
 
+          echo "event_name=${event_name}" >> "$GITHUB_OUTPUT"
           echo "action=${action}" >> "$GITHUB_OUTPUT"
+          echo "force_command=${force_command}" >> "$GITHUB_OUTPUT"
           echo "route=${route}" >> "$GITHUB_OUTPUT"
           echo "request_label=${request_label}" >> "$GITHUB_OUTPUT"
           if [ "$route" = "none" ]; then
@@ -64,9 +106,19 @@ jobs:
           REPOSITORY: ${{ github.repository }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          TRIGGER_ACTOR: ${{ github.actor }}
+          EVENT_NAME: ${{ steps.route.outputs.event_name }}
+          EVENT_ACTION: ${{ steps.route.outputs.action }}
+          FORCE_COMMAND: ${{ steps.route.outputs.force_command }}
           REQUEST_LABEL: ${{ steps.route.outputs.request_label }}
         run: |
           set -euo pipefail
+          finish_issue() {
+            local message="$1"
+            gh issue close "$ISSUE_NUMBER" --repo "$REPOSITORY" --comment "$message" ||
+              gh issue comment "$ISSUE_NUMBER" --repo "$REPOSITORY" --body "$message"
+          }
+
           association="$(gh api "repos/${REPOSITORY}/issues/${ISSUE_NUMBER}" --jq '.author_association // ""')"
           membership_token="${ORG_MEMBERSHIP_TOKEN:-$GH_TOKEN}"
           membership_response="$(GH_TOKEN="$membership_token" gh api -i "orgs/${ORG_NAME}/members/${ISSUE_AUTHOR}" --silent 2>/tmp/org-membership.err || true)"
@@ -74,20 +126,52 @@ jobs:
           permission="$(gh api "repos/${REPOSITORY}/collaborators/${ISSUE_AUTHOR}/permission" --jq '.permission // ""' 2>/dev/null || true)"
           echo "Issue author @${ISSUE_AUTHOR}: association=${association:-unknown}, org_membership_http=${membership_status:-unknown}, repo_permission=${permission:-unknown}"
 
-          authorized=false
+          trigger_permission="$(gh api "repos/${REPOSITORY}/collaborators/${TRIGGER_ACTOR}/permission" --jq '.permission // ""' 2>/dev/null || true)"
+          trigger_membership_response="$(GH_TOKEN="$membership_token" gh api -i "orgs/${ORG_NAME}/members/${TRIGGER_ACTOR}" --silent 2>/tmp/org-trigger-membership.err || true)"
+          trigger_membership_status="$(printf '%s\n' "$trigger_membership_response" | awk '/^HTTP\// { code=$2 } END { print code }')"
+          echo "Trigger actor @${TRIGGER_ACTOR}: org_membership_http=${trigger_membership_status:-unknown}, repo_permission=${trigger_permission:-unknown}, event=${EVENT_NAME}/${EVENT_ACTION}, force_command=${FORCE_COMMAND}"
+
+          issue_author_authorized=false
           if [ "${membership_status:-}" = "204" ]; then
-            authorized=true
+            issue_author_authorized=true
           fi
           case "$association" in
-            OWNER|MEMBER) authorized=true ;;
+            OWNER|MEMBER) issue_author_authorized=true ;;
           esac
           case "$permission" in
-            admin) authorized=true ;;
+            admin) issue_author_authorized=true ;;
           esac
+
+          force_requested=false
+          if [ "$EVENT_NAME" = "issue_comment" ] && [ "$FORCE_COMMAND" = "true" ]; then
+            force_requested=true
+          elif [ "$EVENT_NAME" = "issues" ] && [ "$EVENT_ACTION" = "reopened" ]; then
+            force_requested=true
+          fi
+
+          trigger_is_owner=false
+          case "$trigger_permission" in
+            admin) trigger_is_owner=true ;;
+          esac
+
+          authorized=false
+          force_approved=false
+          if [ "$issue_author_authorized" = "true" ]; then
+            authorized=true
+          elif [ "$force_requested" = "true" ] && [ "$trigger_is_owner" = "true" ]; then
+            authorized=true
+            force_approved=true
+          fi
           echo "authorized=${authorized}" >> "$GITHUB_OUTPUT"
+          echo "force_approved=${force_approved}" >> "$GITHUB_OUTPUT"
+          echo "trigger_actor=${TRIGGER_ACTOR}" >> "$GITHUB_OUTPUT"
 
           if [ "$authorized" != "true" ]; then
-            gh issue close "$ISSUE_NUMBER" --repo "$REPOSITORY" --comment "This ${REQUEST_LABEL} request was not processed automatically because @${ISSUE_AUTHOR} was not recognized as a vie-group organization member or repository admin. Detected author association: ${association:-unknown}; organization membership HTTP status: ${membership_status:-unknown}; repository permission: ${permission:-unknown}."
+            if [ "$force_requested" = "true" ]; then
+              finish_issue "This ${REQUEST_LABEL} request was not force-processed because @${TRIGGER_ACTOR} was not recognized as a repository owner/admin. Detected trigger actor organization membership HTTP status: ${trigger_membership_status:-unknown}; trigger actor repository permission: ${trigger_permission:-unknown}. Original issue author @${ISSUE_AUTHOR}: author association ${association:-unknown}; organization membership HTTP status ${membership_status:-unknown}; repository permission ${permission:-unknown}."
+            else
+              finish_issue "This ${REQUEST_LABEL} request was not processed automatically because @${ISSUE_AUTHOR} was not recognized as a vie-group organization member or repository admin. Detected author association: ${association:-unknown}; organization membership HTTP status: ${membership_status:-unknown}; repository permission: ${permission:-unknown}."
+            fi
           fi
       - if: steps.authorize.outputs.authorized == 'true'
         uses: actions/checkout@v4
@@ -109,6 +193,8 @@ jobs:
           ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           BASE_BRANCH: ${{ github.event.repository.default_branch }}
+          FORCE_APPROVED: ${{ steps.authorize.outputs.force_approved }}
+          TRIGGER_ACTOR: ${{ steps.authorize.outputs.trigger_actor }}
         run: |
           set -euo pipefail
 
@@ -149,9 +235,22 @@ jobs:
 
           close_no_change() {
             local message="$1"
-            gh issue close "$ISSUE_NUMBER" --comment "$message"
+            finish_issue "$message"
             exit 0
           }
+
+          finish_issue() {
+            local message="$1"
+            gh issue close "$ISSUE_NUMBER" --comment "$message" ||
+              gh issue comment "$ISSUE_NUMBER" --body "$message"
+          }
+
+          force_note=""
+          if [ "$FORCE_APPROVED" = "true" ]; then
+            force_note="
+
+          Forced by repository owner/admin @${TRIGGER_ACTOR}."
+          fi
 
           parser_output="$(mktemp)"
           item_title=""
@@ -175,7 +274,7 @@ jobs:
               pr_title="$commit_message"
               pr_body="Automated seminar content submission from ${ISSUE_URL}.
 
-          Closes #${ISSUE_NUMBER}"
+          Closes #${ISSUE_NUMBER}${force_note}"
               ;;
             seminar-edit)
               GITHUB_OUTPUT="$parser_output" ISSUE_BODY_PATH="$issue_body_path" ISSUE_NUMBER="$ISSUE_NUMBER" ISSUE_URL="$ISSUE_URL" ISSUE_AUTHOR="$ISSUE_AUTHOR" GITHUB_REPOSITORY="$GITHUB_REPOSITORY" npm run issue:seminar-edit
@@ -191,7 +290,7 @@ jobs:
 
           Updated seminar: \`${item_id}\`.
 
-          Closes #${ISSUE_NUMBER}"
+          Closes #${ISSUE_NUMBER}${force_note}"
               ;;
             seminar-delete)
               GITHUB_OUTPUT="$parser_output" DELETE_ISSUE_BODY_PATH="$issue_body_path" node scripts/delete-seminar-from-issue.mjs parse
@@ -207,23 +306,23 @@ jobs:
               fi
 
               if ! original_author="$(gh api "repos/${original_repository}/issues/${original_issue_number}" --jq '.user.login')"; then
-                gh issue close "$ISSUE_NUMBER" --comment "Could not find original seminar issue ${original_repository}#${original_issue_number}; no files were changed."
+                finish_issue "Could not find original seminar issue ${original_repository}#${original_issue_number}; no files were changed."
                 exit 0
               fi
 
-              if [ "$original_author" != "$ISSUE_AUTHOR" ]; then
-                gh issue close "$ISSUE_NUMBER" --comment "This delete request was not processed because original seminar issue ${original_repository}#${original_issue_number} was opened by @${original_author}, but this request was opened by @${ISSUE_AUTHOR}."
+              if [ "$original_author" != "$ISSUE_AUTHOR" ] && [ "$FORCE_APPROVED" != "true" ]; then
+                finish_issue "This delete request was not processed because original seminar issue ${original_repository}#${original_issue_number} was opened by @${original_author}, but this request was opened by @${ISSUE_AUTHOR}."
                 exit 0
               fi
 
               if [ "$(gh api "repos/${original_repository}/issues/${original_issue_number}" --jq 'has("pull_request")')" = "true" ]; then
-                gh issue close "$ISSUE_NUMBER" --comment "Issue ${original_repository}#${original_issue_number} is a pull request, not a seminar submission issue; no files were changed."
+                finish_issue "Issue ${original_repository}#${original_issue_number} is a pull request, not a seminar submission issue; no files were changed."
                 exit 0
               fi
 
               is_submission="$(gh api "repos/${original_repository}/issues/${original_issue_number}" --jq '((.labels // []) | map(.name) | index("seminar-submission") != null) or ((.title // "") | startswith("[Seminar]"))')"
               if [ "$is_submission" != "true" ]; then
-                gh issue close "$ISSUE_NUMBER" --comment "Issue ${original_repository}#${original_issue_number} is not recognized as a seminar submission; no files were changed."
+                finish_issue "Issue ${original_repository}#${original_issue_number} is not recognized as a seminar submission; no files were changed."
                 exit 0
               fi
 
@@ -242,7 +341,7 @@ jobs:
 
           Verified against original seminar issue for \`${item_id}\`.
 
-          Closes #${ISSUE_NUMBER}"
+          Closes #${ISSUE_NUMBER}${force_note}"
               ;;
             publication-edit)
               GITHUB_OUTPUT="$parser_output" ISSUE_BODY_PATH="$issue_body_path" ISSUE_NUMBER="$ISSUE_NUMBER" ISSUE_URL="$ISSUE_URL" ISSUE_AUTHOR="$ISSUE_AUTHOR" GITHUB_REPOSITORY="$GITHUB_REPOSITORY" npm run issue:publication-edit
@@ -258,7 +357,7 @@ jobs:
 
           Updated publication: \`${item_id}\`.
 
-          Closes #${ISSUE_NUMBER}"
+          Closes #${ISSUE_NUMBER}${force_note}"
               ;;
             team-edit)
               GITHUB_OUTPUT="$parser_output" ISSUE_BODY_PATH="$issue_body_path" ISSUE_NUMBER="$ISSUE_NUMBER" ISSUE_URL="$ISSUE_URL" ISSUE_AUTHOR="$ISSUE_AUTHOR" GITHUB_REPOSITORY="$GITHUB_REPOSITORY" npm run issue:team-edit
@@ -274,7 +373,7 @@ jobs:
 
           Team member: \`${item_id}\`.
 
-          Closes #${ISSUE_NUMBER}"
+          Closes #${ISSUE_NUMBER}${force_note}"
               ;;
             *)
               echo "Unsupported route: ${ROUTE}"
@@ -347,15 +446,15 @@ jobs:
 
           case "$ROUTE" in
             seminar-submission)
-              gh issue close "$ISSUE_NUMBER" --comment "Created/updated and merged content PR: ${pr_url}"
+              finish_issue "Created/updated and merged content PR: ${pr_url}"
               ;;
             seminar-edit|publication-edit)
-              gh issue close "$ISSUE_NUMBER" --comment "Created/updated and merged content edit PR: ${pr_url}"
+              finish_issue "Created/updated and merged content edit PR: ${pr_url}"
               ;;
             seminar-delete)
-              gh issue close "$ISSUE_NUMBER" --comment "Created/updated and merged content deletion PR: ${pr_url}"
+              finish_issue "Created/updated and merged content deletion PR: ${pr_url}"
               ;;
             team-edit)
-              gh issue close "$ISSUE_NUMBER" --comment "Created/updated and merged team edit PR: ${pr_url}"
+              finish_issue "Created/updated and merged team edit PR: ${pr_url}"
               ;;
           esac

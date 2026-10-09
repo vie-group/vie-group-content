@@ -132,6 +132,8 @@ Unlike seminar deletion, editing is not limited to the original submitter. The w
 
 If GitHub private membership visibility causes false negatives for non-admin organization members, add an `ORG_MEMBERSHIP_TOKEN` repository secret with `read:org` permission so the workflow can verify membership through the organization API.
 
+For failed content issues opened by outside users, a repository owner/admin can force a retry by reopening the issue or by commenting `/force-merge`. The aliases `/force-retry` and `/retry-content` also work. The forced path still runs the normal parser and content validation before creating and merging a PR.
+
 ## Editing One Publication
 
 Preferred path:

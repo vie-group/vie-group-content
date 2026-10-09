@@ -9,6 +9,7 @@ The public website's `edit-team/` page opens pre-filled team edit issues in this
 
 The content-changing issue workflow only processes issues opened by recognized `vie-group` organization members, with a repository-admin fallback for organization owners whose private membership is reported by GitHub as `CONTRIBUTOR`. External users and non-admin external collaborators are closed without changing data.
 Closed content-change issues can be retried by reopening them; the unified content issue workflow listens to `opened`, `edited`, and `reopened` issue events.
+Repository owners/admins can force-process a failed content issue opened by another user by reopening it, or by commenting `/force-merge` on the issue. `/force-retry` and `/retry-content` are accepted aliases.
 
 For seminar edits, keep `Original Seminar ID` unchanged. The optional URL fields are the complete final values: keep a URL to retain it, clear it to remove it, or drag a replacement file into the matching attachment box to replace it with a repository-local asset.
 For publication edits, keep `Original Publication ID` unchanged. The optional URL fields are also the complete final values; attachments are copied into `assets/publications/`.

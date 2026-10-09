@@ -61,6 +61,12 @@ function firstUrl(value) {
   return match ? match[0].replace(/[.,;"']+$/, "") : "";
 }
 
+function allUrls(value) {
+  return [...String(value || "").matchAll(/https?:\/\/[^\s"'<>()[\]]+/g)].map((match) =>
+    match[0].replace(/[.,;"']+$/, "")
+  );
+}
+
 function isGitHubAttachmentUrl(value) {
   try {
     const url = new URL(value);
@@ -166,6 +172,30 @@ function parseIssueForm(body) {
   return Object.fromEntries(Object.entries(fields).map(([key, lines]) => [key, cleanValue(lines.join("\n"))]));
 }
 
+function preamble(body) {
+  const value = String(body || "");
+  const firstField = value.search(/^###\s+/m);
+  return firstField >= 0 ? value.slice(0, firstField) : value;
+}
+
+function inferAttachmentKind(sourceUrl) {
+  if (!isGitHubAttachmentUrl(sourceUrl)) return "";
+  const extension = extensionFromFilename(new URL(sourceUrl).pathname);
+  if (/^\.(gif|jpe?g|png|svg|webp)$/i.test(extension)) return "image";
+  if (/^\.(ppt|pptx|pptm|zip)$/i.test(extension)) return "slides";
+  if (/^\.pdf$/i.test(extension)) return "paper";
+  return "";
+}
+
+function fallbackAttachmentLinks(body) {
+  const links = {};
+  for (const url of allUrls(preamble(body))) {
+    const kind = inferAttachmentKind(url);
+    if (kind && !links[kind]) links[kind] = url;
+  }
+  return links;
+}
+
 function field(fields, label, required = false) {
   const value = fields[normalizeLabel(label)] || "";
   if (required && !value) throw new Error(`${label} is required in the issue form.`);
@@ -186,7 +216,9 @@ async function writeOutput(name, value) {
 async function addSeminarFromIssue() {
   const bodyPath = process.env.ISSUE_BODY_PATH;
   if (!bodyPath) throw new Error("ISSUE_BODY_PATH is required.");
-  const fields = parseIssueForm(await readFile(bodyPath, "utf8"));
+  const body = await readFile(bodyPath, "utf8");
+  const fields = parseIssueForm(body);
+  const fallbackLinks = fallbackAttachmentLinks(body);
   const date = field(fields, "Date", true);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("Date must use YYYY-MM-DD.");
 
@@ -200,7 +232,7 @@ async function addSeminarFromIssue() {
     ["code", "Code URL"],
     ["video", "Video URL"]
   ]) {
-    const value = field(fields, label) || firstUrl(field(fields, attachmentLabel));
+    const value = field(fields, label) || firstUrl(field(fields, attachmentLabel)) || fallbackLinks[key];
     if (value) rawLinks[key] = value;
   }
 
@@ -253,7 +285,9 @@ async function addSeminarFromIssue() {
 async function editSeminarFromIssue() {
   const bodyPath = process.env.ISSUE_BODY_PATH;
   if (!bodyPath) throw new Error("ISSUE_BODY_PATH is required.");
-  const fields = parseIssueForm(await readFile(bodyPath, "utf8"));
+  const body = await readFile(bodyPath, "utf8");
+  const fields = parseIssueForm(body);
+  const fallbackLinks = fallbackAttachmentLinks(body);
   const id = field(fields, "Original Seminar ID", true).trim();
 
   const date = field(fields, "Date", true);
@@ -269,7 +303,7 @@ async function editSeminarFromIssue() {
     ["code", "Code URL"],
     ["video", "Video URL"]
   ]) {
-    const value = firstUrl(field(fields, attachmentLabel)) || field(fields, label);
+    const value = firstUrl(field(fields, attachmentLabel)) || field(fields, label) || fallbackLinks[key];
     if (value) rawLinks[key] = value;
   }
 
