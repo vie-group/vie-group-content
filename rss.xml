@@ -5,8 +5,17 @@
     <link>https://www.vie.group</link>
     <description>VIE focuses on computer vision and image/video quality assessment. Current topics include visual inference, visual quality evaluation, medical image analysis, amodal perception, action understanding, and robust learning.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://vie-group.github.io/vie-group-content/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Seminar: Summer internship report</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2026-09-18-summer-internship-report</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Yixuan Sun</description>
+      <category>seminar</category>
+      <category>Feed-forward modeling for 4D hand-object interaction from monocular RGB video</category>
+    </item>
     <item>
       <title>Seminar: MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training</title>
       <link>https://www.vie.group/presentation/</link>
@@ -525,14 +534,6 @@
       <guid isPermaLink="false">seminar:2023-03-10-no-reference-opinion-unaware-quality-assessment-of-authentically-distorted-image</guid>
       <pubDate>Fri, 10 Mar 2023 12:00:00 GMT</pubDate>
       <description>Yingjian Song</description>
-      <category>seminar</category>
-    </item>
-    <item>
-      <title>Seminar: Towards certifying Linf robustness using neural networks with Linf-dist neurons</title>
-      <link>https://www.vie.group/presentation/</link>
-      <guid isPermaLink="false">seminar:2023-03-03-towards-certifying-linf-robustness-using-neural-networks-with-linf-dist-neurons</guid>
-      <pubDate>Fri, 03 Mar 2023 12:00:00 GMT</pubDate>
-      <description>Yujia Liu</description>
       <category>seminar</category>
     </item>
   </channel>
