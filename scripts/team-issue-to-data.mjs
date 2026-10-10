@@ -1,4 +1,5 @@
 import { mkdir, readFile, writeFile, appendFile, rm } from "node:fs/promises";
+import { processImageAttachment } from "./image-processing.mjs";
 
 const groups = ["faculty", "current", "alumni"];
 const attachmentContentTypes = new Map([
@@ -206,10 +207,18 @@ async function downloadImageAttachment(sourceUrl, personName) {
     extensionFromFilename(filenameFromContentDisposition(response.headers.get("content-disposition"))) ||
     attachmentContentTypes.get(cleanContentType) ||
     ".png";
+  const bytes = Buffer.from(await response.arrayBuffer());
+  const processed = await processImageAttachment({
+    buffer: bytes,
+    extension,
+    contentType,
+    preset: "team-portrait",
+    label: `${personName} portrait`
+  });
   const dir = `assets/team/${slugify(personName)}`;
-  const path = `${dir}/image${extension}`;
+  const path = `${dir}/image${processed.extension}`;
   await mkdir(dir, { recursive: true });
-  await writeFile(path, Buffer.from(await response.arrayBuffer()));
+  await writeFile(path, processed.buffer);
   console.log(`Downloaded team image attachment to ${path}`);
   return path;
 }

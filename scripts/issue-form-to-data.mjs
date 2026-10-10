@@ -1,4 +1,5 @@
 import { mkdir, readFile, writeFile, appendFile, rm } from "node:fs/promises";
+import { processImageAttachment } from "./image-processing.mjs";
 
 const command = process.argv[2];
 const attachmentContentTypes = new Map([
@@ -124,11 +125,21 @@ async function downloadGitHubAttachment(kind, sourceUrl, record) {
   const year = record.date.slice(0, 4);
   const dir = `assets/seminars/${year}/${record.id}`;
   const extension = attachmentExtension(kind, sourceUrl, contentType, response.headers.get("content-disposition"));
-  const path = `${dir}/${kind}${extension}`;
   const bytes = Buffer.from(await response.arrayBuffer());
+  const processed =
+    kind === "image"
+      ? await processImageAttachment({
+          buffer: bytes,
+          extension,
+          contentType,
+          preset: "seminar-cover",
+          label: `${record.id} ${kind}`
+        })
+      : { buffer: bytes, extension };
+  const path = `${dir}/${kind}${processed.extension}`;
 
   await mkdir(dir, { recursive: true });
-  await writeFile(path, bytes);
+  await writeFile(path, processed.buffer);
   console.log(`Downloaded ${kind} attachment to ${path}`);
   return path;
 }
