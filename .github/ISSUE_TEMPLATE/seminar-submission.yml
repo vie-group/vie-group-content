@@ -1,108 +1,115 @@
-name: Seminar material submission
-description: Submit group seminar metadata and links for review.
-title: "[Seminar] YYYY-MM-DD Speaker - Title"
+name: Seminar material submission / 组会材料提交
+description: Submit group seminar metadata and links for review. / 提交组会报告信息和相关材料链接。
+title: "[Seminar] YYYY-MM-DD Speaker - Title / 报告人 - 标题"
 labels: ["seminar-submission"]
 body:
   - type: markdown
     attributes:
       value: |
+        如果你没有直接写入权限，请填写此表单；自动流程会把 Issue 转成 Pull Request。
         Fill this form if you do not have direct write access. A workflow will turn the issue into a pull request.
+
+        如果论文已有 PDF 链接，请填入 Paper URL / 论文链接。
         If the paper already has a PDF link, put it in Paper URL.
+
+        如需提交封面图、PPT 或 PDF 文件，请点击对应 Attachment / 附件输入框并拖入文件，GitHub 会自动插入上传链接。
         To submit a cover image, PPT, or PDF file, click inside the matching Attachment box and drag the file there. GitHub will insert an upload link automatically.
+
+        自动流程会先把 GitHub 附件复制到本仓库，再更新网站数据。
         The workflow will copy GitHub attachments into this repository before updating the website.
   - type: input
     id: date
     attributes:
-      label: Date
-      description: Use YYYY-MM-DD.
+      label: Date / 日期
+      description: 使用 YYYY-MM-DD 格式。 / Use YYYY-MM-DD.
       placeholder: "2024-04-07"
     validations:
       required: true
   - type: input
     id: speaker
     attributes:
-      label: Speaker
-      placeholder: "Name"
+      label: Speaker / 报告人
+      placeholder: "Name / 姓名"
     validations:
       required: true
   - type: input
     id: title
     attributes:
-      label: Title
-      placeholder: "Paper or talk title"
+      label: Title / 标题
+      placeholder: "Paper or talk title / 论文或报告标题"
     validations:
       required: true
   - type: input
     id: image_url
     attributes:
-      label: Image URL
+      label: Image URL / 图片链接
       placeholder: "https://.../cover.png"
     validations:
       required: false
   - type: textarea
     id: image_attachment
     attributes:
-      label: Image Attachment
-      description: Drag a seminar cover image into this box if no Image URL is available.
-      placeholder: "Drop cover image here."
+      label: Image Attachment / 图片附件
+      description: 如果没有 Image URL / 图片链接，请把组会封面图拖到此处。 / Drag a seminar cover image into this box if no Image URL is available.
+      placeholder: "Drop cover image here. / 将封面图拖到这里。"
     validations:
       required: false
   - type: input
     id: paper_url
     attributes:
-      label: Paper URL
+      label: Paper URL / 论文链接
       placeholder: "https://arxiv.org/pdf/..."
     validations:
       required: false
   - type: input
     id: slides_url
     attributes:
-      label: Slides URL
+      label: Slides URL / 幻灯片链接
       placeholder: "https://github.com/.../slides.pptx"
     validations:
       required: false
   - type: textarea
     id: paper_attachment
     attributes:
-      label: Paper Attachment
-      description: If no Paper URL is available, drag the paper PDF into this box.
-      placeholder: "Drop paper PDF here."
+      label: Paper Attachment / 论文附件
+      description: 如果没有 Paper URL / 论文链接，请把论文 PDF 拖到此处。 / If no Paper URL is available, drag the paper PDF into this box.
+      placeholder: "Drop paper PDF here. / 将论文 PDF 拖到这里。"
     validations:
       required: false
   - type: textarea
     id: slides_attachment
     attributes:
-      label: Slides Attachment
-      description: Drag the seminar PPT/PDF into this box.
-      placeholder: "Drop slides PDF/PPT here."
+      label: Slides Attachment / 幻灯片附件
+      description: 请把组会 PPT/PDF 拖到此处。 / Drag the seminar PPT/PDF into this box.
+      placeholder: "Drop slides PDF/PPT here. / 将幻灯片 PDF/PPT 拖到这里。"
     validations:
       required: false
   - type: input
     id: code_url
     attributes:
-      label: Code URL
+      label: Code URL / 代码链接
       placeholder: "https://github.com/..."
     validations:
       required: false
   - type: input
     id: video_url
     attributes:
-      label: Video URL
-      placeholder: "Optional"
+      label: Video URL / 视频链接
+      placeholder: "Optional / 可选"
     validations:
       required: false
   - type: input
     id: tags
     attributes:
-      label: Tags
-      description: Comma-separated.
+      label: Tags / 标签
+      description: 使用英文逗号分隔。 / Comma-separated.
       placeholder: "IQA, diffusion"
     validations:
       required: false
   - type: textarea
     id: abstract
     attributes:
-      label: Abstract
-      placeholder: "Optional short summary."
+      label: Abstract / 摘要
+      placeholder: "Optional short summary. / 可选的简短摘要。"
     validations:
       required: false

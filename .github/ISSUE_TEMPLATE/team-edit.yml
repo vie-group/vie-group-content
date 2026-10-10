@@ -1,19 +1,27 @@
-name: Edit team member
-description: Add one team member, edit one record, or submit website-generated batch status changes.
-title: "[Edit Team] person-name"
+name: Edit team member / 编辑团队成员
+description: Add one team member, edit one record, or submit website-generated batch status changes. / 新增成员、编辑单条记录，或提交网站生成的批量状态调整。
+title: "[Edit Team] person-name / 姓名"
 labels: ["team-edit"]
 body:
   - type: markdown
     attributes:
       value: |
+        使用此表单新增、更新、移动或删除一位团队成员。
         Use this form to add, update, move, or delete one team member.
+
+        批量状态调整由网站编辑器生成，并写入 Issue 正文中的 Batch Changes / 批量变更字段。
         Batch status changes are generated from the website editor through the Batch Changes field in the issue body.
+
+        调整成员状态时，请保持 Original Name / 原始姓名和 Original Group / 原始分组指向当前记录，并设置 Target Group / 目标分组及相关字段。
         To adjust a person's status, keep Original Name/Group pointing to the current record and set Target Group plus the relevant fields.
+
+        如果把图片拖入 Image Attachment / 图片附件，该图片会替换 Image URL / 图片链接，并复制到本仓库。
         If you drag an image into Image Attachment, that image replaces Image URL and is copied into this repository.
   - type: dropdown
     id: operation
     attributes:
-      label: Operation
+      label: Operation / 操作
+      description: update = 更新，add = 新增，delete = 删除。 / update, add, or delete.
       options:
         - update
         - add
@@ -23,8 +31,8 @@ body:
   - type: dropdown
     id: original_group
     attributes:
-      label: Original Group
-      description: For update/delete. Leave unchanged when generated from the website.
+      label: Original Group / 原始分组
+      description: 用于 update/delete；由网站生成时保持不变。 / For update/delete. Leave unchanged when generated from the website.
       options:
         - faculty
         - current
@@ -34,16 +42,16 @@ body:
   - type: input
     id: original_name
     attributes:
-      label: Original Name
-      description: For update/delete. Leave blank for a new person.
+      label: Original Name / 原始姓名
+      description: 用于 update/delete；新增成员时留空。 / For update/delete. Leave blank for a new person.
       placeholder: "Zihao Liu"
     validations:
       required: false
   - type: dropdown
     id: target_group
     attributes:
-      label: Target Group
-      description: The final group/status for add/update.
+      label: Target Group / 目标分组
+      description: add/update 后的最终分组或状态；current = 在组成员，alumni = 已毕业/离组，faculty = 教师。 / The final group/status for add/update.
       options:
         - current
         - alumni
@@ -53,92 +61,92 @@ body:
   - type: input
     id: name
     attributes:
-      label: Name
-      placeholder: "New Person"
+      label: Name / 姓名
+      placeholder: "New Person / 新成员姓名"
     validations:
       required: false
   - type: input
     id: role
     attributes:
-      label: Role
-      description: Used for faculty/current records.
+      label: Role / 身份
+      description: 用于 faculty/current 记录。 / Used for faculty/current records.
       placeholder: "Ph.D. Student"
     validations:
       required: false
   - type: input
     id: email
     attributes:
-      label: Email
+      label: Email / 邮箱
       placeholder: "name at pku.edu.cn"
     validations:
       required: false
   - type: input
     id: affiliation
     attributes:
-      label: Affiliation
-      description: Used for faculty records.
+      label: Affiliation / 单位
+      description: 用于 faculty 记录。 / Used for faculty records.
       placeholder: "School of Electronics Engineering and Computer Science, Peking University"
     validations:
       required: false
   - type: input
     id: address
     attributes:
-      label: Address
-      description: Used for faculty records.
+      label: Address / 地址
+      description: 用于 faculty 记录。 / Used for faculty records.
       placeholder: "Room ..."
     validations:
       required: false
   - type: input
     id: year
     attributes:
-      label: Year
-      description: Used for alumni records.
+      label: Year / 年份
+      description: 用于 alumni 记录。 / Used for alumni records.
       placeholder: "2026"
     validations:
       required: false
   - type: input
     id: degree
     attributes:
-      label: Degree
-      description: Used for alumni records.
+      label: Degree / 学位
+      description: 用于 alumni 记录。 / Used for alumni records.
       placeholder: "PhD / MS / BS"
     validations:
       required: false
   - type: input
     id: destination
     attributes:
-      label: Destination
-      description: Used for alumni records.
-      placeholder: "Company, university, or role"
+      label: Destination / 去向
+      description: 用于 alumni 记录。 / Used for alumni records.
+      placeholder: "Company, university, or role / 公司、学校或职位"
     validations:
       required: false
   - type: input
     id: image_url
     attributes:
-      label: Image URL
-      description: Existing image path or URL. Leave blank to clear unless using Image Attachment.
+      label: Image URL / 图片链接
+      description: 现有图片路径或 URL；留空表示清除，除非使用 Image Attachment / 图片附件。 / Existing image path or URL. Leave blank to clear unless using Image Attachment.
       placeholder: "media/image/person.jpg"
     validations:
       required: false
   - type: textarea
     id: image_attachment
     attributes:
-      label: Image Attachment
-      description: Drag a replacement portrait image here.
-      placeholder: "Drop replacement image here."
+      label: Image Attachment / 图片附件
+      description: 将替换用头像图片拖到此处。 / Drag a replacement portrait image here.
+      placeholder: "Drop replacement image here. / 将替换图片拖到这里。"
     validations:
       required: false
   - type: input
     id: profile_url
     attributes:
-      label: Profile URL
+      label: Profile URL / 个人主页链接
       placeholder: "media/page/person.html or https://..."
     validations:
       required: false
   - type: textarea
     id: edit_note
     attributes:
-      label: Edit Note
-      placeholder: "What changed and why?"
+      label: Edit Note / 编辑说明
+      placeholder: "What changed and why? / 修改了什么，为什么修改？"
     validations:
       required: false

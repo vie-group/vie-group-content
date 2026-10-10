@@ -1,129 +1,136 @@
-name: Edit seminar record
-description: Edit one published seminar record and optionally replace its files.
-title: "[Edit Seminar] seminar-id"
+name: Edit seminar record / 编辑组会记录
+description: Edit one published seminar record and optionally replace its files. / 编辑一条已发布的组会记录，并可替换相关文件。
+title: "[Edit Seminar] seminar-id / 组会编号"
 labels: ["seminar-edit"]
 body:
   - type: markdown
     attributes:
       value: |
+        使用此表单编辑一条组会记录。
         Use this form to edit one seminar record.
+
+        Original Seminar ID / 原始编号用于定位记录，即使 Date / 日期或 Title / 标题变化也不要修改。
         Original Seminar ID identifies the record and stays stable even if Date or Title changes.
+
+        Date / 日期、Speaker / 报告人、Title / 标题为必填项。可选 URL 字段表示最终希望保留的完整值；留空表示清除。
         Date, Speaker, and Title are required. Optional URL fields are the full desired final values; leave an optional URL blank to clear it.
+
+        如果把文件拖入 Attachment / 附件输入框，该附件会替换对应 URL，并复制到本仓库。
         If you drag a file into an Attachment box, that attachment replaces the corresponding URL and is copied into this repository.
   - type: input
     id: original_seminar_id
     attributes:
-      label: Original Seminar ID
-      description: The current seminar id from the website edit link.
+      label: Original Seminar ID / 原始编号
+      description: 网站编辑链接中的当前组会编号。 / The current seminar id from the website edit link.
       placeholder: "2024-04-07-zero-shot-adversarial-robustness"
     validations:
       required: true
   - type: input
     id: date
     attributes:
-      label: Date
-      description: Use YYYY-MM-DD.
+      label: Date / 日期
+      description: 使用 YYYY-MM-DD 格式。 / Use YYYY-MM-DD.
       placeholder: "2024-04-07"
     validations:
       required: true
   - type: input
     id: speaker
     attributes:
-      label: Speaker
-      placeholder: "Name"
+      label: Speaker / 报告人
+      placeholder: "Name / 姓名"
     validations:
       required: true
   - type: input
     id: title
     attributes:
-      label: Title
-      placeholder: "Paper or talk title"
+      label: Title / 标题
+      placeholder: "Paper or talk title / 论文或报告标题"
     validations:
       required: true
   - type: input
     id: image_url
     attributes:
-      label: Image URL
-      description: Full desired image URL/path. Leave blank to clear unless using Image Attachment.
+      label: Image URL / 图片链接
+      description: 最终希望保留的完整图片 URL/路径；留空表示清除，除非使用 Image Attachment / 图片附件。 / Full desired image URL/path. Leave blank to clear unless using Image Attachment.
       placeholder: "media/image/example.png"
     validations:
       required: false
   - type: textarea
     id: image_attachment
     attributes:
-      label: Image Attachment
-      description: Drag a replacement cover image here.
-      placeholder: "Drop replacement image here."
+      label: Image Attachment / 图片附件
+      description: 将替换用封面图拖到此处。 / Drag a replacement cover image here.
+      placeholder: "Drop replacement image here. / 将替换图片拖到这里。"
     validations:
       required: false
   - type: input
     id: paper_url
     attributes:
-      label: Paper URL
-      description: Full desired paper URL/path. Leave blank to clear unless using Paper Attachment.
+      label: Paper URL / 论文链接
+      description: 最终希望保留的完整论文 URL/路径；留空表示清除，除非使用 Paper Attachment / 论文附件。 / Full desired paper URL/path. Leave blank to clear unless using Paper Attachment.
       placeholder: "https://arxiv.org/pdf/..."
     validations:
       required: false
   - type: textarea
     id: paper_attachment
     attributes:
-      label: Paper Attachment
-      description: Drag a replacement paper PDF here.
-      placeholder: "Drop replacement paper PDF here."
+      label: Paper Attachment / 论文附件
+      description: 将替换用论文 PDF 拖到此处。 / Drag a replacement paper PDF here.
+      placeholder: "Drop replacement paper PDF here. / 将替换 PDF 拖到这里。"
     validations:
       required: false
   - type: input
     id: slides_url
     attributes:
-      label: Slides URL
-      description: Full desired slides URL/path. Leave blank to clear unless using Slides Attachment.
+      label: Slides URL / 幻灯片链接
+      description: 最终希望保留的完整幻灯片 URL/路径；留空表示清除，除非使用 Slides Attachment / 幻灯片附件。 / Full desired slides URL/path. Leave blank to clear unless using Slides Attachment.
       placeholder: "assets/seminars/2024/example/slides.pptx"
     validations:
       required: false
   - type: textarea
     id: slides_attachment
     attributes:
-      label: Slides Attachment
-      description: Drag replacement slides here.
-      placeholder: "Drop replacement slides PDF/PPT here."
+      label: Slides Attachment / 幻灯片附件
+      description: 将替换用幻灯片拖到此处。 / Drag replacement slides here.
+      placeholder: "Drop replacement slides PDF/PPT here. / 将替换 PDF/PPT 拖到这里。"
     validations:
       required: false
   - type: input
     id: code_url
     attributes:
-      label: Code URL
-      description: Full desired code URL/path. Leave blank to clear.
+      label: Code URL / 代码链接
+      description: 最终希望保留的完整代码 URL/路径；留空表示清除。 / Full desired code URL/path. Leave blank to clear.
       placeholder: "https://github.com/..."
     validations:
       required: false
   - type: input
     id: video_url
     attributes:
-      label: Video URL
-      description: Full desired video URL/path. Leave blank to clear.
+      label: Video URL / 视频链接
+      description: 最终希望保留的完整视频 URL/路径；留空表示清除。 / Full desired video URL/path. Leave blank to clear.
       placeholder: "https://..."
     validations:
       required: false
   - type: input
     id: tags
     attributes:
-      label: Tags
-      description: Comma-separated full desired tag list. Leave blank to clear.
+      label: Tags / 标签
+      description: 最终希望保留的完整标签列表，使用英文逗号分隔；留空表示清除。 / Comma-separated full desired tag list. Leave blank to clear.
       placeholder: "IQA, diffusion"
     validations:
       required: false
   - type: textarea
     id: abstract
     attributes:
-      label: Abstract
-      description: Full desired abstract. Leave blank to clear.
-      placeholder: "Optional short summary."
+      label: Abstract / 摘要
+      description: 最终希望保留的完整摘要；留空表示清除。 / Full desired abstract. Leave blank to clear.
+      placeholder: "Optional short summary. / 可选的简短摘要。"
     validations:
       required: false
   - type: textarea
     id: edit_note
     attributes:
-      label: Edit Note
-      placeholder: "What changed and why?"
+      label: Edit Note / 编辑说明
+      placeholder: "What changed and why? / 修改了什么，为什么修改？"
     validations:
       required: false

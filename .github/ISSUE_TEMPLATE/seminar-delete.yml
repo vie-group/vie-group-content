@@ -1,34 +1,39 @@
-name: Delete seminar submission
-description: Request deletion of a seminar that you submitted.
-title: "[Delete Seminar] Original issue #"
+name: Delete seminar submission / 删除组会提交
+description: Request deletion of a seminar that you submitted. / 申请删除自己提交的组会记录。
+title: "[Delete Seminar] Original issue # / 原始 Issue 编号"
 labels: ["seminar-delete"]
 body:
   - type: markdown
     attributes:
       value: |
+        使用此表单删除通过 GitHub Issue 提交的组会记录。
         Use this form to delete a seminar submitted through a GitHub issue.
+
+        自动流程只会处理由原始组会提交 Issue 的同一 GitHub 用户发起的删除请求。
         The workflow will only proceed if this delete issue is opened by the same GitHub user who opened the original seminar submission issue.
+
+        对于从网站仓库迁移来的旧组会，请填写 Seminar ID / 组会编号，以便自动流程找到原始来源仓库。
         For seminars migrated from the website repository, fill Seminar ID so the workflow can find the original source repository.
   - type: input
     id: original_seminar_issue_number
     attributes:
-      label: Original Seminar Issue Number
-      description: The GitHub issue number used to submit the seminar, for example 1 or #1.
+      label: Original Seminar Issue Number / 原始编号
+      description: 提交该组会时使用的 GitHub Issue 编号，例如 1 或 #1。 / The GitHub issue number used to submit the seminar, for example 1 or #1.
       placeholder: "#1"
     validations:
       required: true
   - type: input
     id: seminar_id
     attributes:
-      label: Seminar ID
-      description: Optional for new content-repo submissions. Required for older seminars migrated from the website repository.
+      label: Seminar ID / 组会编号
+      description: 对新内容仓库提交可选；对从网站仓库迁移来的旧组会必填。 / Optional for new content-repo submissions. Required for older seminars migrated from the website repository.
       placeholder: "2026-09-04-mopd-multi-teacher-on-policy-distillation-for-capability-integration-in-llm-post"
     validations:
       required: false
   - type: textarea
     id: reason
     attributes:
-      label: Reason
-      placeholder: "Wrong file, duplicate submission, wrong date, etc."
+      label: Reason / 删除原因
+      placeholder: "Wrong file, duplicate submission, wrong date, etc. / 文件错误、重复提交、日期错误等。"
     validations:
       required: false

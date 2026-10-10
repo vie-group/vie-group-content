@@ -1,34 +1,42 @@
-name: Edit publication record
-description: Edit one published publication record and optionally replace its files.
-title: "[Edit Publication] publication-id"
+name: Edit publication record / 编辑论文记录
+description: Edit one published publication record and optionally replace its files. / 编辑一条已发布论文记录，并可替换相关文件。
+title: "[Edit Publication] publication-id / 论文编号"
 labels: ["publication-edit"]
 body:
   - type: markdown
     attributes:
       value: |
+        使用此表单编辑一条论文记录。
         Use this form to edit one publication record.
+
+        Original Publication ID / 原始编号用于定位记录，即使 Year / 年份、Title / 标题或 Authors / 作者变化也不要修改。
         Original Publication ID identifies the record and stays stable even if Year, Title, or Authors change.
+
+        Year / 年份、Type / 类型、Authors / 作者、Title / 标题、Venue / 发表信息为必填项。可选 URL 字段表示最终希望保留的完整值；留空表示清除。
         Year, Type, Authors, Title, and Venue are required. Optional URL fields are the full desired final values; leave an optional URL blank to clear it.
+
+        如果把文件拖入 Attachment / 附件输入框，该附件会替换对应 URL，并复制到本仓库。
         If you drag a file into an Attachment box, that attachment replaces the corresponding URL and is copied into this repository.
   - type: input
     id: original_publication_id
     attributes:
-      label: Original Publication ID
-      description: The current publication id from the website edit page.
+      label: Original Publication ID / 原始编号
+      description: 网站编辑页中的当前论文编号。 / The current publication id from the website edit page.
       placeholder: "liu-2024-blade"
     validations:
       required: true
   - type: input
     id: year
     attributes:
-      label: Year
+      label: Year / 年份
       placeholder: "2024"
     validations:
       required: true
   - type: dropdown
     id: type
     attributes:
-      label: Type
+      label: Type / 类型
+      description: conference = 会议，journal = 期刊，dataset = 数据集。 / conference, journal, or dataset.
       options:
         - conference
         - journal
@@ -38,108 +46,108 @@ body:
   - type: input
     id: authors
     attributes:
-      label: Authors
-      placeholder: "Author A, Author B, Tingting Jiang"
+      label: Authors / 作者
+      placeholder: "Author A, Author B, Tingting Jiang / 作者 A, 作者 B"
     validations:
       required: true
   - type: input
     id: title
     attributes:
-      label: Title
-      placeholder: "Publication title"
+      label: Title / 标题
+      placeholder: "Publication title / 论文标题"
     validations:
       required: true
   - type: input
     id: venue
     attributes:
-      label: Venue
+      label: Venue / 发表信息
       placeholder: "CVPR 2024"
     validations:
       required: true
   - type: textarea
     id: note
     attributes:
-      label: Note
-      description: Pages, location, volume/issue, month, or other note. Leave blank to clear.
-      placeholder: "Optional publication note."
+      label: Note / 备注
+      description: 页码、地点、卷期、月份或其它备注；留空表示清除。 / Pages, location, volume/issue, month, or other note. Leave blank to clear.
+      placeholder: "Optional publication note. / 可选论文备注。"
     validations:
       required: false
   - type: input
     id: pdf_url
     attributes:
-      label: PDF URL
-      description: Full desired PDF URL/path. Leave blank to clear unless using PDF Attachment.
+      label: PDF URL / 文件链接
+      description: 最终希望保留的完整 PDF URL/路径；留空表示清除，除非使用 PDF Attachment / 文件附件。 / Full desired PDF URL/path. Leave blank to clear unless using PDF Attachment.
       placeholder: "media/pdf/example.pdf"
     validations:
       required: false
   - type: textarea
     id: pdf_attachment
     attributes:
-      label: PDF Attachment
-      description: Drag a replacement paper PDF here.
-      placeholder: "Drop replacement PDF here."
+      label: PDF Attachment / 文件附件
+      description: 将替换用论文 PDF 拖到此处。 / Drag a replacement paper PDF here.
+      placeholder: "Drop replacement PDF here. / 将替换 PDF 拖到这里。"
     validations:
       required: false
   - type: input
     id: slide_url
     attributes:
-      label: Slide URL
-      description: Full desired slide URL/path. Leave blank to clear unless using Slide Attachment.
+      label: Slide URL / 幻灯片链接
+      description: 最终希望保留的完整幻灯片 URL/路径；留空表示清除，除非使用 Slide Attachment / 幻灯片附件。 / Full desired slide URL/path. Leave blank to clear unless using Slide Attachment.
       placeholder: "assets/publications/2024/example/slide.pptx"
     validations:
       required: false
   - type: textarea
     id: slide_attachment
     attributes:
-      label: Slide Attachment
-      description: Drag replacement slides here.
-      placeholder: "Drop replacement slides PDF/PPT here."
+      label: Slide Attachment / 幻灯片附件
+      description: 将替换用幻灯片拖到此处。 / Drag replacement slides here.
+      placeholder: "Drop replacement slides PDF/PPT here. / 将替换 PDF/PPT 拖到这里。"
     validations:
       required: false
   - type: input
     id: poster_url
     attributes:
-      label: Poster URL
-      description: Full desired poster URL/path. Leave blank to clear unless using Poster Attachment.
+      label: Poster URL / 海报链接
+      description: 最终希望保留的完整海报 URL/路径；留空表示清除，除非使用 Poster Attachment / 海报附件。 / Full desired poster URL/path. Leave blank to clear unless using Poster Attachment.
       placeholder: "assets/publications/2024/example/poster.pdf"
     validations:
       required: false
   - type: textarea
     id: poster_attachment
     attributes:
-      label: Poster Attachment
-      description: Drag a replacement poster PDF/image here.
-      placeholder: "Drop replacement poster here."
+      label: Poster Attachment / 海报附件
+      description: 将替换用海报 PDF/图片拖到此处。 / Drag a replacement poster PDF/image here.
+      placeholder: "Drop replacement poster here. / 将替换海报拖到这里。"
     validations:
       required: false
   - type: input
     id: code_url
     attributes:
-      label: Code URL
-      description: Full desired code URL/path. Leave blank to clear unless using Code Attachment.
+      label: Code URL / 代码链接
+      description: 最终希望保留的完整代码 URL/路径；留空表示清除，除非使用 Code Attachment / 代码附件。 / Full desired code URL/path. Leave blank to clear unless using Code Attachment.
       placeholder: "https://github.com/..."
     validations:
       required: false
   - type: textarea
     id: code_attachment
     attributes:
-      label: Code Attachment
-      description: Drag replacement code archive here.
-      placeholder: "Drop replacement code zip here."
+      label: Code Attachment / 代码附件
+      description: 将替换用代码压缩包拖到此处。 / Drag replacement code archive here.
+      placeholder: "Drop replacement code zip here. / 将替换代码压缩包拖到这里。"
     validations:
       required: false
   - type: input
     id: tags
     attributes:
-      label: Tags
-      description: Comma-separated full desired tag list. Leave blank to clear.
+      label: Tags / 标签
+      description: 最终希望保留的完整标签列表，使用英文逗号分隔；留空表示清除。 / Comma-separated full desired tag list. Leave blank to clear.
       placeholder: "segmentation, weak supervision"
     validations:
       required: false
   - type: textarea
     id: edit_note
     attributes:
-      label: Edit Note
-      placeholder: "What changed and why?"
+      label: Edit Note / 编辑说明
+      placeholder: "What changed and why? / 修改了什么，为什么修改？"
     validations:
       required: false
