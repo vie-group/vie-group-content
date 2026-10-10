@@ -49,6 +49,19 @@ function firstUrl(value) {
   return match ? match[0].replace(/[.,;"']+$/, "") : "";
 }
 
+function allUrls(value) {
+  return Array.from(String(value || "").matchAll(/https?:\/\/[^\s"'<>()[\]]+/g), ([match]) => match.replace(/[.,;"']+$/, ""));
+}
+
+function firstGitHubAttachmentUrl(value) {
+  return allUrls(value).find((url) => isGitHubAttachmentUrl(url)) || "";
+}
+
+function normalizeImageInput(value) {
+  const raw = cleanValue(value);
+  return firstUrl(raw) || raw;
+}
+
 function normalizeKey(value) {
   return String(value || "")
     .normalize("NFKD")
@@ -309,9 +322,14 @@ async function applySingleChange(team, change, fallbackFields = null) {
 
   let image;
   if (fallbackFields) {
-    image = firstUrl(field(fallbackFields, "Image Attachment")) || field(fallbackFields, "Image URL");
+    const attachmentValue = field(fallbackFields, "Image Attachment");
+    const imageUrlValue = field(fallbackFields, "Image URL");
+    image =
+      firstGitHubAttachmentUrl(`${attachmentValue}\n${imageUrlValue}\n${fallbackFields.__body || ""}`) ||
+      normalizeImageInput(attachmentValue) ||
+      normalizeImageInput(imageUrlValue);
   } else if (hasOwnValue(change, "imageUrl")) {
-    image = changeValue(change, "imageUrl");
+    image = normalizeImageInput(changeValue(change, "imageUrl"));
   } else {
     image = removed?.person?.image || "";
   }
@@ -349,7 +367,9 @@ async function applySingleChange(team, change, fallbackFields = null) {
 async function editTeamFromIssue() {
   const bodyPath = process.env.ISSUE_BODY_PATH;
   if (!bodyPath) throw new Error("ISSUE_BODY_PATH is required.");
-  const fields = parseIssueForm(await readFile(bodyPath, "utf8"));
+  const body = await readFile(bodyPath, "utf8");
+  const fields = parseIssueForm(body);
+  fields.__body = body;
   const batchChanges = parseBatchChanges(field(fields, "Batch Changes"));
 
   const path = "data/team.json";
