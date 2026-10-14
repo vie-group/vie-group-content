@@ -8,6 +8,15 @@
     <lastBuildDate>Fri, 18 Sep 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://vie-group.github.io/vie-group-content/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Seminar: PhyWorldBench: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2026-09-18-phyworldbench-a-comprehensive-evaluation-of-physical-realism-in-text-to-video-mo</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Shuyun Lu</description>
+      <category>seminar</category>
+      <category>VQA</category>
+    </item>
+    <item>
       <title>Seminar: Summer internship report</title>
       <link>https://www.vie.group/presentation/</link>
       <guid isPermaLink="false">seminar:2026-09-18-summer-internship-report</guid>
@@ -526,14 +535,6 @@
       <guid isPermaLink="false">seminar:2023-03-17-patchdct-patch-refinement-for-high-quality-instance-segmentation</guid>
       <pubDate>Fri, 17 Mar 2023 12:00:00 GMT</pubDate>
       <description>Ruohua Shi</description>
-      <category>seminar</category>
-    </item>
-    <item>
-      <title>Seminar: No Reference Opinion Unaware Quality Assessment of Authentically Distorted Images</title>
-      <link>https://www.vie.group/presentation/</link>
-      <guid isPermaLink="false">seminar:2023-03-10-no-reference-opinion-unaware-quality-assessment-of-authentically-distorted-image</guid>
-      <pubDate>Fri, 10 Mar 2023 12:00:00 GMT</pubDate>
-      <description>Yingjian Song</description>
       <category>seminar</category>
     </item>
   </channel>
