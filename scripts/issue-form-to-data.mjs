@@ -207,6 +207,17 @@ function field(fields, label, required = false) {
   return value;
 }
 
+function firstIsoDate(value) {
+  const match = String(value || "").match(/\b\d{4}-\d{2}-\d{2}\b/);
+  return match ? match[0] : "";
+}
+
+function dateField(fields, label, required = false) {
+  const value = firstIsoDate(field(fields, label, required));
+  if (required && !value) throw new Error(`${label} must contain a date using YYYY-MM-DD.`);
+  return value;
+}
+
 async function writeOutput(name, value) {
   if (!process.env.GITHUB_OUTPUT) return;
   const safeValue = String(value || "");
@@ -224,7 +235,7 @@ async function addSeminarFromIssue() {
   const body = await readFile(bodyPath, "utf8");
   const fields = parseIssueForm(body);
   const fallbackLinks = fallbackAttachmentLinks(body);
-  const date = field(fields, "Date", true);
+  const date = dateField(fields, "Date", true);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("Date must use YYYY-MM-DD.");
 
   const title = field(fields, "Title", true);
@@ -295,7 +306,7 @@ async function editSeminarFromIssue() {
   const fallbackLinks = fallbackAttachmentLinks(body);
   const id = field(fields, "Original Seminar ID", true).trim();
 
-  const date = field(fields, "Date", true);
+  const date = dateField(fields, "Date", true);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("Date must use YYYY-MM-DD.");
 
   const title = field(fields, "Title", true);
