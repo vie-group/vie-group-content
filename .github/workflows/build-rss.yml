@@ -19,17 +19,23 @@ jobs:
     steps:
       - name: Verify workflow actor organization membership
         env:
-          GH_TOKEN: ${{ secrets.ORG_READ_TOKEN || github.token }}
+          GH_TOKEN: ${{ secrets.ORG_MEMBERSHIP_TOKEN || secrets.ORG_READ_TOKEN || github.token }}
           ORG_LOGIN: vie-group
           ACTOR: ${{ github.actor }}
+          REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
-          if gh api "orgs/${ORG_LOGIN}/members/${ACTOR}" --silent; then
-            echo "@${ACTOR} is a member of ${ORG_LOGIN}."
-          else
-            echo "::error::@${ACTOR} is not a member of ${ORG_LOGIN}; refusing to modify content."
-            exit 1
+          membership_response="$(gh api -i "orgs/${ORG_LOGIN}/members/${ACTOR}" --silent 2>/tmp/org-membership.err || true)"
+          membership_status="$(printf '%s\n' "$membership_response" | awk '/^HTTP\// { code=$2 } END { print code }')"
+          permission="$(gh api "repos/${REPOSITORY}/collaborators/${ACTOR}/permission" --jq '.permission // ""' 2>/dev/null || true)"
+
+          echo "@${ACTOR}: org_membership_http=${membership_status:-unknown}, repo_permission=${permission:-unknown}"
+          if [ "${membership_status:-}" = "204" ] || [ "${permission:-}" = "admin" ]; then
+            exit 0
           fi
+
+          echo "::error::@${ACTOR} is not recognized as a ${ORG_LOGIN} organization member or repository admin; refusing to modify content."
+          exit 1
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
