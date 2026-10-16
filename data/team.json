@@ -35,6 +35,12 @@
       "image": "assets/team/jiange-wang/image.jpg",
       "profileUrl": "https://github.com/WangJGG",
       "role": "Ph.D. Student"
+    },
+    {
+      "name": "Lu Xianze",
+      "email": "xianze.lu_26@pku.edu.cn",
+      "image": "assets/team/lu-xianze/image.jpg",
+      "role": "Master Student"
     }
   ],
   "alumni": [
