@@ -58,9 +58,16 @@ function firstGitHubAttachmentUrl(value) {
   return allUrls(value).find((url) => isGitHubAttachmentUrl(url)) || "";
 }
 
+function isPlaceholderInput(value) {
+  return /^drag\b/i.test(cleanValue(value));
+}
+
 function normalizeImageInput(value) {
   const raw = cleanValue(value);
-  return firstUrl(raw) || raw;
+  if (!raw || isPlaceholderInput(raw)) return "";
+  const url = firstUrl(raw) || raw;
+  if (/^\/?(media|static)\//i.test(url)) return `https://vie-group.github.io/${url.replace(/^\/+/, "")}`;
+  return url;
 }
 
 function normalizeKey(value) {
@@ -333,10 +340,15 @@ async function applySingleChange(team, change, fallbackFields = null) {
   if (fallbackFields) {
     const attachmentValue = field(fallbackFields, "Image Attachment");
     const imageUrlValue = field(fallbackFields, "Image URL");
+    const attachmentUrl =
+      firstGitHubAttachmentUrl(attachmentValue) ||
+      firstGitHubAttachmentUrl(fallbackFields.__body || "");
     image =
-      firstGitHubAttachmentUrl(`${attachmentValue}\n${imageUrlValue}\n${fallbackFields.__body || ""}`) ||
+      attachmentUrl ||
+      normalizeImageInput(imageUrlValue) ||
       normalizeImageInput(attachmentValue) ||
-      normalizeImageInput(imageUrlValue);
+      removed?.person?.image ||
+      "";
   } else if (hasOwnValue(change, "imageUrl")) {
     image = normalizeImageInput(changeValue(change, "imageUrl"));
   } else {
