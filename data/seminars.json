@@ -6,7 +6,9 @@
     "title": "SurgTEMP Temporal-Aware Surgical Video Question Answering",
     "abstract": "",
     "links": {
-      "paper": "https://arxiv.org/abs/2603.29962"
+      "image": "https://github.com/vie-group/vie-group-content/blob/main/assets/seminars/2026/2026-10-16-SurgTEMP-Temporal-Aware-Surgical-Video-Question-Answering/image.png",
+      "paper": "https://arxiv.org/abs/2603.29962",
+      "slides": "https://github.com/vie-group/vie-group-content/blob/main/assets/seminars/2026/2026-10-16-SurgTEMP-Temporal-Aware-Surgical-Video-Question-Answering/ppt.pptx"
     },
     "tags": [],
     "source": {
@@ -14,6 +16,13 @@
       "repository": "vie-group/vie-group-content",
       "issueNumber": 18,
       "issueUrl": "https://github.com/vie-group/vie-group-content/issues/18",
+      "author": "qiyue-hub"
+    },
+    "lastEdit": {
+      "type": "github-issue",
+      "repository": "vie-group/vie-group-content",
+      "issueNumber": 21,
+      "issueUrl": "https://github.com/vie-group/vie-group-content/issues/21",
       "author": "qiyue-hub"
     }
   },
