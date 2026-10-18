@@ -5,8 +5,16 @@
     <link>https://www.vie.group</link>
     <description>VIE focuses on computer vision and image/video quality assessment. Current topics include visual inference, visual quality evaluation, medical image analysis, amodal perception, action understanding, and robust learning.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://vie-group.github.io/vie-group-content/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Seminar: SurgTEMP Temporal-Aware Surgical Video Question Answering</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2026-10-18-surgtemp-temporal-aware-surgical-video-question-answering</guid>
+      <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Qiyue Li</description>
+      <category>seminar</category>
+    </item>
     <item>
       <title>Seminar: PhyWorldBench: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models</title>
       <link>https://www.vie.group/presentation/</link>
@@ -527,14 +535,6 @@
       <guid isPermaLink="false">seminar:2023-03-17-polyformer-referring-image-segmentation-as-sequential-polygon-generation</guid>
       <pubDate>Fri, 17 Mar 2023 12:00:00 GMT</pubDate>
       <description>Zhixuan Li</description>
-      <category>seminar</category>
-    </item>
-    <item>
-      <title>Seminar: PATCHDCT: PATCH REFINEMENT FOR HIGH QUALITY INSTANCE SEGMENTATION</title>
-      <link>https://www.vie.group/presentation/</link>
-      <guid isPermaLink="false">seminar:2023-03-17-patchdct-patch-refinement-for-high-quality-instance-segmentation</guid>
-      <pubDate>Fri, 17 Mar 2023 12:00:00 GMT</pubDate>
-      <description>Ruohua Shi</description>
       <category>seminar</category>
     </item>
   </channel>
