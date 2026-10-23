@@ -16,6 +16,14 @@
       <category>seminar</category>
     </item>
     <item>
+      <title>Seminar: Progression as Latent Drift: Generative Forecasting of Slow-Evolving Pathologies</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2026-10-16-progression-as-latent-drift-generative-forecasting-of-slow-evolving-pathologies</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Xueqing Yu</description>
+      <category>seminar</category>
+    </item>
+    <item>
       <title>Seminar: PhyWorldBench: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models</title>
       <link>https://www.vie.group/presentation/</link>
       <guid isPermaLink="false">seminar:2026-09-18-phyworldbench-a-comprehensive-evaluation-of-physical-realism-in-text-to-video-mo</guid>
@@ -527,14 +535,6 @@
       <guid isPermaLink="false">seminar:2023-03-24-hcsc-hierarchical-contrastive-selective-coding</guid>
       <pubDate>Fri, 24 Mar 2023 12:00:00 GMT</pubDate>
       <description>Chenxi Yang</description>
-      <category>seminar</category>
-    </item>
-    <item>
-      <title>Seminar: PolyFormer: Referring Image Segmentation as Sequential Polygon Generation</title>
-      <link>https://www.vie.group/presentation/</link>
-      <guid isPermaLink="false">seminar:2023-03-17-polyformer-referring-image-segmentation-as-sequential-polygon-generation</guid>
-      <pubDate>Fri, 17 Mar 2023 12:00:00 GMT</pubDate>
-      <description>Zhixuan Li</description>
       <category>seminar</category>
     </item>
   </channel>
