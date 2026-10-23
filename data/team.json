@@ -25,9 +25,9 @@
     },
     {
       "name": "Xueqing Yu",
-      "role": "Undergraduate Student",
       "email": "yuxueqing at pku.edu.cn",
-      "image": "media/image/true.jpg"
+      "image": "https://vie-group.github.io/media/image/true.jpg",
+      "role": "Master Student"
     },
     {
       "name": "Jiange Wang",
