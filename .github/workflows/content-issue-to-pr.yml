@@ -182,15 +182,28 @@ jobs:
         with:
           node-version: 22
       - if: steps.authorize.outputs.authorized == 'true'
-        name: Ensure image processing tools
+        name: Ensure document and image processing tools
         run: |
           set -euo pipefail
-          if command -v magick >/dev/null 2>&1 || command -v convert >/dev/null 2>&1; then
-            echo "ImageMagick is already available."
+          packages=()
+          if ! command -v magick >/dev/null 2>&1 && ! command -v convert >/dev/null 2>&1; then
+            packages+=(imagemagick)
+          fi
+          if ! command -v pdftoppm >/dev/null 2>&1; then
+            packages+=(poppler-utils)
+          fi
+          if ! command -v soffice >/dev/null 2>&1 && ! command -v libreoffice >/dev/null 2>&1; then
+            packages+=(libreoffice-impress)
+          fi
+          if ! command -v fc-match >/dev/null 2>&1 || ! fc-match "Noto Sans CJK SC" | grep -qi "Noto"; then
+            packages+=(fonts-noto-cjk)
+          fi
+          if [ "${#packages[@]}" -eq 0 ]; then
+            echo "Document and image processing tools are already available."
             exit 0
           fi
           sudo apt-get update
-          sudo apt-get install -y imagemagick
+          sudo apt-get install -y --no-install-recommends "${packages[@]}"
       - id: process
         if: steps.authorize.outputs.authorized == 'true'
         name: Apply content issue and merge PR

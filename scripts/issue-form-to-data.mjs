@@ -1,5 +1,5 @@
-import { mkdir, readFile, writeFile, appendFile, rm } from "node:fs/promises";
-import { processImageAttachment } from "./image-processing.mjs";
+import { access, mkdir, readFile, writeFile, appendFile, rm } from "node:fs/promises";
+import { generateDocumentCover, processImageAttachment } from "./image-processing.mjs";
 
 const command = process.argv[2];
 const attachmentContentTypes = new Map([
@@ -157,6 +157,43 @@ function isOwnedSeminarAsset(value, id) {
   return path.startsWith("assets/seminars/") && path.includes(`/${id}/`) && !path.split("/").includes("..");
 }
 
+function localAssetPath(value) {
+  const path = String(value || "").replace(/^\/+/, "");
+  if (!path || /^https?:\/\//i.test(path) || path.includes("\0") || path.split("/").includes("..")) return "";
+  return path;
+}
+
+async function fileExists(path) {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function ensureSeminarCoverImage(links, record) {
+  if (links.image) return links;
+
+  const year = record.date.slice(0, 4);
+  const dir = `assets/seminars/${year}/${record.id}`;
+  const outputPath = `${dir}/image.jpg`;
+  for (const [kind, value] of [
+    ["slides", links.slides],
+    ["paper", links.paper]
+  ]) {
+    const sourcePath = localAssetPath(value);
+    if (!sourcePath || !(await fileExists(sourcePath))) continue;
+
+    await mkdir(dir, { recursive: true });
+    if (await generateDocumentCover({ sourcePath, outputPath, label: `${record.id} ${kind} cover` })) {
+      return { ...links, image: outputPath };
+    }
+  }
+
+  return links;
+}
+
 async function pruneReplacedOwnedLinks(existing, nextLinks) {
   const retained = new Set(Object.values(nextLinks || {}).filter(Boolean).map((value) => String(value).replace(/^\/+/, "")));
   for (const value of Object.values(existing.links || {})) {
@@ -253,7 +290,8 @@ async function addSeminarFromIssue() {
   }
 
   const id = `${date}-${slugify(title)}`;
-  const links = await localizeAttachmentLinks(rawLinks, { date, id });
+  let links = await localizeAttachmentLinks(rawLinks, { date, id });
+  links = await ensureSeminarCoverImage(links, { date, id });
   const source =
     process.env.ISSUE_NUMBER && process.env.ISSUE_AUTHOR
       ? {
@@ -329,7 +367,8 @@ async function editSeminarFromIssue() {
   if (index < 0) throw new Error(`Seminar not found: ${id}`);
 
   const existing = items[index];
-  const links = await localizeAttachmentLinks(rawLinks, { ...existing, date, id });
+  let links = await localizeAttachmentLinks(rawLinks, { ...existing, date, id });
+  links = await ensureSeminarCoverImage(links, { ...existing, date, id });
   await pruneReplacedOwnedLinks(existing, links);
 
   const record = {
@@ -367,7 +406,8 @@ async function localizeExistingSeminars() {
   let changed = false;
   for (const item of items) {
     if (!item.links || typeof item.links !== "object") continue;
-    const links = await localizeAttachmentLinks(item.links, item);
+    let links = await localizeAttachmentLinks(item.links, item);
+    links = await ensureSeminarCoverImage(links, item);
     if (JSON.stringify(links) !== JSON.stringify(item.links)) {
       item.links = links;
       changed = true;
