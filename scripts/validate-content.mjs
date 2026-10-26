@@ -56,6 +56,10 @@ function checkLinksObject(links, label) {
   }
 }
 
+function normalizeEmail(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
 const data = Object.fromEntries(
   await Promise.all(
     files.map(async (file) => {
@@ -149,6 +153,7 @@ for (const item of activityDetails) {
 }
 
 const team = data["data/team.json"];
+const teamEmails = new Map();
 for (const group of ["faculty", "current", "alumni"]) {
   if (!Array.isArray(team[group])) fail(`team.${group} must be an array.`);
   for (const person of team[group]) {
@@ -156,6 +161,12 @@ for (const group of ["faculty", "current", "alumni"]) {
     if (person.image && typeof person.image !== "string") fail(`team.${group} ${person.name} image must be a string.`);
     if (person.profileUrl && typeof person.profileUrl !== "string") {
       fail(`team.${group} ${person.name} profileUrl must be a string.`);
+    }
+    const email = normalizeEmail(person.email);
+    if (email) {
+      const previous = teamEmails.get(email);
+      if (previous) fail(`team has duplicate email ${person.email}: ${previous} and ${group}/${person.name}`);
+      teamEmails.set(email, `${group}/${person.name}`);
     }
   }
 }

@@ -79,6 +79,10 @@ function normalizeKey(value) {
     .trim();
 }
 
+function normalizeEmail(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
 function slugify(value) {
   const slug = String(value || "")
     .normalize("NFKD")
@@ -244,6 +248,32 @@ function removePerson(team, group, name) {
   return null;
 }
 
+function removePeopleByName(team, group, name) {
+  const key = normalizeKey(name);
+  if (!key) return [];
+  return removeMatchingPeople(team, group, (person) => normalizeKey(person.name) === key);
+}
+
+function removePeopleByEmail(team, group, email) {
+  const key = normalizeEmail(email);
+  if (!key) return [];
+  return removeMatchingPeople(team, group, (person) => normalizeEmail(person.email) === key);
+}
+
+function removeMatchingPeople(team, group, predicate) {
+  const removed = [];
+  const searchGroups = group ? [group] : groups;
+  for (const currentGroup of searchGroups) {
+    const people = team[currentGroup] || [];
+    for (let index = people.length - 1; index >= 0; index -= 1) {
+      if (!predicate(people[index])) continue;
+      const [person] = people.splice(index, 1);
+      removed.unshift({ person, group: currentGroup, index });
+    }
+  }
+  return removed;
+}
+
 function cleanPerson(person) {
   return Object.fromEntries(
     Object.entries(person).filter(([, value]) => {
@@ -320,7 +350,13 @@ async function applySingleChange(team, change, fallbackFields = null) {
   const originalGroup = optionalGroup(changeValue(change, "originalGroup"));
   const targetGroup = operation === "delete" ? "" : normalizeGroup(changeValue(change, "targetGroup"));
 
-  const removed = operation === "add" ? null : removePerson(team, originalGroup, originalName || changeValue(change, "name"));
+  const addDuplicates = operation === "add"
+    ? [
+        ...removePeopleByName(team, "", changeValue(change, "name")),
+        ...removePeopleByEmail(team, "", changeValue(change, "email"))
+      ]
+    : [];
+  const removed = operation === "add" ? (addDuplicates[0] || null) : removePerson(team, originalGroup, originalName || changeValue(change, "name"));
   if (operation !== "add" && !removed) {
     throw new Error(`Team member not found: ${originalGroup ? `${originalGroup}/` : ""}${originalName || changeValue(change, "name")}`);
   }
@@ -367,9 +403,15 @@ async function applySingleChange(team, change, fallbackFields = null) {
     ? teamRecordForGroup(fallbackFields, targetGroup, image)
     : teamRecordFromChange(change, targetGroup, image, removed?.person || {});
   if (operation === "add") {
-    const duplicate = removePerson(team, targetGroup, record.name);
-    if (duplicate?.person?.image && duplicate.person.image !== image && isOwnedTeamAsset(duplicate.person.image, duplicate.person.name)) {
-      await rm(duplicate.person.image, { force: true });
+    const duplicates = [
+      ...addDuplicates,
+      ...removePeopleByName(team, targetGroup, record.name),
+      ...removePeopleByEmail(team, "", record.email)
+    ];
+    for (const duplicate of duplicates) {
+      if (duplicate?.person?.image && duplicate.person.image !== image && isOwnedTeamAsset(duplicate.person.image, duplicate.person.name)) {
+        await rm(duplicate.person.image, { force: true });
+      }
     }
   }
 
