@@ -6,9 +6,9 @@
     "title": "SurgTEMP Temporal-Aware Surgical Video Question Answering",
     "abstract": "",
     "links": {
-      "image": "https://github.com/vie-group/vie-group-content/blob/main/assets/seminars/2026/2026-10-16-SurgTEMP-Temporal-Aware-Surgical-Video-Question-Answering/image.png",
+      "image": "assets/seminars/2026/2026-10-16-SurgTEMP-Temporal-Aware-Surgical-Video-Question-Answering/image.png",
       "paper": "https://arxiv.org/abs/2603.29962",
-      "slides": "https://github.com/vie-group/vie-group-content/blob/main/assets/seminars/2026/2026-10-16-SurgTEMP-Temporal-Aware-Surgical-Video-Question-Answering/ppt.pptx"
+      "slides": "assets/seminars/2026/2026-10-16-SurgTEMP-Temporal-Aware-Surgical-Video-Question-Answering/ppt.pptx"
     },
     "tags": [],
     "source": {
@@ -34,7 +34,8 @@
     "abstract": "",
     "links": {
       "paper": "https://arxiv.org/abs/2607.08270",
-      "slides": "assets/seminars/2026/2026-10-16-progression-as-latent-drift-generative-forecasting-of-slow-evolving-pathologies/slides.pptx"
+      "slides": "assets/seminars/2026/2026-10-16-progression-as-latent-drift-generative-forecasting-of-slow-evolving-pathologies/slides.pptx",
+      "image": "assets/seminars/2026/2026-10-16-progression-as-latent-drift-generative-forecasting-of-slow-evolving-pathologies/image.jpg"
     },
     "tags": [],
     "source": {
@@ -53,7 +54,8 @@
     "abstract": "",
     "links": {
       "paper": "https://doi.org/10.48550/arXiv.2507.13428",
-      "slides": "assets/seminars/2026/2026-09-18-phyworldbench-a-comprehensive-evaluation-of-physical-realism-in-text-to-video-mo/slides.pptx"
+      "slides": "assets/seminars/2026/2026-09-18-phyworldbench-a-comprehensive-evaluation-of-physical-realism-in-text-to-video-mo/slides.pptx",
+      "image": "assets/seminars/2026/2026-09-18-phyworldbench-a-comprehensive-evaluation-of-physical-realism-in-text-to-video-mo/image.jpg"
     },
     "tags": [
       "VQA"
@@ -73,7 +75,8 @@
     "title": "Summer internship report",
     "abstract": "",
     "links": {
-      "slides": "assets/seminars/2026/2026-09-18-summer-internship-report/slides.pptx"
+      "slides": "assets/seminars/2026/2026-09-18-summer-internship-report/slides.pptx",
+      "image": "assets/seminars/2026/2026-09-18-summer-internship-report/image.jpg"
     },
     "tags": [
       "Feed-forward modeling for 4D hand-object interaction from monocular RGB video"
