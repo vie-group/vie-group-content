@@ -74,7 +74,7 @@ function normalizeKey(value) {
   return String(value || "")
     .normalize("NFKD")
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
