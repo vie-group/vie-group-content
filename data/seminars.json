@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-05-an-expert-level-generalist-ai-for-abdominal-ct-diagnosis",
+    "date": "2026-11-05",
+    "speaker": "Jiange Wang",
+    "title": "An Expert-Level Generalist AI for Abdominal CT Diagnosis",
+    "abstract": "",
+    "links": {
+      "image": "assets/seminars/2026/2026-11-05-an-expert-level-generalist-ai-for-abdominal-ct-diagnosis/image.jpg",
+      "paper": "assets/seminars/2026/2026-11-05-an-expert-level-generalist-ai-for-abdominal-ct-diagnosis/paper.pdf",
+      "slides": "assets/seminars/2026/2026-11-05-an-expert-level-generalist-ai-for-abdominal-ct-diagnosis/slides.pptx"
+    },
+    "tags": [],
+    "source": {
+      "type": "github-issue",
+      "repository": "vie-group/vie-group-content",
+      "issueNumber": 49,
+      "issueUrl": "https://github.com/vie-group/vie-group-content/issues/49",
+      "author": "WangJGG"
+    }
+  },
+  {
     "id": "2026-10-30-spotiflow-accurate-and-efficient-spot-detection-for-fluorescence-microscopy-with",
     "date": "2026-10-30",
     "speaker": "Lu Xianze",
