@@ -5,8 +5,16 @@
     <link>https://www.vie.group</link>
     <description>VIE focuses on computer vision and image/video quality assessment. Current topics include visual inference, visual quality evaluation, medical image analysis, amodal perception, action understanding, and robust learning.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 12:00:00 GMT</lastBuildDate>
     <atom:link href="https://vie-group.github.io/vie-group-content/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Seminar: SurgVidLM: Towards Multi-grained Video Understanding with Large Language Model in Robot-assisted Surgery</title>
+      <link>https://www.vie.group/presentation/</link>
+      <guid isPermaLink="false">seminar:2026-11-27-surgvidlm-towards-multi-grained-video-understanding-with-large-language-model-in</guid>
+      <pubDate>Fri, 27 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Qiyue Li</description>
+      <category>seminar</category>
+    </item>
     <item>
       <title>Seminar: An Expert-Level Generalist AI for Abdominal CT Diagnosis</title>
       <link>https://www.vie.group/presentation/</link>
@@ -527,14 +535,6 @@
       <guid isPermaLink="false">seminar:2023-04-07-finediving-a-fine-grained-dataset-for-procedure-aware-action-quality-assessment</guid>
       <pubDate>Fri, 07 Apr 2023 12:00:00 GMT</pubDate>
       <description>Qiyue Li</description>
-      <category>seminar</category>
-    </item>
-    <item>
-      <title>Seminar: Unsupervised Pre-training for Temporal Action Localization Tasks</title>
-      <link>https://www.vie.group/presentation/</link>
-      <guid isPermaLink="false">seminar:2023-03-31-unsupervised-pre-training-for-temporal-action-localization-tasks</guid>
-      <pubDate>Fri, 31 Mar 2023 12:00:00 GMT</pubDate>
-      <description>Yanfeng Yang</description>
       <category>seminar</category>
     </item>
   </channel>
